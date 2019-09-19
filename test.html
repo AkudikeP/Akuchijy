@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/livescript">
+
+data = '[{"name" : "Ashwin", "age" : "20"},{"name" : "Abhinandan", "age" : "20"}]';
+
+var mydata = JSON.parse(data);
+//alert(mydata[0].name);
+//alert(mydata[0].age);
+//alert(mydata[1].name);
+//alert(mydata[1].age);
+
+var http = new XMLHttpRequest();
+var url = "http://mobiledarzi.com/pro.php";
+var params = "email=anshulkhare50@gmail.com";
+http.open("POST", url, true);
+
+//Send the proper header information along with the request
+http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+    }
+}
+http.send(params);
+	 
+//alert(col3);
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

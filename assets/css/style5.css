@@ -1,0 +1,185 @@
+@charset "utf-8";
+/* CSS Document */
+
+.career_image{
+		position: relative; 
+   width: 100%;
+   }
+   .career_text{
+ position: absolute; 
+   top: 125px; 
+   left:38%; 
+   
+   color:#fff;
+   font-size:24px;
+   background-color:#000;
+   }
+   .port-image
+{
+    width: 100%;
+}
+
+.col-md-3
+{
+    margin-bottom:20px;
+}
+
+.each-item
+{
+    position:relative;
+    overflow:hidden;
+}
+
+.each-item:hover .cap2, .each-item:hover .cap1
+{
+    left:0px;
+}
+
+.cap1
+{
+    position:absolute;
+    width:100%;
+    height:70%;
+    background:rgba(255, 255, 255, 0.5);
+    top:0px;
+    left:-100%;
+    padding:10px;
+    
+    transition: all .5s;
+}
+
+.cap2
+{
+    position:absolute;
+    width:100%;
+    height:30%;
+    background:rgba(0, 178, 255, 0.5);
+    bottom:0px;
+    left:100%;
+    padding:10px;
+    
+    transition: all .5s;
+}
+.bx{
+	border:1px solid rgba(0, 0, 0, 0.35);
+	margin-top:20px;
+}
+.bx:hover{
+	border:1px solid rgba(0, 0, 0, 0.25);
+	
+}
+
+.pdd{
+	padding:15px;
+}
+.pdd1{
+	padding:10px 5px;
+}
+
+.slt{
+	width:20%;
+}
+.hover-squared{
+	height:500px;
+}
+@media (max-width:500px){
+.hover-squared{
+	height:250px;
+}
+}
+.team{
+	
+	padding:0px;
+	margin:0px;
+}
+.btn-filt{
+	background-color:transparent;
+	margin-right:20px;
+}
+.btn-filt:hover{
+	color:#03C;
+	
+	border-bottom:1px solid #03C;
+}
+.btn-filt:active{
+	color:#03C;
+	
+	border-bottom:1px solid #03C;
+}
+.btn-filt:focus{
+	color:#03C;
+	
+	border-bottom:1px solid #03C;
+}
+.clr-red{
+
+	color:#F00 !important;
+}
+
+.btn-red{
+	background-color:#bb0f0f !important;
+	color:#fff !important;
+	
+}
+.btn-blue{
+	background-color:#138dc7 !important;
+     color:#fff !important;
+}
+.btn-red:hover{
+	background-color:#9e0808 !important;
+	
+	
+}
+.lrg{
+	padding:12px 75px !important;
+}
+
+.team{
+	
+	padding:0px;
+	margin:0px;
+}
+.srch{
+	margin-top:6px;
+	padding:7px 75px;	
+}
+	
+.accordion-inner{
+	padding:10px;
+	margin-left:10px;
+}
+
+#accordion-first .accordion-group {
+    margin-bottom: 10px;
+}
+
+#accordion-first .accordion-heading, #accordion-first .accordion-toggle:hover, #accordion-first .accordion-heading .accordion-toggle.active {
+    background: none repeat scroll 0% 0% transparent;
+}
+#accordion-first .accordion-heading {
+    border-bottom: 0px none;
+    font-size: 16px;
+}
+
+#accordion-first .accordion-heading .accordion-toggle {
+    display: block;
+    cursor: pointer;
+    padding: 5px 0px !important;
+    color: #222;
+    outline: medium none !important;
+    text-decoration: none;
+}
+
+#accordion-first .accordion-heading .accordion-toggle.active em{background-color: #3373c8;}
+
+#accordion-first .accordion-heading .accordion-toggle > em {
+	background-color:#000;
+    
+    color: #fff;
+    font-size: 14px;
+    height: 16px;
+    line-height: 16px;
+    margin-right: 15px;
+    text-align: center;
+    width: 16px;}
+

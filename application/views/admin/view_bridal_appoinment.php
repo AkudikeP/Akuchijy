@@ -1,0 +1,725 @@
+<link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
+<style>
+
+            .form-wizard .nav > li > a{padding: 10px; margin-right:0; text-align: left; color:#888888;}
+                        .tab-right{margin-left:-30px; margin-top:-1px; }
+            .tab-right .panel {margin-right:-30px;}
+            .tab-right .vd_panel-menu {right: 28px; top: -15px;}
+            .tab-right h3{border-bottom:1px solid #EEEEEE;}
+            table .vd_radio label:after{top:0;}
+
+
+    </style>
+
+    <!-- for specific page responsive in style css -->
+        <style>
+
+            @media (max-width: 767px) {
+              .tab-right{margin-left:0; margin-top:0;}
+              .tab-right .panel{margin-right: 0;}
+
+            }
+
+    </style>
+          <div class="vd_title-section clearfix">
+            <div class="vd_panel-header">
+              <h1><?php if($this->uri->segment(3)){echo "";}else{echo "";}?></h1>
+             <!-- <small class="subtitle">Ecommerce Pages: Add Product</small>-->
+
+              <div class="vd_panel-menu visible-xs">
+                <div class="menu">
+                  <div data-action="click-trigger"> <span class="menu-icon mgr-10"><i class="fa fa-bars"></i></span>Menu <i class="fa fa-angle-down"></i> </div>
+                  <div data-action="click-target" class="vd_mega-menu-content width-xs-2 left-xs" style="display: none;">
+                    <div class="child-menu">
+                      <div class="content-list content-menu">
+                        <ul class="list-wrapper pd-lr-10">
+                          <li> <a href="#">
+                            <div class="menu-icon"><i class="fa fa-search"></i></div>
+                            <div class="menu-text">Preview</div>
+                            </a> </li>
+                          <li> <a href="#">
+                            <div class="menu-icon"><i class="fa fa-copy"></i></div>
+                            <div class="menu-text">Duplicate</div>
+                            </a> </li>
+                          <li> <a href="#">
+                            <div class="menu-icon"><i class="fa fa-money"></i></div>
+                            <div class="menu-text">Product Sales</div>
+                            </a> </li>
+                          <li> <a href="#">
+                            <div class="menu-icon"><i class="fa fa-trash-o"></i></div>
+                            <div class="menu-text">Delete</div>
+                            </a> </li>
+                          <li> <a href="#">
+                            <div class="menu-icon"><i class="fa fa-support"></i></div>
+                            <div class="menu-text">Help</div>
+                            </a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- menu -->
+              </div>
+            </div>
+          </div>
+
+          <div class="vd_content-section clearfix" id="ecommerce-product-add">
+            <div class="row">
+              <div class="col-sm-3 col-md-4 col-lg-3">
+                <div class="form-wizard condensed mgbt-xs-20">
+                  <ul class="nav nav-tabs nav-stacked">
+                    <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Appoinment Detail </a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-sm-9 col-md-8 col-lg-9 tab-right">
+                <div class="panel widget panel-bd-left light-widget">
+                  <div class="panel-heading no-title"> </div>
+                  <div  class="panel-body">
+                    <div class="tab-content no-bd mgbt-xs-20">
+                    <?php if($this->session->flashdata('message')){?>
+                      <div class="alert alert-success">
+                        <?php echo $this->session->flashdata('message')?>
+                      </div>
+                  <?php } ?>
+                      <div id="tabinfo" class="tab-pane active">
+                       <?php
+             if($this->uri->segment(3)){
+
+
+                echo form_open("product/change_and_submit_bridal",array('class'=>"contact-form"));
+                $this->db->where('id',$this->uri->segment(3));
+                $this->db->update('user_appoinment',array('admin_status'=>'yes'));
+               $edit=$this->db->get_where("user_appoinment",array("id"=>$this->uri->segment(3)))->row();?>
+
+                          <h3 class="mgtp-15 mgbt-xs-20"> Appoinment Details</h3>
+
+                          <div class="row">
+
+                          </div>
+                          <div class="row">
+                          <div class="form-group">
+
+                            <label for="wholesale_price" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Name</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <input type="hidden" name="id" value="<?php echo $edit->id;?>">
+                                <input type="text" data-validation="custom" data-validation-regexp="^([a-zA-Z ]+)$"  value="<?php echo $edit->name;?>" disabled="" required="">
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+
+                          <!-- form-group -->
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Email</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <input type="email"  data-validation="email" class=" updateCurrentText " data-rel="tags-input" value="<?php echo $edit->email;?>" disabled="" required style="width:129%" >
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity1" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Contact</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <input type="text" name="contact" pattern="[0-9]{10}" title="10 digit contact number" maxlength="10" value="<?php echo $edit->contact;?>" required="">
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+
+
+
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity5" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Address</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <textarea name="address" rows="5" cols="50" required=""><?php echo $edit->address;?></textarea>
+
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity5" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">City</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <input type="text" name="city" data-validation="custom" data-validation-regexp="^([a-zA-Z ]+)$" value="<?php echo $edit->city;?>" required="">
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity5" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Preferred Appointment Date Time</span> </label>
+                            <div class="col-lg-9">
+                              <div class="">
+                                <div class="input-group date form_datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                    <input class="form-control" size="16" type="text" value="<?php echo $edit->date_time;?>" name="date_time" value="" readonly required>
+                                    <span class="input-group-addon"><span class="fa fa-times"></span></span>
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+
+                            </div>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+
+
+
+
+                          <div class="row">
+                          <div class="form-group">
+                            <label for="quantity6" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Query</span> </label>
+                            <div class="col-lg-9">
+                              <div class="input-group">
+                                <textarea name="query" rows="5" cols="50 required=""><?php echo $edit->query;?></textarea>
+
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="">
+                         <div>
+
+
+                         <?php if($edit->status!='Approve'){ ?>
+                          <button  type="submit" class="btn vd_btn vd_bg-blue btn-sm save-btn">
+                         <i class="fa fa-times append-icon"></i> Submit and Approve</button>
+                         <?php } if($edit->status!='Cancel'){ ?>
+                          <a  href="<?php echo base_url();?>index.php/product/bridal_cancel/<?php echo $edit->id; ?>" class="btn vd_btn vd_bg-blue btn-sm save-btn">
+                          <i class="fa fa-times append-icon"></i> Cancel</a>
+                         <?php } ?>
+
+                         </div>
+                       </div>
+                           <?php echo form_close();?>
+                           <?php
+                          }?>
+                      </div>
+                      <!-- #tabinfo -->
+
+                      <div id="tabprice" class="tab-pane">
+
+
+                      </div>
+
+
+                      <div id="tabasso" class="tab-pane">
+
+                      </div>
+
+                      <div id="tabatta" class="tab-pane">
+
+
+                      </div>
+
+
+
+                    </div>
+                    <!-- tab-content -->
+
+                  </div>
+                  <!-- panel-body -->
+
+                  <!-- form-horizontal -->
+                </div>
+                <!-- Panel Widget -->
+              </div>
+              <!-- col-sm-12-->
+            </div>
+            <!-- row -->
+
+          </div>
+          <!-- .vd_content-section -->
+
+        </div>
+        <!-- .vd_content -->
+      </div>
+      <!-- .vd_container -->
+    </div>
+    <!-- .vd_content-wrapper -->
+
+    <!-- Middle Content End -->
+
+  </div>
+  <!-- .container -->
+</div>
+<!-- .content -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header vd_bg-blue vd_white">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title" id="myModalLabel">Cancel Changes</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Are you sure you want to cancel your changes?</h5>
+      </div>
+      <div class="modal-footer background-login">
+        <button type="button" class="btn vd_btn vd_bg-grey" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn vd_btn vd_bg-green"  data-dismiss="modal">No</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="modal fade" id="addPriceModal" tabindex="-1" role="dialog" aria-labelledby="priceModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header vd_bg-blue vd_white">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title" id="priceModalLabel">Add Price for Combination</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Combination</label>
+            <div class="col-sm-7 controls">
+              <select class="width-40" id="option-combination">
+                            <option value="S - Grey">S - Grey</option>
+                            <option value="S - Blue">S - Blue</option>
+                            <option value="M - Grey">M - Grey</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Price</label>
+            <div class="col-sm-7 controls">
+              <input class="input-border-btm width-40" type="number" id="price-combination">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Enabled</label>
+            <div class="col-sm-7 controls">
+              <input  type="checkbox" data-rel="switch" data-wrapper-class="inverse" data-size="small" data-on-text="<i class='fa fa-check'></i>" data-off-text="<i class='fa fa-times'></i>" id="enable-combination">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer background-login">
+        <button type="button" class="btn vd_btn vd_bg-grey" data-dismiss="modal">Close</button>
+        <button type="button" class="btn vd_btn vd_bg-green" id="add-price-btn"><i class="fa fa-plus append-icon"></i> Add Price</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- Footer Start -->
+  <footer class="footer-1"  id="footer">
+    <div class="vd_bottom ">
+        <div class="container">
+            <div class="row">
+              <div class=" col-xs-12">
+                <div class="copyright">
+                    Copyright &copy;2016 MobileDarji. All Rights Reserved
+                </div>
+              </div>
+            </div><!-- row -->
+        </div><!-- container -->
+    </div>
+  </footer>
+<!-- Footer END -->
+
+
+</div>
+
+<!-- .vd_body END  -->
+<a id="back-top" href="#" data-action="backtop" class="vd_back-top visible"> <i class="fa  fa-angle-up"> </i> </a>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+<script>
+//alert('kk');
+  $.validate({
+    lang: 'en'
+  });
+</script>
+
+<script>
+
+<!--
+<a class="back-top" href="#" id="back-top"> <i class="icon-chevron-up icon-white"> </i> </a> -->
+
+<!-- Javascript =============================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/jquery.js"></script>
+
+
+<!-- <script>
+ $(document).ready(function(){
+  $("#row_dim").hide();
+
+$("#accessories_1").change(function() {
+
+    var sid = $(this).val();
+    $.ajax({
+        type : "POST",
+        url : "<?php echo base_url();?>index.php/product/ajax_add_cat_acc",
+        data : {sid:sid},
+        success: function(data){
+      //alert(data);
+          if(data)
+          $("#apppent_id").html(data);
+      }
+    });
+});
+});
+</script>
+<script>
+  $(document).on('change','#sub_cat_acc',function(){
+     var sub_id = $(this).val();
+    $.ajax({
+        type : "POST",
+        url : "<?php echo base_url();?>index.php/product/ajax_add_subcat_acc",
+        data : {sub_id:sub_id},
+        success: function(data){
+      //alert(data);
+          if(data)
+          $("#apppent_id2").html(data);
+      }
+    });
+});
+</script>
+
+<script>
+  $(document).on('change','#man_1',function(){
+        var validcode = 40;
+        var validcode1 = 41;
+        var code = $(this).val();
+        if (code == validcode || code == validcode1) {
+            $("#row_dim").show();
+        } else {
+            $("#row_dim").hide();
+        }
+    });
+</script> -->
+
+<!--[if lt IE 9]>
+  <script type="text/javascript" src="js/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/jquery-ui/jquery-ui.custom.min.js'></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/caroufredsel.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/plugins.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/breakpoints/breakpoints.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/dataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/tagsInput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/blockUI/jquery.blockUI.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/pnotify/js/jquery.pnotify.min.js"></script>
+
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/theme.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/custom/custom.js"></script>
+
+<!-- Specific Page Scripts Put Here -->
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/tagsInput/jquery.tagsinput.min.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/daterangepicker/moment.min.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/daterangepicker/daterangepicker.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/colorpicker/colorpicker.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/ckeditor/ckeditor.js'></script>
+<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/ckeditor/adapters/jquery.js'></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/bootstrap-wysiwyg/js/wysihtml5-0.3.0.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/bootstrap-wysiwyg/js/bootstrap-wysihtml5-0.0.2.js"></script>
+<script type="text/javascript">
+$(window).load(function()
+{
+  "use strict";
+
+
+
+  //CKEDITOR.replace( $('[data-rel^="ckeditor"]') );
+  $( '[data-rel^="ckeditor"]' ).ckeditor();
+
+
+  $( '#imageTable tbody' ).sortable({
+    placeholder: "warning",
+    helper: function(e, ui) {
+      ui.children().each(function() {
+        $(this).width($(this).width());
+        $(this).css('background','rgba(255,255,255,.6)');
+      });
+      return ui;
+    },
+    stop: function(e, ui) {
+      $( '#imageTable tbody' ).children().each(function() {
+        var object=$(this);
+        object.children('.pointer').html(object.index()+1);
+      });
+
+    }
+    }).disableSelection();
+
+
+
+  $('.save-btn').click(function(e) {
+    var object= $(this);
+    object.addClass('disabled');
+        object.prepend('<i id="save-spinner" class="fa fa-spinner fa-spin append-icon"></i>');
+    object.children('.fa-save').remove();
+    setTimeout(function(){
+      object.children('.fa-spinner').remove();
+      object.removeClass('disabled');
+      object.prepend('<i class="fa fa-save append-icon"></i>');
+      notification('topright', 'success', 'fa fa-check-circle vd_green', 'Save Successfully', 'Your has setting is saved successfully')
+      },2000)
+    ;
+    });
+
+  $('#add-price-btn').click(function(e) {
+    var option_value = $("#addPriceModal #option-combination").val();
+    var price_value = $("#addPriceModal #price-combination").val();
+    var check_value = $('#addPriceModal #enable-combination').bootstrapSwitch('state') ? '<i class="fa fa-check vd_green"></i>' : '<i class="fa fa-times vd_grey"></i>';
+    var menu_value = $('#addPriceModal #enable-combination').bootstrapSwitch('state') ?   '<a data-original-title="Disabled" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_green"> <i class="fa fa-power-off"></i> </a>' : '<a data-original-title="Enabled" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_grey"> <i class="fa fa-power-off"></i> </a>'
+    $('#specific_price_table tbody').append('<tr>' + '<td>' + option_value +'</td>\
+                                <td>$' + price_value + '</td>\
+                                <td class="text-center">' + check_value + '</td>\
+                                <td class="menu-action">' + menu_value + ' <a data-original-title="edit" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_yellow"> <i class="fa fa-pencil"></i> </a> <a data-original-title="delete" data-toggle="tooltip" data-placement="top" class="btn menu-icon vd_red"> <i class="fa fa-times"></i> </a></td>\
+                              </tr>' + '</tr>');
+    $('[data-toggle^="tooltip"]').tooltip();
+
+    $('#addPriceModal').modal('hide');
+
+  });
+
+  // count down on meta keyword/description text size
+
+  function countDown($source, $target) {
+    var max = $source.attr("data-maxchar");
+    $target.html(max-$source.val().length);
+
+    $source.keyup(function(){
+      $target.html(max-$source.val().length);
+    });
+  }
+
+
+
+    countDown($("#meta_title_1"), $("#meta_title_1_counter"));
+    countDown($("#meta_description_1"), $("#meta_description_1_counter"));
+
+})
+</script>
+
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="../blueimp.github.io/JavaScript-Load-Image/js/load-image.min.html"></script>
+<!-- The Canvas to Blob plugin is included for image resizing functionality -->
+<script src="../blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.iframe-transport.js"></script>
+<!-- The basic File Upload plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload-process.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload-image.js"></script>
+<!-- The File Upload audio preview plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload-audio.js"></script>
+<!-- The File Upload video preview plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload-video.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/js/jquery.fileupload-validate.js"></script>
+<script>
+/*jslint unparam: true, regexp: true */
+/*global window, $ */
+
+$(function () {
+    'use strict';
+
+    var url = window.location.hostname === 'blueimp.github.io' ?
+                '//jquery-file-upload.appspot.com/' : 'plugins/jquery-file-upload/server/php/',
+        uploadButton = $('<button/>')
+            .addClass('btn vd_btn vd_bg-blue')
+            .prop('disabled', true)
+            .text('Processing...')
+            .on('click', function () {
+                var $this = $(this),
+                    data = $this.data();
+                $this
+                    .off('click')
+                    .text('Abort')
+                    .on('click', function () {
+                        $this.remove();
+                        data.abort();
+                    });
+                data.submit().always(function () {
+                    $this.remove();
+                });
+            });
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        autoUpload: false,
+        acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+        maxFileSize: 5000000, // 5 MB
+        // Enable image resizing, except for Android and Opera,
+        // which actually support image resizing, but fail to
+        // send Blob objects via XHR requests:
+        disableImageResize: /Android(?!.*Chrome)|Opera/
+            .test(window.navigator.userAgent),
+        previewMaxWidth: 100,
+        previewMaxHeight: 100,
+        previewCrop: true
+    }).on('fileuploadadd', function (e, data) {
+        data.context = $('<div/>').appendTo('#files');
+        $.each(data.files, function (index, file) {
+            var node = $('<p/>')
+                    .append($('<span/>').text(file.name));
+            if (!index) {
+                node
+                    .append('<br>')
+                    .append(uploadButton.clone(true).data(data));
+            }
+            node.appendTo(data.context);
+        });
+    }).on('fileuploadprocessalways', function (e, data) {
+        var index = data.index,
+            file = data.files[index],
+            node = $(data.context.children()[index]);
+        if (file.preview) {
+            node
+                .prepend('<br>')
+                .prepend(file.preview);
+        }
+        if (file.error) {
+            node
+                .append('<br>')
+                .append($('<span class="text-danger"/>').text(file.error));
+        }
+        if (index + 1 === data.files.length) {
+            data.context.find('button')
+                .text('Upload')
+                .prop('disabled', !!data.files.error);
+        }
+    }).on('fileuploadprogressall', function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        $('#progress .progress-bar').css(
+            'width',
+            progress + '%'
+        );
+    }).on('fileuploaddone', function (e, data) {
+        $.each(data.result.files, function (index, file) {
+            if (file.url) {
+                var link = $('<a>')
+                    .attr('target', '_blank')
+                    .prop('href', file.url);
+                $(data.context.children()[index])
+                    .wrap(link);
+            } else if (file.error) {
+                var error = $('<span class="text-danger"/>').text(file.error);
+                $(data.context.children()[index])
+                    .append('<br>')
+                    .append(error);
+            }
+        });
+    }).on('fileuploadfail', function (e, data) {
+        $.each(data.files, function (index, file) {
+            var error = $('<span class="text-danger"/>').text('File upload failed.');
+            $(data.context.children()[index])
+                .append('<br>')
+                .append(error);
+        });
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+
+});
+</script>
+<script type="text/javascript">
+
+</script>
+<!-- Specific Page Scripts END -->
+
+
+<!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
+<link href="<?php echo base_url(); ?>css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>js/jquery-1.8.3.min.js" charset="UTF-8"></script>
+
+<script type="text/javascript" src="<?php echo base_url(); ?>js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+        showMeridian: 1,
+          hoursDisabled: '0,1,2,3,4,5,6,7,8,9,20,21,22,23'
+    });
+  $('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
+  $('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 1,
+    minView: 0,
+    maxView: 1,
+    forceParse: 0
+    });
+</script>
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-43329142-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("#quantity").keyup(function (e)
+    {
+    var $qua = $(this).val();
+    if($qua=='0')
+    {
+      alert('Zero Product not be inserted.');
+      this.value='';
+    }
+});
+});
+
+</script>
+
+</body>
+
+<!-- Mirrored from vendroid.venmond.com/pages-ecommerce-product-add.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Sep 2016 11:26:07 GMT -->
+</html>
