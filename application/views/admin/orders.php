@@ -12,7 +12,8 @@
             <div class="vd_panel-header">
             <?php if(isset($delete) && !isset($complete)){ ?>
               <h1>List Of All Archive Orders</h1>
-              <?php }else if(!isset($delete) && isset($complete)){ echo "<h1>List Of All Completed Orders</h1>"; }else{
+              <?php }else if(!isset($delete) && isset($complete)){ echo "<h1>List Of All Completed Orders</h1>"; }else if(isset($expired)) {
+                echo "<h1>List Of All Expired Orders</h1>";} else {
                 echo "<h1>List Of All Pending Orders</h1>";
                 } ?>
 
@@ -118,7 +119,8 @@
                   <div class="panel-heading vd_bg-grey">
                     <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-dot-circle-o"></i> </span> <?php if(isset($delete) && !isset($complete)){ ?>
               All Archive Orders
-              <?php }else if(!isset($delete) && isset($complete)){ echo "All Completed Orders"; }else{
+              <?php }else if(!isset($delete) && isset($complete)){ echo "All Completed Orders"; }else if(isset($expired)) {
+                echo "All Expired Orders";} else {
                 echo "All Pending Orders";
                 } ?></h3>
                   </div>

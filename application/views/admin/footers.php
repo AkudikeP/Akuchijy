@@ -40,7 +40,7 @@
                         <tr class="gradeA">
                           <td class="center"><?php echo $i;?></td>
                           <td><?php echo $fab->mobile;?></td>
-                          <td><?php echo $fab->coptwrite;?></td>
+                          <td><?php echo $fab->copyright;?></td>
                           <td><?php echo $fab->mailus_add;?></td>
                           <td><?php echo $fab->office_add;?></td>
                           <td>

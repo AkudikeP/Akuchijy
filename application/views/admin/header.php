@@ -1706,6 +1706,11 @@ if(!empty($data) && $data->vendor_id!=0){
                         <span class="menu-text">View All Pending Orders</span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url();?>product/expired_orders">
+                        <span class="menu-text">View All Expired Orders</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="<?php echo base_url();?>product/stitching_orders">

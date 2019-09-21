@@ -866,13 +866,6 @@ $fab_a=$this->db->get_where("accessories",array("status"=>'approve',"status_enab
 
   public function test()
   {
-    $this->load->library('session');
-    print_r($_SESSION);
-    if(isset($_SESSION)) {
-      echo 'isset';
-    } else {
-      echo 'is not set';
-    }
   }
 
   public function add_city_session()
@@ -4944,7 +4937,7 @@ public function user_signup(){
         $this->email->subject('Mobile Darzi');
         $this->email->message($message);
           $this->email->send();
-          $this->session->set_flashdata('msg', 'An email has been sent on your email id for verification');
+          $this->session->set_flashdata('msg', 'A verification link has been sent to your email.');
 
           if($this->input->post('mobile')!=''){
               echo "success";

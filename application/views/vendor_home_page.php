@@ -1159,7 +1159,7 @@ $this->db->order_by('id','asc');
 </div>
 </div>
 
-<p style="text-align: center;color: #fff;padding-top: -7px;background-color: #3C3C3C;padding: 8px;"><?php if(isset($info->coptwrite)){ echo $info->coptwrite; }?></p>
+<p style="text-align: center;color: #fff;padding-top: -7px;background-color: #3C3C3C;padding: 8px;"><?php if(isset($info->copyright)){ echo $info->copyright; }?></p>
 
 
 <!--div class="container">

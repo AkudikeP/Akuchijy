@@ -7072,6 +7072,29 @@ if(!empty($oid)){
     $this->adminlayout();
   }
 
+  public function expired_orders()
+  {
+    $data['all_orders'] = $this->db
+        ->select('*')
+        ->order_by("oid","desc")
+        ->from('orders')
+        ->join('users', 'orders.userid = users.uid')
+        ->where(array("ostatus"=>"In Process","pay_status"=>"success"))
+        ->get()
+        ->result();
+        $date = strtotime(date('Y-m-d h:i:s', time()));
+        $data['orders'] = array();
+        foreach($data['all_orders'] as $fab){
+          if($date > strtotime($fab->delivery_date))
+          {
+            array_push($data['orders'], $fab);      
+          }
+        }
+        $data['expired'] = 'expired';
+    $this->template['middle'] = $this->load->view($this->middle = 'admin/orders',$data,true);
+    $this->adminlayout();
+  }
+
 //
     public function completed_orders($user=false){
     //$this->db->update('orders',array("read_status"=>"yes"));
@@ -11789,7 +11812,7 @@ public function add_accessories($edit=false)
      // echo "sdf";exit;
      if($this->input->post("mobile")){
      $data=array("mobile"=>$this->input->post("mobile"),
-          "coptwrite"=>$this->input->post("coptwrite"),
+          "copyright"=>$this->input->post("copyright"),
           "mailus_add"=>$this->input->post("mailus_add"),
           "about"=>$this->input->post("about"),
           "office_add"=>$this->input->post("office_add"));
@@ -11811,7 +11834,7 @@ public function add_accessories($edit=false)
     {
       if($this->input->post("mobile")){
        $data=array("mobile"=>$this->input->post("mobile"),
-          "coptwrite"=>$this->input->post("coptwrite"),
+          "copyright"=>$this->input->post("copyright"),
           "mailus_add"=>$this->input->post("mailus_add"),
           "about"=>$this->input->post("about"),
           "office_add"=>$this->input->post("office_add"));

@@ -399,41 +399,52 @@ overflow:hidden;cursor:pointer}
 
             </div>
 </section>
- <section class="content product-cat-sl content--fill content-fill-3d " style="padding-top: 0px !important;">
-
-    <div class="container">
-
-        <h2 class="text-center text-uppercase" style="margin-bottom: 10px; margin-top: 15px;">Tailoring Styles</h2>
-
-        <div class="product-category-carousel mobile-special-arrows animated-arrows slick">
-         <?php $this->db->limit(10);
-     $fcats=$this->db->get("category")->result();
-     foreach($fcats as $subcat){?>
-
-            <div class="product-category hover-squared" align="center">
-
-             <div class="sizes-example sizes-example1 "> <a href="<?php echo base_url(); ?>stitching/<?php echo strtolower(str_replace(" ", "-", $subcat->cat_name));?>/<?php echo $subcat->mid;?>">
-
-                <img src="<?php echo base_url(); ?>assets/category/resize261_391/<?php echo $subcat->cat_image;?>">
-</a>
-</div>
-              <div class="product-category__info">
-              </div>
-<div class="product-category__info__ribbon latest">
-
-                        <h5 class="product-category__info__ribbon__title fabric"><?php echo $subcat->cat_name;?></h5>
-      <?php $ps=$this->db->get_where("fabric",array("category"=>$subcat->cid));?>
-
-
-                    </div>
-            </div>
-    <?php }?>
-
+<section>
+    <div style="background-color: white;padding: 5rem 10%;margin-bottom: 2rem;">
+        <div style="text-align:center; letter-spacing:1px; font-family: 'Lato', sans-serif !important;">
+            <h2 style="font-weight: 100;">We believe in making</h2><br>
+              <div style="font-weight: bold;">the best Made to Measure Cloths for Everyone in the world.</div><br>
+              Why waste time and money buying ill-fitting
+              dress in off-the-rack sizes, when you can get local and international dresses which are made to your
+              perfect fit at the same price?<br> An Asnvel Made to Measure dress is an experience which gives you that
+              confident experience. From the first stitch to the last button there’s genuine work behind every single
+              dress we produce, with only you in mind. We ensure thorough review of all the vendors on our platform
+              and we put the control in your our customer’s hands.
         </div>
-
     </div>
-
 </section>
+<section class="content product-cat-sl content--fill content-fill-3d " style="padding-top: 0px !important;">
+  <div class="container"style="padding-top: 3rem;">
+  <h2 class="text-center text-uppercase" style="margin-bottom: 10px;">Tailoring Styles</h2>
+    <div class="product-category-carousel mobile-special-arrows animated-arrows slick">
+      <?php
+      $category=array('img (1).jpg', 'img (2).jpg', 'img (3).jpg', 'img (4).jpg', 'img (5).jpg', 'img (6).jpg', 'img (7).jpg', 'img (8).jpg', 
+      'img (9).jpg', 'img (10).jpg', 'img (11).jpg', 'img (12).jpg', 'img (13).jpg', 'img (14).jpg', 'img (15).jpg', 'img (16).jpg', 'img (17).jpg', 
+      'img (18).jpg', 'img (19).jpg', 'img (20).jpg', 'img (21).jpg', 'img (22).jpg', 'img (23).jpg', 'img (24).jpg', 'img (25).jpg', 'img (26).jpg', 
+      'img (27).jpg', 'img (28).jpg', 'img (29).jpg', 'img (30).jpg', 'img (31).jpg');
+      $cat_name = array('Traditional', 'Traditional', 'Traditional', 'Traditional', 'Causal', 'female suit', 'Wedding Gown', 'School', 'Traditional', 
+      'Suit', 'Suit', 'Blouse', 'Gown', 'Sweaters', 'Wedding gown', 'Causal wear', 'Flowing gown', 'Traditional', 'Gown', 'Head tie', 
+      'T shirt', 'Traditional', 'Mufflers', 'Leather jacket', 'Suit', 'Jump suit', 'Traditional', 'Corporate', 'Causal', 'Corporate', 
+      'Corporate', 'Coat', 'Wedding');
+      for($i = 0; $i < count($category); $i++):?>
+      <div class="product-category hover-squared" align="center">
+        <div class="sizes-example sizes-example1" style="height: fit-content!important; padding-bottom: 2rem;">
+          <a href="#">
+            <img src="<?php echo base_url(); ?>assets/samples/<?php echo $category[$i]?>">
+          </a>
+        </div>
+        <div class="product-category__info">
+        </div>
+        <div class="product-category__info__ribbon latest">
+          <h5 class="product-category__info__ribbon__title fabric"><?=$cat_name[$i]?>
+          </h5>
+        </div>
+      </div>
+<?php endfor; ?>
+    </div>
+  </div>
+</section>
+
 
 
 <!--

@@ -131,7 +131,7 @@
                             <label for="quantity11" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Copy Right</span> </label>
                             <div class="col-lg-2">
                               <div class="input-group">
-                                <input type="text" placeholder="Copy Right" id="quantity11" name="coptwrite" required value="<?php echo $edit->coptwrite;?>">
+                                <input type="text" placeholder="Copyright" id="quantity11" name="copyright" required value="<?php echo $edit->copyright;?>">
                               </div>
                             </div>
                           </div>
@@ -206,7 +206,7 @@
                             <label for="quantity11" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Copy Right</span> </label>
                             <div class="col-lg-2">
                               <div class="input-group">
-                                <input type="text" placeholder="Copy Right" id="quantity11" name="coptwrite" required>
+                                <input type="text" placeholder="Copy Right" id="quantity11" name="copyright" required>
                               </div>
                             </div>
                           </div>
