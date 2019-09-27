@@ -300,7 +300,7 @@ body
                             <div class="form-group">
                               <label class="col-md-2 col-sm-3 control-label">Mobile Number</label>
                               <div class="col-sm-3 controls">
-                                <input type="text" class="input-border-btm" placeholder="Enter Mobile Number" id="contact" name="contact" value="<?php echo $contact;?>" maxlength="10" onKeyPress="return isNumberKey(event)" >
+                                <input type="text" class="input-border-btm" placeholder="Enter Mobile Number" id="contact" name="contact" value="<?php echo $contact;?>" maxlength="11" onKeyPress="return isNumberKey(event)" >
                               </div>
                               <button class="btn vd_bg-green vd_white" type="submit" id="submit" onClick="valid_nu">Send OTP</button>
                             </div>
@@ -775,7 +775,7 @@ if(isNaN(a))
 //alert("");
 $.confirm({
 title: 'Alert',
-content: 'Enter the valid Mobile Number(Like : 9566137117)',
+content: 'Enter the valid Mobile Number(Like : 08012345678)',
 icon: 'fa fa-question-circle',
 animation: 'scale',
 closeAnimation: 'scale',
@@ -793,7 +793,7 @@ buttons: {
 document.form.contact.focus();
 return false;
 }
-if((a.length < 1) || (a.length > 10))
+if((a.length < 1) || (a.length > 11))
 {
 alert(" Your Mobile Number must be 1 to 10 Integers");
 document.form.contact.select();
@@ -1096,7 +1096,7 @@ $(document).ready(function() {
 <?php } ?>
 
 	$('#contact').keyup(function(){
-		if($(this).val().length !=10)
+		if($(this).val().length !=11)
 			$('#submit').attr('disabled', true);
 		else
 			$('#submit').attr('disabled',false);

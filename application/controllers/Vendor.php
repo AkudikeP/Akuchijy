@@ -1237,6 +1237,61 @@ public function service_notification($id){
     $this->vendorlayout();
   }
 
+  public function test() {
+    function gen_random_string($length=6)
+
+    {
+      $chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";//length:36
+
+      $final_rand='';
+
+      for($i=0;$i<$length; $i++)
+      {
+        $final_rand .= $chars[ rand(0,strlen($chars)-1)];
+      }
+      return $final_rand;
+    }
+    $activation_code = gen_random_string();
+
+    $mobileNumber = '07034176342';
+    $message = 'Please verify your phone number with this pin "'.$activation_code;
+    $senderid = 'ANSVEL REG';
+    $to = $mobileNumber;
+    $token = 'WLFW1sqWoE1nfSaGpAEvpc8WkKztRqKKqHASm1I3w2bG5SRHxX2kdKAhBptn3lMQKyBLwlBVJ2rPC1BvDthX4PLYNM0TzvXa6OTE';
+    $baseurl = 'https://smartsmssolutions.com/api/json.php?';
+
+$sms_array = array 
+  (
+  'sender' => $senderid,
+  'to' => $to,
+  'message' => $message,
+  'type' => '0',
+  'routing' => 3,
+  'token' => $token
+);
+
+$params = http_build_query($sms_array);
+$ch = curl_init(); 
+
+curl_setopt($ch, CURLOPT_URL,$baseurl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+$response = curl_exec($ch);
+
+if( ! curl_errno($ch) && substr($response, 29, 13) === '234'.substr($mobileNumber, 1))
+{
+  echo "Successful<br>";
+}
+else
+{
+  echo "Failed<br>";
+}
+
+curl_close($ch);
+}
+
 
 public function registration(){//print_r($_POST);
  			$contact=$this->input->post('contact');
@@ -1261,53 +1316,46 @@ public function registration(){//print_r($_POST);
 					}
 					return $final_rand;
 				}
-				$status = gen_random_string();
-		$authKey = "136895AdMGPnqo6n5875df12";
-		$mobileNumber = $this->input->post('contact');
-		//Sender ID,While using route4 sender id should be 6 characters long.
-		$senderId = "MDARZI";
-		//Your message to send, Add URL encoding here.
-		$message = "Thank You For Registration With Mobile Darzi. Your Account Activation Code is ".$status;
-		//Define route
-		$route = 4;
-		//Prepare you post parameters
-		$postData = array(
-			'authkey' => $authKey,
-			'mobiles' => $mobileNumber,
-			'message' => $message,
-			'sender' => $senderId,
-			'route' => $route
-		);
+        $activation_code = gen_random_string();
 
-		//API URL
-		$url="http://send.onlinesendsms.com/api/sendhttp.php";
+      $mobileNumber = $this->input->post('contact');
+$message = 'Thank you for registrating with ANSVEL. Verify your phone number with this pin '.$activation_code;
+$senderid = 'ANSVEL AUTH';
+$to = $mobileNumber;
+$token = 'WLFW1sqWoE1nfSaGpAEvpc8WkKztRqKKqHASm1I3w2bG5SRHxX2kdKAhBptn3lMQKyBLwlBVJ2rPC1BvDthX4PLYNM0TzvXa6OTE';
+$baseurl = 'https://smartsmssolutions.com/api/json.php?';
 
-		$ch = curl_init();
-		curl_setopt_array($ch, array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_POST => true,
-			CURLOPT_POSTFIELDS => $postData
-		));
+$sms_array = array 
+  (
+  'sender' => $senderid,
+  'to' => $to,
+  'message' => $message,
+  'type' => '0',
+  'routing' => 3,
+  'token' => $token
+);
 
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		$output = curl_exec($ch);
-		if(curl_errno($ch))
-		{
-			$this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');
-		}
-		else
-		{
-			$this->session->set_flashdata('message', 'Activation Code sent to your phone.Please Click on next...');
+$params = http_build_query($sms_array);
+$ch = curl_init(); 
+
+curl_setopt($ch, CURLOPT_URL,$baseurl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+$response = curl_exec($ch);    
+
+    if( ! curl_errno($ch) && substr($response, 29, 13) === '234'.substr($mobileNumber, 1))
+    {
+			$this->session->set_flashdata('message', 'Activation code sent to your phone.Please Click on next...');
 			$contact=$this->session->userdata('contact');
 			 $query = $this->db->get_where('vendor',array('username'=>'','contact'=>$contact));
 		    if ($query->num_rows() > 0){
 		        $data = array('contact' => $this->session->userdata('contact'),
-                'token' => $status);
+                'token' => $activation_code);
 			 $this->load->library('session');
 				$contact = array('contact'  => $this->session->userdata('contact'),
-					'token'  => $status);
+					'token'  => $activation_code);
 				$this->session->set_userdata($contact);
 				$this->db->where('contact',$this->session->userdata('contact'));
 			$info = $this->db->update('vendor', $data);
@@ -1316,27 +1364,27 @@ public function registration(){//print_r($_POST);
 		  {
 		  	$data = array('contact' => $mobileNumber,
 		  					'reg_date' => date('Y-m-d'),
-                'token' => $status);
+                'token' => $activation_code);
 			 $this->load->library('session');
-				$contact = array('contact'  => $this->input->post('contact'),
-					'token'  => $status);
+				$contact = array('contact'  => $mobileNumber,
+					'token'  => $activation_code);
 				$this->session->set_userdata($contact);
 			$info = $this->db->insert('vendor', $data);
-
 		  }
-
 		}
+    else
+    {
+      $this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');;
+    }
 		curl_close($ch);
 		redirect("Vendor/vendor_registration");
 
   }
 
 
-  public function resend_otp(){//print_r($_POST);
-
-
+  public function resend_otp(){
+    
         function gen_random_string($length=6)
-
 				{
 					$chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";//length:36
 
@@ -1348,43 +1396,35 @@ public function registration(){//print_r($_POST);
 					}
 					return $final_rand;
 				}
-				$status = gen_random_string();
-		$authKey = "136895AdMGPnqo6n5875df12";
+        $activation_code = gen_random_string();
+        
 		$mobileNumber = $this->session->userdata('contact');
-		//Sender ID,While using route4 sender id should be 6 characters long.
-		$senderId = "MDARZI";
-		//Your message to send, Add URL encoding here.
-		$message = "Thank You For Registration With Mobile Darzi. Your Account Activation Code is ".$status;
-		//Define route
-		$route = 4;
-		//Prepare you post parameters
-		$postData = array(
-			'authkey' => $authKey,
-			'mobiles' => $mobileNumber,
-			'message' => $message,
-			'sender' => $senderId,
-			'route' => $route
-		);
+    $message = 'Thank you for registrating with ANSVEL. Verify your phone number with this pin '.$activation_code;
+    $senderid = 'ANSVEL AUTH';
+    $to = $mobileNumber;
+    $token = 'WLFW1sqWoE1nfSaGpAEvpc8WkKztRqKKqHASm1I3w2bG5SRHxX2kdKAhBptn3lMQKyBLwlBVJ2rPC1BvDthX4PLYNM0TzvXa6OTE';
+    $baseurl = 'https://smartsmssolutions.com/api/json.php?';
+    $sms_array = array 
+      (
+      'sender' => $senderid,
+      'to' => $to,
+      'message' => $message,
+      'type' => '0',
+      'routing' => 3,
+      'token' => $token
+    );
 
-		//API URL
-		$url="http://send.onlinesendsms.com/api/sendhttp.php";
+    $params = http_build_query($sms_array);
+    $ch = curl_init(); 
+    
+    curl_setopt($ch, CURLOPT_URL,$baseurl);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+    
+    $response = curl_exec($ch);
 
-		$ch = curl_init();
-		curl_setopt_array($ch, array(
-			CURLOPT_URL => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_POST => true,
-			CURLOPT_POSTFIELDS => $postData
-		));
-
-		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-		$output = curl_exec($ch);
-		if(curl_errno($ch))
-		{
-			$this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');
-		}
-		else
+		if( ! curl_errno($ch) && substr($response, 29, 13) === '234'.substr($mobileNumber, 1))
 		{
 			$data = array('token' => $status);
 				$this->db->where('contact', $mobileNumber);
@@ -1405,8 +1445,11 @@ public function registration(){//print_r($_POST);
 			    echo 'false';
 			}
 		}
+		else
+		{
+			$this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');
+		}
 		curl_close($ch);
-
   }
 
   public function chk_token(){
