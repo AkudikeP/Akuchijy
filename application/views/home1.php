@@ -430,7 +430,7 @@ overflow:hidden;cursor:pointer}
       <div class="product-category hover-squared" align="center">
         <div class="sizes-example sizes-example1" style="height: fit-content!important; padding-bottom: 2rem;">
           <a href="#">
-            <img src="<?php echo base_url(); ?>assets/samples/<?php echo $category[$i]?>">
+            <img src="<?php echo base_url(); ?>assets/category/<?php echo $category[$i]?>">
           </a>
         </div>
         <div class="product-category__info">
