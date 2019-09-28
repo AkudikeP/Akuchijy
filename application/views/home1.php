@@ -299,7 +299,7 @@ overflow:hidden;cursor:pointer}
 </section>
 <section class="content product-cat-sl content--fill content-fill-3d ">
 
-    <div class="container wdt-contain">
+    <div class="container wdt-contain" style="width: 100vw;">
         <div class="modal quick-view zoom" id="quickView"  style="opacity: 1">
 
             <div class="modal-dialog">
