@@ -19,7 +19,7 @@ margin-top: 20px;
   width: 80%;
 }
  .bg-video {
-    background: url("http://mobiledarzi.com/assets/images/tailor.jpg") no-repeat 0px 0px;
+    background: url("<?=base_url();?>assets/images/tailor.jpg") no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
     padding: 100px 0px;
@@ -430,7 +430,7 @@ overflow:hidden;cursor:pointer}
       <div class="product-category hover-squared" align="center">
         <div class="sizes-example sizes-example1" style="height: fit-content!important; padding-bottom: 2rem;">
           <a href="#">
-            <img src="<?php echo base_url(); ?>assets/category/<?php echo $category[$i]?>">
+            <img src="<?=base_url();?>assets/category/<?=$category[$i]?>">
           </a>
         </div>
         <div class="product-category__info">

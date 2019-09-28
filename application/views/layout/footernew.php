@@ -119,23 +119,24 @@ $(document).ready(function(){
                     <?php $menu_link = $this->db->get_where("add_link_menu",array("status_enable"=>'enable',"id"=>'1'))->row();?>
                         <h5 class="title text-uppercase mobile-collapse__title"><?php if(isset($menu_link->link_menu_name)){echo $menu_link->link_menu_name;}?></h5>
                         <div class="v-links-list mobile-collapse__content"><ul>
+                        <!-- help -->
                         <?php $mlink = $this->db->get_where("mobiledarzi",array("status_enable"=>'enable'))->result();
                         foreach ($mlink as $mlink) { ?>
-                          <li><a href="<?php if(isset($mlink->link)){echo $mlink->link;}?>"><?php if(isset($mlink->heading)){echo $mlink->heading;}?></a></li><?php } ?></ul>
+                          <li><a href="<?php if(isset($mlink->link)){echo base_url() . $mlink->link;}?>"><?php if(isset($mlink->heading)){echo $mlink->heading;}?></a></li><?php } ?></ul>
                         </div></div>
 <div class="col-sm-3 col-md-2 mobile-collapse">
 <?php $menu_link = $this->db->get_where("add_link_menu",array("status_enable"=>'enable',"id"=>'2'))->row(); ?>
 <h5 class="title text-uppercase mobile-collapse__title"><?php if(isset($menu_link->link_menu_name)){echo $menu_link->link_menu_name;}?></h5>
 <div class="v-links-list mobile-collapse__content"><ul>
 <?php $slink = $this->db->get_where("service_link",array("status_enable"=>'enable'))->result(); foreach ($slink as $slink) { ?>
-<li><a href="<?php if(isset($slink->service_link_address)){echo $slink->service_link_address;}?>"><?php if(isset($slink->service_link_name)){echo $slink->service_link_name;}?></a></li>
+<li><a href="<?php if(isset($slink->service_link_address)){echo base_url() . $slink->service_link_address;}?>"><?php if(isset($slink->service_link_name)){echo $slink->service_link_name;}?></a></li>
 <?php } ?></ul></div></div>
 <div class="col-sm-3 col-md-2 mobile-collapse">
 <?php $menu_link3 = $this->db->get_where("add_link_menu",array("status_enable"=>'enable',"id"=>'3'))->row(); ?>
 <h5 class="title text-uppercase mobile-collapse__title"><?php if(isset($menu_link3->link_menu_name)){echo $menu_link3->link_menu_name;}?></h5>
 <div class="v-links-list mobile-collapse__content"><ul>
 <?php $ilink = $this->db->get_where("information_link",array("status_enable"=>'enable'))->result();
-foreach ($ilink as $ilink) { ?><li><a href="<?php if(isset($ilink->info_link_address)){echo $ilink->info_link_address;}?>"><?php if(isset($ilink->info_link_name)){echo $ilink->info_link_name;}?></a></li>
+foreach ($ilink as $ilink) { ?><li><a href="<?php if(isset($ilink->info_link_address)){echo base_url() . $ilink->info_link_address;}?>"><?php if(isset($ilink->info_link_name)){echo $ilink->info_link_name;}?></a></li>
 <?php } ?></ul></div></div>
 
 
@@ -153,7 +154,7 @@ foreach ($ilink as $ilink) { ?><li><a href="<?php if(isset($ilink->info_link_add
 
                     ?>
 
-                                <li><a href="<?php if(isset($clink->link_address)){echo $clink->link_address;}?>"><?php if(isset($clink->link_name)){echo $clink->link_name;}?></a></li>
+                                <li><a href="<?php if(isset($clink->link_address)){echo base_url() . $clink->link_address;}?>"><?php if(isset($clink->link_name)){echo $clink->link_name;}?></a></li>
 
                                 <?php } ?>
                             </ul>

@@ -422,7 +422,7 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
 
 </head><body id="asdf" class=" catalog-category-view categorypath-women-new-arrivals-html category-new-arrivals store-default" style="overflow-x:hidden;">
 <div id="loading" style="background-color: #fff;top:0px;left:0px;width: 100%;height: 100%;position: fixed;z-index:5000000"><center><img src="<?php echo base_url(); ?>assets/images/01-progress.gif" style=" position:relative; top:50vh;"></center></div>
-<?php if(false){?>
+<?php if($this->session->userdata("city_session")==''){?>
 <div class="modal modal--bg zoom" id="newsletterModal" data-backdrop="static" data-pause=10000 style="display: block !important;">
   <div class="modal-dialog" style="border: 2px solid rgb(255, 255, 255); border-radius:10px">
     <div class="modal-bg-image">
