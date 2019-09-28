@@ -31,14 +31,40 @@ INSERT INTO `testimonial`(`content`, `name`, `image`, `status`) VALUES ("Just li
 UPDATE `homepage_meta` SET `img`='logo221.png', `meta_title`='Ansvel | Doorstep Tailoring Services for Ladies, Gents & Kids', `meta_keyword`='tailors for ladies,tailors,tailors for gents,alteration tailor,sewing,fashion,kids tailor,home visit tailor,on call tailor,online stitching service,bridal western & fashion dress tailors',`meta_desc`='Online tailoring services for Men, Women & Kids at your doorstep',`copyright`='Ansvel LTD',`author`='Ansvel LTD',`geography`='World',`language`='English' WHERE `id` = 1;
 UPDATE `add_link_menu` SET `link_menu_name`='Ansvel' WHERE `id` = 1;
 
-UPDATE `information_link` SET `info_link_name`='Sell On Ansvel',`info_link_address`='http://ansvel.com/vendor-home' WHERE `id` = 1;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/vendor' WHERE `id` = 2;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/tell-your-friend' WHERE `id` = 3;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/welcome/login' WHERE `id` = 4;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/measurement-guide' WHERE `id` = 5;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/blog' WHERE `id` = 6;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/brands' WHERE `id` = 7;
-UPDATE `information_link` SET `info_link_address`='http://ansvel.com/Vendor/vendor_home' WHERE `id` = 8;
+UPDATE `information_link` SET `info_link_name`='Sell On Ansvel',`info_link_address`='vendor-home' WHERE `id` = 1;
+UPDATE `information_link` SET `info_link_address`='vendor' WHERE `id` = 2;
+UPDATE `information_link` SET `info_link_address`='tell-your-friend' WHERE `id` = 3;
+UPDATE `information_link` SET `info_link_address`='welcome/login' WHERE `id` = 4;
+UPDATE `information_link` SET `info_link_address`='measurement-guide' WHERE `id` = 5;
+UPDATE `information_link` SET `info_link_address`='blog' WHERE `id` = 6;
+UPDATE `information_link` SET `info_link_address`='brands' WHERE `id` = 7;
+UPDATE `information_link` SET `info_link_address`='Vendor/vendor_home' WHERE `id` = 8;
 UPDATE `information_link` SET `status_enable`='disable' WHERE `id` = 9;
+
+UPDATE `mobiledarzi` SET `link`='about-us' WHERE `id` = 1;
+UPDATE `mobiledarzi` SET `link`='how-it-works' WHERE `id` = 2;
+UPDATE `mobiledarzi` SET `link`='blog' WHERE `id` = 3;
+UPDATE `mobiledarzi` SET `link`='terms-and-condition' WHERE `id` = 4;
+UPDATE `mobiledarzi` SET `link`='privacy-policy' WHERE `id` = 5;
+UPDATE `mobiledarzi` SET `link`='careers' WHERE `id` = 6;
+UPDATE `mobiledarzi` SET `link`='sitemap.xml' WHERE `id` = 7;
+
+UPDATE `service_link` SET `service_link_address`='stitching' WHERE `id` = 1;
+UPDATE `service_link` SET `service_link_address`='fabric' WHERE `id` = 2;
+UPDATE `service_link` SET `service_link_address`='uniform' WHERE `id` = 3;
+UPDATE `service_link` SET `service_link_address`='accessories' WHERE `id` = 4;
+UPDATE `service_link` SET `service_link_address`='altration' WHERE `id` = 5;
+UPDATE `service_link` SET `service_link_address`='more-services' WHERE `id` = 6;
+UPDATE `service_link` SET `service_link_address`='donate' WHERE `id` = 7;
+UPDATE `service_link` SET `service_link_address`='bridal' WHERE `id` = 8;
+UPDATE `service_link` SET `service_link_address`='online-boutique/women/1' WHERE `id` = 9;
+
+UPDATE `customer_support_link` SET `link_address`='faq' WHERE `id` = 1;
+UPDATE `customer_support_link` SET `link_address`='contact' WHERE `id` = 2;
+UPDATE `customer_support_link` SET `link_address`='cancel-return' WHERE `id` = 3;
+UPDATE `customer_support_link` SET `link_address`='payment' WHERE `id` = 4;
+UPDATE `customer_support_link` SET `link_address`='shipping' WHERE `id` = 5;
+UPDATE `customer_support_link` SET `link_address`='manage-profile' WHERE `id` = 6;
+UPDATE `customer_support_link` SET `link_address`='track-order' WHERE `id` = 7;
 
 // ALTER TABLE `posts_product_files` CHANGE `posts_product_id` `file_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
