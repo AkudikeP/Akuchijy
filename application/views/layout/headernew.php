@@ -897,10 +897,18 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
 
         <nav class="navbar navbar-wd" id="navbar">
             <div class="container no-pdd-lg">
-
+<style>
+.navbar-header .logo img {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+</style>
                 <div class="navbar-header account">
       <div class="col-xs-2 flo-n"> <button type="button" class="navbar-toggle" id="slide-nav"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button></div>
-    <div class="col-xs-7" align="center"><a class="logo" href="<?php echo base_url();?>" style="float:none;">  <img src="<?php echo base_url(); ?>assets/images/logom.png" alt=""/>  </a></div>
+    <div class="col-xs-7" align="center"><a class="logo" href="<?php echo base_url();?>" style="float:none; display: inline-flex;">
+      <img src="<?php echo base_url(); ?>assets/images/logo/logo2.png" alt="Ansvel logo" style="background-color: white;border-radius: 50%;"/>
+      <img src="<?php echo base_url(); ?>assets/images/logo/ansvel_text1.png" alt="Ansvel logo" style="width: 120px;height: auto;"/>
+            </a></div>
                 </div>
 
                 <div class="pull-left search-focus-fade no-pdd-lg" id="slidemenu">
