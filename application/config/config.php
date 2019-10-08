@@ -48,8 +48,7 @@
 
 */
 
-// $config['base_url'] = 'http://lz9epmix-site.ctempurl.com/tailorcommerce/';
-$config['base_url'] = ENVIRONMENT === 'development' ? 'http://localhost:3000' : 'http://lz9epmix-site.ctempurl.com/tailorcommerce/';
+$config['base_url'] = ENVIRONMENT === 'development' ? 'http://localhost:3000' : 'https://ansvel.com';
 
 /*
 
