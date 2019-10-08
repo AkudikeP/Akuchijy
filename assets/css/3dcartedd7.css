@@ -2,9 +2,9 @@
 * General
 ***********************************************************************************************************************/
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,300italic,400);
-@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,300italic,400);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light');
 
 #itemsBlock .products-header span.check-mark {
     display: none;

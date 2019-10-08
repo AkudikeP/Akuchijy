@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => (ENVIRONMENT !== 'production' ? 'localhost' : 'mysql7002.site4now.net:3306'),
-	'username' => (ENVIRONMENT !== 'production' ? 'brown' : 'lz9epmix_tailorc'),
-	'password' => (ENVIRONMENT !== 'production' ? 'pounds' : '7@if_M&~SSM.'),
-	'database' => 'lz9epmix_tailorcommerce',
+	'hostname' => 'localhost',
+	'username' => (ENVIRONMENT !== 'production' ? 'brown' : 'PSwmrgmw92tGyoe'),
+	'password' => (ENVIRONMENT !== 'production' ? 'pounds' : 'v,KtQNiL?D7h'),
+	'database' => 'ansvel-PSwmrgmwWW56xZ7',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

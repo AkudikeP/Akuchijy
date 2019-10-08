@@ -44,7 +44,7 @@
 
             </head>
     <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://demo8.cmsmart.net/m2multistore/pub/static/frontend/netbase/multistore/en_US/images/loader-2.gif"}}' class="cms-about-us cms-page-view page-layout-1column">
-        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" type="text/css" media="screen"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" type="text/css" media="screen"/>
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo base_url(); ?>css/design_default.css">
 <link rel="stylesheet" type="text/css" media="all" href="http://demo8.cmsmart.net/m2multistore/pub/media/sun/configed_css/settings_default.css">
 

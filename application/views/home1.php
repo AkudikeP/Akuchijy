@@ -277,7 +277,7 @@ overflow:hidden;cursor:pointer}
 	}
 }
 </style>
-<section class="content" id="slider">
+<section class="content" id="slider" style="height: calc(400vw/12);">
  <div id="jssor_1" style="position: relative;  width: 1300px; max-height:500px; ">
 
 <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height:400px; overflow: hidden;">
@@ -299,7 +299,7 @@ overflow:hidden;cursor:pointer}
 </section>
 <section class="content product-cat-sl content--fill content-fill-3d ">
 
-    <div class="container wdt-contain" style="width: 100vw;">
+    <div class="container wdt-contain" style="width: 100vw; height: fit-content;">
         <div class="modal quick-view zoom" id="quickView"  style="opacity: 1">
 
             <div class="modal-dialog">
@@ -941,11 +941,11 @@ if($newarr==1){ ?>
 
 <!--<script type="text/javascript" src="<?php echo base_url(); ?>assets/templates/common-html5/js/utilitiesedd7.js"></script>-->
 
-  <script src="js/jssor.slider-22.0.6.min.js" type="text/javascript"></script>
+  <script src="<?=base_url();?>js/jssor.slider-22.0.6.min.js" type="text/javascript"></script>
 
 
    <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>js/jquery-1.10.1.min.js"><\/script>')</script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/2.1.0/jquery.imagesloaded.min.js"></script>
    <script src="<?php echo base_url(); ?>js/jquery-imagefill.js"></script>
   <script>
   var jqc2 = $.noConflict();

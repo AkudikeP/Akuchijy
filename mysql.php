@@ -1,4 +1,5 @@
 <?php
+// >=L5^g0sm:O cpanel password
 
 UPDATE `services` SET `service_image` = 'More_services1.jpg' WHERE `services`.`service_id` = 54;
 UPDATE `services` SET `service_image` = 'default_upload.png' WHERE `services`.`service_id` = 53;

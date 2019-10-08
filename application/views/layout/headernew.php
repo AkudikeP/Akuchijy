@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 <?php error_reporting(0);
       ini_set('display_errors', 0);
       //$this->session->set_userdata("city_session",'2229');
