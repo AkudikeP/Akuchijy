@@ -915,11 +915,11 @@ $fab_a=$this->db->get_where("accessories",array("status"=>'approve',"status_enab
   }
    public function fabric1() {
 
-
-    $data['cat']=$this->db->get_where("mcategory",array('status'=>'enable'))->result();
-    $data['mcat']=$this->db->get_where("our_services",array('type'=>'Fabric'))->row();
-     $this->template['middle'] = $this->load->view ($this->middle = 'fabric1',$data,true);
-    $this->layout();
+redirect("Store");
+   // $data['cat']=$this->db->get_where("mcategory",array('status'=>'enable'))->result();
+   // $data['mcat']=$this->db->get_where("our_services",array('type'=>'Fabric'))->row();
+    // $this->template['middle'] = $this->load->view ($this->middle = 'fabric1',$data,true);
+    //$this->layout();
   }
    public function acces() {
 
