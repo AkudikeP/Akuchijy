@@ -3,11 +3,8 @@ class Vendor extends MY_Controller
 {
  	public function __construct()
  	{
-        parent::__construct();
-		/*if(!$this->session->userdata("vendor_loggedin"))
-		{
-			redirect("Vendor");
-		}*/
+    parent::__construct();
+    $this->load->library('form_validation');
 	}
 
  	public function index() {
@@ -1254,7 +1251,7 @@ public function service_notification($id){
     $activation_code = gen_random_string();
 
     $mobileNumber = '07034176342';
-    $message = 'Please verify your phone number with this pin "'.$activation_code;
+    $message = 'Test. Please verify your phone number with this pin "'.$activation_code;
     $senderid = 'ANSVEL REG';
     $to = $mobileNumber;
     $token = 'WLFW1sqWoE1nfSaGpAEvpc8WkKztRqKKqHASm1I3w2bG5SRHxX2kdKAhBptn3lMQKyBLwlBVJ2rPC1BvDthX4PLYNM0TzvXa6OTE';
@@ -1293,32 +1290,24 @@ curl_close($ch);
 }
 
 
-public function registration(){//print_r($_POST);
- 			$contact=$this->input->post('contact');
-        	$where = "contact=$contact";
-			$this->db->where($where);
-		    $query = $this->db->get('vendor');
-		    if ($query->num_rows() > 0){
-		        $this->session->set_flashdata('message', 'Sorry this Mobile Number already exit.');
-		      redirect("Vendor/vendor_registration");
-		  }
+public function registration(){
+  $this->form_validation->set_rules('contact', 'Contact', 'required|exact_length[11]|numeric|trim');
+  if ($this->form_validation->run() === FALSE)
+  {
+    $this->session->set_flashdata('message', validation_errors());
+    redirect("Vendor/vendor_registration");
+  }
+  $contact=$this->input->post('contact');
+  $where = 'contact='.$contact.' AND question1!=""';
+  $query = $this->db->where($where)->get('vendor');
+  if ($query->num_rows() > 0)
+  {
+    $this->session->set_flashdata('message', 'Sorry this mobile number already exists.'.$this->db->last_query());
+    redirect("Vendor/vendor_registration");
+  }
+  $activation_code = $this->_gen_random_string();
 
-        function gen_random_string($length=6)
-
-				{
-					$chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";//length:36
-
-					$final_rand='';
-
-					for($i=0;$i<$length; $i++)
-					{
-						$final_rand .= $chars[ rand(0,strlen($chars)-1)];
-					}
-					return $final_rand;
-				}
-        $activation_code = gen_random_string();
-
-      $mobileNumber = $this->input->post('contact');
+$mobileNumber = $this->input->post('contact');
 $message = 'Thank you for registrating with ANSVEL. Verify your phone number with this pin '.$activation_code;
 $senderid = 'ANSVEL AUTH';
 $to = $mobileNumber;
@@ -1326,7 +1315,7 @@ $token = 'WLFW1sqWoE1nfSaGpAEvpc8WkKztRqKKqHASm1I3w2bG5SRHxX2kdKAhBptn3lMQKyBLwl
 $baseurl = 'https://smartsmssolutions.com/api/json.php?';
 
 $sms_array = array 
-  (
+(
   'sender' => $senderid,
   'to' => $to,
   'message' => $message,
@@ -1346,57 +1335,55 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
 $response = curl_exec($ch);    
 
     if( ! curl_errno($ch) && substr($response, 29, 13) === '234'.substr($mobileNumber, 1))
+    // if(true)
     {
-			$this->session->set_flashdata('message', 'Activation code sent to your phone.Please Click on next...');
-			$contact=$this->session->userdata('contact');
-			 $query = $this->db->get_where('vendor',array('username'=>'','contact'=>$contact));
-		    if ($query->num_rows() > 0){
-		        $data = array('contact' => $this->session->userdata('contact'),
-                'token' => $activation_code);
-			 $this->load->library('session');
-				$contact = array('contact'  => $this->session->userdata('contact'),
+			$this->session->set_flashdata('message', 'Activation code sent to your phone. Please click on next...');
+			$contact=$this->input->post('contact');
+      $query = $this->db->where(array('contact' => $contact))->get('vendor');
+      if ($query->num_rows() > 0){
+        $data = array('token' => $activation_code);
+			  $this->load->library('session');
+				$contactSess = array('contact' => $contact,
 					'token'  => $activation_code);
-				$this->session->set_userdata($contact);
-				$this->db->where('contact',$this->session->userdata('contact'));
-			$info = $this->db->update('vendor', $data);
+				$this->session->set_userdata($contactSess);
+				$this->db->where(array('contact' => $contact));
+			  $info = $this->db->update('vendor', $data);
 		  }
 		  else
 		  {
 		  	$data = array('contact' => $mobileNumber,
-		  					'reg_date' => date('Y-m-d'),
-                'token' => $activation_code);
-			 $this->load->library('session');
-				$contact = array('contact'  => $mobileNumber,
+          'reg_date' => date('Y-m-d'),
+          'token' => $activation_code);
+			  $this->load->library('session');
+				$contact = array('contact' => $mobileNumber,
 					'token'  => $activation_code);
 				$this->session->set_userdata($contact);
-			$info = $this->db->insert('vendor', $data);
+			  $info = $this->db->insert('vendor', $data);
 		  }
 		}
     else
     {
-      $this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');;
+      $this->session->set_flashdata('message', 'An error occured. Please try again');
     }
 		curl_close($ch);
 		redirect("Vendor/vendor_registration");
+  }
 
+  private function _gen_random_string($length=6)
+  {
+    $chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    $final_rand='';
+
+    for($i=0;$i<$length; $i++)
+    {
+      $final_rand .= $chars[rand(0,strlen($chars)-1)];
+    }
+    return $final_rand;
   }
 
 
   public function resend_otp(){
-    
-        function gen_random_string($length=6)
-				{
-					$chars ="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";//length:36
-
-					$final_rand='';
-
-					for($i=0;$i<$length; $i++)
-					{
-						$final_rand .= $chars[ rand(0,strlen($chars)-1)];
-					}
-					return $final_rand;
-				}
-        $activation_code = gen_random_string();
+        $activation_code = $this->_gen_random_string();
         
 		$mobileNumber = $this->session->userdata('contact');
     $message = 'Thank you for registrating with ANSVEL. Verify your phone number with this pin '.$activation_code;
@@ -1435,366 +1422,145 @@ $response = curl_exec($ch);
 				$this->session->set_userdata($contact);
 			if ($info)
 		    {
-		    	$this->session->set_flashdata('message', 'Activation Code sent to your phone.Please Click on next...');
+		    	$this->session->set_flashdata('message', 'Activation Code sent to your phone. Please Click on next...');
 		        echo 'true';
-
 			 }
 			  else
 			{
-				$this->session->set_flashdata('message', 'Some error! Please resend again. ');
+				$this->session->set_flashdata('message', 'An error occured. Please try again');
 			    echo 'false';
 			}
 		}
 		else
 		{
-			$this->session->set_flashdata('message', 'Sorry some problem! Please enter Mobile Number.');
+			$this->session->set_flashdata('message', 'An error occured. Please try again');
 		}
 		curl_close($ch);
   }
 
   public function chk_token(){
-  	$this->db->where('token',$this->input->post('token'));
-		    $query = $this->db->get('vendor');
-		    if ($query->num_rows() > 0)
-		    {
-		        $this->session->set_flashdata('message', 'Your mobile number is verified successfully.Please Click on next..');
-		        echo 'true';
+    $this->form_validation->set_rules('token', 'Token', 'required|exact_length[6]|alpha_numeric|trim');
+    switch(true)
+    {
+      case $this->form_validation->run() === FALSE;
+        echo validation_errors();
+      break;
 
-			 }
-			  else
-			{
-			    $this->session->set_flashdata('message', 'Your OTP Code is Incorrect.');
-			    echo 'false';
-			}
+      default:
+        $contact = $this->session->userdata('contact');
+        $details = $this->db->where(array('contact' => $contact))->get('vendor')->row_array();
+        $token = $this->input->post('token');
+        switch($details['token'])
+        {
+          case $token:
+            $this->db->where(array('contact' => $contact))->set(array('token' => 1))->update('vendor');
+            echo 'true';
+          break;
 
+          case 1:
+            echo 'true';
+          break;
+
+          default:
+            echo 'Invalid OTP';
+        }
+    }
   }
 
-    public function registration_insert(){
-    //  print_r($_POST);
-    //  print_r($_FILES);
-      $this->load->library('upload');
-		if(!empty($_FILES["id_proof"]["name"])){
-    //echo "in.......";  echo $_FILES["id_proof"]["name"];
-  //  print_r($_FILES);
-	    $config['upload_path'] = './assets/images/';
+  public function registration_insert(){
+    $this->load->library('upload');
+    $config['upload_path'] = './assets/images/';
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
-		$config['max_size']	= '1000000';
+		$config['max_size']	= '20480';
+		$config['max_filename']     		= '200';
+		$config['file_ext_tolower']     	= TRUE;
+		$config['max_filename_increment']   = '10';
+		$config['encrypt_name']     		= TRUE;
 		$this->upload->initialize($config);
-		if (!$this->upload->do_upload('id_proof'))
-		{
-			echo $this->upload->display_errors();
-		}
-		else
-		{
-		$pic = $this->upload->data();
+  $this->form_validation->set_rules('vendor_name', 'Vendor name', 'required|min_length[2]|max_length[50]|trim');
+  $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|max_length[1024]|trim');
+  $this->form_validation->set_rules('email', 'Email', 'required|min_length[5]|max_length[250]|valid_email|is_unique[vendor.email]|trim',
+    array(
+      'is_unique' => 'This email already exists.'
+    )
+  );
+  $this->form_validation->set_rules('address', 'Address', 'required|min_length[2]|max_length[1024]|trim');
+  $this->form_validation->set_rules('country', 'Country', 'required|min_length[1]|max_length[6]|numeric|trim');
+  $this->form_validation->set_rules('city', 'City', 'required|min_length[1]|max_length[6]|numeric|trim');
+  $this->form_validation->set_rules('state', 'State', 'required|min_length[1]|max_length[6]|numeric|trim');
+  $this->form_validation->set_rules('pincode', 'Pincode', 'min_length[1]|max_length[20]|numeric|trim');
+  $this->form_validation->set_rules('category', 'Category', 'required|in_list[Vendor,Service provider]|trim');
+  $this->form_validation->set_rules('id_type', 'ID type', 'required|in_list[Passport,Voters Card,Drivers License,NIN Card]|trim');
+  
+  $contact=$this->session->userdata('contact');
+  switch(true)
+  {
+    case empty($_FILES["id_proof"]["name"]):
+      echo 'id proof file not selected';
+      break;
 
+    case empty($this->db->where(array('contact' => $contact, 'token' => 1))->get('vendor')->row_array()):
+      echo 'Please validate your phone number';
+    break;
+
+    case ! $this->upload->do_upload('id_proof'):
+      echo $this->upload->display_errors();
+    break;
+
+    case $this->form_validation->run() === FALSE:
+      echo validation_errors();
+    break;
+    
+    default:
+    $pic = $this->upload->data();
 		$file=$pic['file_name'];
-		//$type="image";
-		}
-  }//echo $file;exit;
-            $data = array(
-				         'vendor_name' => $this->input->post('vendor_name'),
-                'username' => $this->input->post('username'),
-                'password' => md5($this->input->post('password')),
-                'email' => $this->input->post('email'),
-                'address' => $this->input->post('address'),
-                'city' => $this->input->post("city"),
-                'state' => $this->input->post('state'),
-                'country' => $this->input->post('country'),
-                'pincode' => $this->input->post('pincode'),
-				        'option'=>implode(",",$this->input->post("option")),
-	 			"id_type" =>$this->input->post("id_type"),
-				"id_proof"=>$file);
-            	$contact=$this->session->userdata('contact');
-            	$this->db->where('contact', $contact);
-				if($this->db->update('vendor', $data)){
-		        	$this->session->set_flashdata('message', 'Your Personal information inserted Successfully.Please go to next...');
-		        	echo 'true';
-		        }
-		        else
-		        {
-		        	 $this->session->set_flashdata('message', 'Please Enter all information.');
-		        	 echo 'false';
-		        }
-
-            	$site_address=$this->db->get('footer')->row();
-              $message = '<!DOCTYPE html>
-                            <html>
-                            <head>
-                                <title></title>
-                            </head>
-                            <body>
-                            <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
-                                <div id="inouter" style="border-bottom:2px dashed #444;">
-                                <br>
-                                <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
-                                <br>
-                                <h2>Welcome to MobileDarzi!</h2>
-                                <br>
-
-                                <p>Dear  '.$this->input->post("vendor_name").',</p>
-                                <p>Thank you for registering with MobileDarzi. Please use your e-mail address to log in to your account at <a href="http://mobiledarzi.com/vendor">http://mobiledarzi.com/vendor:</a></p>
-
-
-
-                              </p>
-                                <br>
-
-                                <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
-
-                                <p>We hope you enjoy our products and services.</p>
-
-                                <p>Best Regards,</p>
-                                <br>
-                                <p>Team MobileDarzi</p>
-                                <br>
-                                <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="'.base_url("assets/sociallinks/cod.png").'" style="float: right;"></p>
-                                <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
-                                <p align="center"><img width="4%" src="'.base_url("assets/sociallinks/facebook_square-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/twitter_square-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/google_square-24.png").'"> <img src="'.base_url("assets/sociallinks/tumblr.png").'" width="4%"> <img width="4%" src="'.base_url("assets/sociallinks/instagram_square_color-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/youtube_square_color-24.png").'"></p>
-
-                                </div>
-                                <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
-                            </div>
-                            </body>
-                            </html>';
-            /*  $message = '<!DOCTYPE html>
-              <html>
-              <head>
-              	<title></title>
-              	<style type="text/css">
-              		#outer{
-              			border:1px solid #ddd;
-              			width: 50%;
-              			margin:auto;
-              			padding:1%;
-              		}
-              		#inouter{
-              			border-bottom:2px dashed #444;
-              		}
-              		.footer{
-              			background-color: #27638e;
-              			//text-align:center;
-              			color:#fff;
-              			padding: 1%;
-              			font-size: 13px;
-              		}
-              		.small{
-              			color:#555;
-              			font-size: 12px;
-              		}
-              		.center{
-              			text-align: center;
-              		}
-              	</style>
-              </head>
-              <body>
-              <div id="outer">
-              	<div id="inouter">
-              	<br>
-              	<img src="logo2.jpg">
-              	<br>
-              	<h2>Welcome to MobileDarzi!</h2>
-              	<br>
-
-              	<p>Dear '.$this->input->post('vendor_name').'</p>
-              	<p>Thank you for registering with MobileDarzi. Please use your e-mail address to log in to your account at <a href="http://mobiledarzi.com/vendor">http://mobiledarzi.com/vendor:</a></p>
-
-
-              	<br>
-
-              	<p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
-
-              	<p>We hope you enjoy our products and services.</p>
-
-              	<p>Best Regards,</p>
-              	<br>
-              	<p>Team MobileDarzi</p>
-              	<br>
-              	<p class="footer">Need Help? Call us on +919644409191 / 0731-4213190</p>
-              	<p class="center small">CONNECT WITH US <br></p>
-
-              	</div>
-              	<p class="small">Copyright&copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+      $data = array(
+        'vendor_name' => $this->input->post('vendor_name'),
+        // 'username' => $this->input->post('username'),
+        'password' => md5($this->input->post('password')),
+        'email' => $this->input->post('email'),
+        'address' => $this->input->post('address'),
+        'city' => $this->input->post("city"),
+        'state' => $this->input->post('state'),
+        'country' => $this->input->post('country'),
+        'pincode' => $this->input->post('pincode'),
+        'category' => $this->input->post('category'),
+        "id_type" =>$this->input->post("id_type"),
+        "id_proof"=>$file);
+        $data['option'] = $data['category'] == 'Service provider' ? 'Service provider' : implode(",",$this->input->post("option"));
+        $where = array('contact' => $contact);
+      if($this->db->set($data)->where($where)->update('vendor')){
+        $message = '<!DOCTYPE html>
+          <html>
+          <head>
+            <title></title>
+          </head>
+          <body>
+          <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
+            <div id="inouter" style="border-bottom:2px dashed #444;">
+              <br>
+              <img src='.base_url().'"assets/images/logo2.jpg">
+              <br>
+              <h2>Welcome to Ansvel!</h2>
+              <br>
+              <p>Dear  '.$this->input->post("vendor_name").',</p>
+              <p>Thank you for registering with Ansvel. Please use your e-mail address to log in to your account at <a href="https://ansvel.com/vendor">https://ansvel.com/vendor:</a></p>
+              <br>
+              <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at 07034176342 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+              <p>We hope you enjoy our products and services.</p>
+              <p>Best Regards,</p>
+              <br>
+              <p>Team Ansvel</p>
+              <br>
+              <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="'.base_url("assets/sociallinks/cod.png").'" style="float: right;"></p>
+              <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
+              <p align="center"><img width="4%" src="'.base_url("assets/sociallinks/facebook_square-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/twitter_square-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/google_square-24.png").'"> <img src="'.base_url("assets/sociallinks/tumblr.png").'" width="4%"> <img width="4%" src="'.base_url("assets/sociallinks/instagram_square_color-24.png").'"> <img width="4%" src="'.base_url("assets/sociallinks/youtube_square_color-24.png").'"></p>
               </div>
-              </body>
-              </html>';*/
-            	         /*   	$message = "<!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge' />
-<style type='text/css'>
-    body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
-    table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
-    img{-ms-interpolation-mode: bicubic;}
-    img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
-    table{border-collapse: collapse !important;}
-    body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
-    a[x-apple-data-detectors] {
-        color: inherit !important;
-        text-decoration: none !important;
-        font-size: inherit !important;
-        font-family: inherit !important;
-        font-weight: inherit !important;
-        line-height: inherit !important;
-    }
-    @media screen and (max-width: 525px) {
-        .wrapper {
-          width: 100% !important;
-            max-width: 100% !important;
-        }
-        .logo img {
-          margin: 0 auto !important;
-        }
-        .mobile-hide {
-          display: none !important;
-        }
-        .img-max {
-          max-width: 100% !important;
-          width: 100% !important;
-          height: auto !important;
-        }
-        .responsive-table {
-          width: 100% !important;
-        }
-        .padding {
-          padding: 10px 5% 15px 5% !important;
-        }
-        .padding-meta {
-          padding: 30px 5% 0px 5% !important;
-          text-align: center;
-        }
-        .padding-copy {
-             padding: 10px 5% 10px 5% !important;
-          text-align: center;
-        }
-        .no-padding {
-          padding: 0 !important;
-        }
-        .section-padding {
-          padding: 50px 15px 50px 15px !important;
-        }
-        .mobile-button-container {
-            margin: 0 auto;
-            width: 100% !important;
-        }
-        .mobile-button {
-            padding: 15px !important;
-            border: 0 !important;
-            font-size: 16px !important;
-            display: block !important;
-        }
-    }
-    div[style*='margin: 16px 0;'] { margin: 0 !important; }
-</style>
-</head>
-<body style='margin: 0 !important; padding: 0 !important;'>
-<div style='display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;'>
-</div>
-<table border='0' cellpadding='0' cellspacing='0' width='100%'>
-    <tr>
-        <td bgcolor='#ffffff' align='center'>
-            <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='wrapper'>
-                <tr>
-                    <td align='center' valign='top' style='padding: 15px 0;' class='logo'>
-                        <a href='http://litmus.com' target='_blank'>
-                            <img alt='Logo' src='http://mobiledarzi.com/assets/images/logo2.png'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
-                        </a>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor='#ffffff' align='center' style='padding: 15px;'>
-            <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='responsive-table'>
-                <tr>
-                    <td>
-                        <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-                            <tr>
-                                <td align='center' style='font-size: 32px; font-family: Helvetica, Arial, sans-serif; color: #333333;' class='padding-copy'>Welcome To Mobile Darzi!</td>
-                            </tr>
-                            <tr>
-                                <td align='left' style='padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;' class='padding-copy'></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor='#ffffff' align='center' style='padding: 15px;' class='padding'>
-            <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='responsive-table'>
-                <tr>
-                    <td style='padding: 10px 0 0 0; border-top: 1px dashed #aaaaaa;'>
-                        <table cellspacing='0' cellpadding='0' border='0' width='100%'>
-                            <tr>
-                                <td valign='top' class='mobile-wrapper'>
-                                    <table cellpadding='0' cellspacing='0' border='0' width='47%' style='width: 100%;' align='left'>
-                                        <tr>
-                                            <td style='padding: 0 0 10px 0;'>
-                                                <table cellpadding='0' cellspacing='0' border='0' width='100%'>
-                                                    <tr>
-                                                        <td align='center' style='font-family: Arial, sans-serif; color: #333333; font-size: 16px;'>
-														You will get a confirmation call from mobile darzi soon.Once your account will be activated you will be able to access your account.
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor='#ffffff' align='center' style='padding: 15px;'>
-            <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='responsive-table'>
-                <tr>
-                    <td>
-                        <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-                            <tr>
-                                <td>
-                                    <table width='100%' border='0' cellspacing='0' cellpadding='0'>
-                                        <tr>
-                                            <td align='left' style='padding: 0 0 0 0; font-size: 14px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color: #aaaaaa; font-style: italic;' class='padding-copy'>Please Keep It Secure</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td bgcolor='#ffffff' align='center' style='padding: 20px 0px;'>
-            <table width='100%' border='0' cellspacing='0' cellpadding='0' align='center' style='max-width: 500px;' class='responsive-table'>
-                <tr>
-                    <td align='center' style='font-size: 12px; line-height: 18px; font-family: Helvetica, Arial, sans-serif; color:#666666;'>
-                        ".$site_address->office_add."
-                        <br>
-                        <span style='font-family: Arial, sans-serif; font-size: 12px; color: #444444;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <a href='http://mobiledarzi.com' target='_blank' style='color: #666666; text-decoration: none;'>Mobile Darzi</a>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-</body>
-</html>";
-*/
-$to_email = $this->input->post('email');
+              <p class="small" style="text-align: center;">Copyright  &copy 2017 Ansvel.com.</p>
+          </div>
+          </body>
+          </html>';
+      $to_email = $this->input->post('email');
         $this->load->library('email');
         $this->email->initialize(array(
           'protocol' => 'smtp',
@@ -1808,102 +1574,96 @@ $to_email = $this->input->post('email');
           'crlf' => "\r\n",
           'newline' => "\r\n"
         ));
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        //$this->email->cc('another@another-example.com');
-        $this->email->subject('Mobile Darzi');
+        $this->email->subject('Ansvel');
         $this->email->message($message);
         $this->email->send();
 
-		                        //redirect("Vendor/dashboard");
+        $this->session->set_flashdata('message', 'Your Personal information inserted Successfully.Please go to next...');
+        echo 'true';
+      }
+      else
+      {
+        echo 'An error occured. Please try again';
+      }
+    }
     }
 
-    public function insert_question(){//print_r($_POST);
-            $data = array(
-                'question1' => $this->input->post('question1'),
-                'question2' => $this->input->post('question2'),
-                'question3' => $this->input->post('question3'),
-                'question4' => $this->input->post('question4'),
-                'question5' => $this->input->post('question5'));
-            	$contact=$this->session->userdata('contact');
-            	$this->db->where('contact', $contact);
-		        if($this->db->update('vendor', $data)){
-		        	$this->session->unset_userdata('contact');
-		        	$this->session->unset_userdata('token');
-		        	$this->session->sess_destroy();
-		        	$this->session->set_flashdata('message', 'Your information inserted Successfully.Please go to Login...');
-		        	echo 'true';
+    public function insert_question(){
+  $this->form_validation->set_rules('question1', 'Question 1', 'required|max_length[120]|trim');
+  $this->form_validation->set_rules('question2', 'Question 2', 'required|max_length[120]|trim');
+  $this->form_validation->set_rules('question3', 'Question 3', 'required|max_length[120]|trim');
+  $this->form_validation->set_rules('question4', 'Question 4', 'required|max_length[120]|trim');
+  $this->form_validation->set_rules('question5', 'Question 5', 'required|max_length[120]|trim');
+  switch(true)
+  {
+    case $this->form_validation->run() === FALSE;
+    echo validation_errors();
+    break;
 
-		        }
-		        else
-		        {
-		        	 $this->session->set_flashdata('message', 'Please Enter all information.');
-		        	 echo 'false';
-		        }
-                //redirect("Vendor/dashboard");
+    default:
+      $data = array(
+        'question1' => $this->input->post('question1'),
+        'question2' => $this->input->post('question2'),
+        'question3' => $this->input->post('question3'),
+        'question4' => $this->input->post('question4'),
+        'question5' => $this->input->post('question5'));
+        $contact=$this->session->userdata('contact');
+        $this->db->where('contact', $contact);
+      if($this->db->update('vendor', $data)){
+        $this->session->unset_userdata('contact');
+        $this->session->unset_userdata('token');
+        $this->session->sess_destroy();
+        $this->session->set_flashdata('message', 'Your information inserted Successfully.Please go to Login...');
+        echo 'true';
+      }
+      else
+      {
+          $this->session->set_flashdata('message', 'Please Enter all information.');
+          echo 'false';
+      }
+  }
     }
 
 public function registration_bank(){
+  $this->form_validation->set_rules('acc_name', 'Account name', 'required|max_length[255]|trim');
+  $this->form_validation->set_rules('acc_number', 'Account number', 'required|numeric|exact_length[10]|trim');
+  $this->form_validation->set_rules('re_acc_number', 'Re-enter account number', 'required|matches[acc_number]|trim');
+  $this->form_validation->set_rules('bank_name', 'Bank name', 'required|in_list[Access Bank Plc,Access (Diamond),Citibank Nigeria Limited,Ecobank Nigeria Plc,Fidelity Bank Plc,FIRST BANK NIGERIA LIMITED,First City Monument Bank Plc,Globus Bank Limited,Guaranty Trust Bank Plc,Heritage Bank Ltd,Key Stone Bank ,Polaris Bank,Providus Bank,Stanbic IBTC Bank Ltd,Standard Chartered Bank Nigeria Ltd,Sterling Bank Plc,SunTrust Bank Nigeria Limited,Titan Trust Bank Ltd,Union Bank of Nigeria Plc,United Bank For Africa Plc,Unity Bank Plc,Wema Bank Plc,Zenith Bank Plc]|trim');
+  $this->form_validation->set_rules('sort_code', 'Sort code', 'required|numeric|max_length[20]|trim');
+  $this->form_validation->set_rules('tin', 'Tax identification number', 'required|numeric|max_length[50]|trim');
+  $this->form_validation->set_rules('acc_type', 'Account type', 'required|in_list[Corporate,Current,Savings]|trim');
+  $this->form_validation->set_rules('acc_class', 'Account class', 'required|in_list[Individual,Limited liability]|trim');
+  $this->form_validation->set_rules('business_name', 'Business name', 'required|max_length[50]|trim');
+  switch(true)
+  {
+    case $this->form_validation->run() === FALSE:
+      echo validation_errors();
+      break;
 
-	print_r($_POST);//print_r($_FILES);
-		$contact=$this->session->userdata('contact');
-		$file='';
-		/*if(!empty($_FILES["id_proof"]["name"])){
-	    $config['upload_path'] = './assets/images/';
-		$config['allowed_types'] = 'gif|jpg|png|jpeg';
-		$config['max_size']	= '1000000';
-		$this->upload->initialize($config);
-		if (!$this->upload->do_upload('id_proof'))
-		{
-			echo $this->upload->display_errors();
-		}
-		else
-		{
-		$pic = $this->upload->data();
-		//print_r($pic);exit;
-		$file=$pic['file_name'];
-		//$type="image";
-		}
-  }*/
-		if($this->input->post('deal_type')=='No')
-		{
-			$pan='';
-			$vat='';
-			$tin='';
-			$gst = ‘’;
-		}
-		else
-		{
-			$pan=$this->input->post('pan_number');
-			$vat=$this->input->post('vat_number');
-			$tin=$this->input->post('tin_number');
-			$gst=$this->input->post('gst_number');
-		}
-	 $data=array(
-				 "account_holder"=>$this->input->post('acount_holder'),
-				 "acc_number"=>$this->input->post('acc_number'),
-				 "branch_name"=>$this->input->post('branch_name'),
-				 "bank_ifc"=>$this->input->post('bank_ifc'),
-				 "acc_type"=>$this->input->post('acc_type'),
-				 "deal_type"=>$this->input->post('deal_type'),
-				 "pan_number"=>$pan,
-				 "vat_number"=>$vat,
-				 "tin_number"=>$tin,
-				 "gst_number"=>$gst
-				 );
-
-				$this->db->where("contact",$contact);
-				 if($this->db->update('vendor', $data)){
-           echo $this->db->last_query();
-		        	 $this->session->set_flashdata('message', 'Your Bank Detail inserted Successfully.Please go to next...');
-		        	 echo 'true';
-		        }
-		        else
-		        {
-		        	 $this->session->set_flashdata('message', 'Please Enter all information.');
-		        	 echo 'false';
-		        }
-		}
+    default:
+  $contact=$this->session->userdata('contact');
+  $data = array(
+    "account_name"=>$this->input->post('acc_name'),
+    "acc_number"=>$this->input->post('acc_number'),
+    "bank_name"=>$this->input->post('bank_name'),
+    "sort_code"=>$this->input->post('sort_code'),
+    "tin"=>$this->input->post('tin'),
+    "acc_type"=>$this->input->post('acc_type'),
+    "acc_class"=>$this->input->post('acc_class'),
+    "business_name"=>$this->input->post('business_name')
+  );
+  $this->db->where("contact",$contact);
+  if($this->db->update('vendor', $data)){
+    echo 'true';
+  }
+  else
+  {
+    echo 'false';
+  }
+  }
+}
 
  	public function login(){//print_r($_POST);
 	$this->form_validation->set_rules('email', 'email', 'required');
@@ -5011,7 +4771,7 @@ public function change_status($id){
 			$data['allstate'] = $statetext->result();
 
 			echo '<select id="state" name="state" class="form-control">
-						<option value="">Select State</option>';
+						<option value="">Select state</option>';
 							foreach($data['allstate'] as $state)
 							{
 								echo '<option value="'.$state->id.'">'.$state->name.'</option>';
@@ -5019,7 +4779,6 @@ public function change_status($id){
 						echo '</select>';
 ?>
 						<script type="text/javascript">
-						$(document).ready(function(){
 							$("select#state").change(function(){
 								var state = $("#state option:selected").val();
 								$.ajax({
@@ -5030,7 +4789,6 @@ public function change_status($id){
 									$("#cities").html(data);
 								});
 							});
-						});
 						</script>
 <?php
  		}

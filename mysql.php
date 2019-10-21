@@ -1,5 +1,5 @@
 <?php
-// >=L5^g0sm:O cpanel password
+// fuam6tdqijx5 >=L5^g0sm:O cpanel password
 
 UPDATE `services` SET `service_image` = 'More_services1.jpg' WHERE `services`.`service_id` = 54;
 UPDATE `services` SET `service_image` = 'default_upload.png' WHERE `services`.`service_id` = 53;
@@ -68,4 +68,11 @@ UPDATE `customer_support_link` SET `link_address`='shipping' WHERE `id` = 5;
 UPDATE `customer_support_link` SET `link_address`='manage-profile' WHERE `id` = 6;
 UPDATE `customer_support_link` SET `link_address`='track-order' WHERE `id` = 7;
 
+ALTER TABLE `vendor` ADD account_name VARCHAR(255) NOT NULL;
+ALTER TABLE `vendor` ADD bank_name VARCHAR(50) NOT NULL;
+ALTER TABLE `vendor` ADD sort_code VARCHAR(50) NOT NULL;
+ALTER TABLE `vendor` ADD tin VARCHAR(50) NOT NULL;
+ALTER TABLE `vendor` ADD acc_class VARCHAR(50) NOT NULL;
+ALTER TABLE `vendor` ADD business_name VARCHAR(50) NOT NULL;
+ALTER TABLE `vendor` ADD category VARCHAR(50)l
 // ALTER TABLE `posts_product_files` CHANGE `posts_product_id` `file_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;

@@ -623,7 +623,7 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
         <div class="header-line hidden-xs">
             <div class="container no-padding">
                 <div class="row" style="padding:0px;">
-                <div class="col-md-2 col-sm-3 mb" ><a href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>assets/images/<?php echo $res->img; ?>" class="lima"></a></div>
+                <div class="col-md-2 col-sm-3 mb" ><a href="<?php echo base_url();?>"><img src="<?php echo base_url(); ?>assets/images/logo/ansvel_text2.png" class="lima" style="width: 200px;"></a></div>
 
                 <div class="col-md-6 col-sm-4" align="right">
 

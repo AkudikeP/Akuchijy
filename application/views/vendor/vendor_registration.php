@@ -4,9 +4,11 @@
 <!--[if gt IE 9]><!-->  <html><!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Vendor Registration</title>
+    <title>Ansvel | Vendor Registration</title>
+    <script>baseUrl='<?=base_url();?>';</script>
 
-
+    <script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/jquery.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>assets/js/vendor_registration.js"></script>
     <!-- Fav and touch icons -->
 
     <style>
@@ -122,32 +124,32 @@ body
     <link href="<?php echo base_url(); ?>adminassets/css/fonts.css"  rel="stylesheet" type="text/css">
 
     <!-- Plugin CSS -->
-    <link href="<?php echo base_url();?>adminassets/plugins/jquery-ui/jquery-ui.custom.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/prettyPhoto-plugin/css/prettyPhoto.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/isotope/css/isotope.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/pnotify/css/jquery.pnotify.css" media="screen" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url();?>adminassets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/jquery-ui/jquery-ui.custom.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/prettyPhoto-plugin/css/prettyPhoto.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/isotope/css/isotope.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/pnotify/css/jquery.pnotify.css" media="screen" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url(); ?>adminassets/plugins/google-code-prettify/prettify.css" rel="stylesheet" type="text/css">
 
 
-    <link href="<?php echo base_url();?>adminassets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/tagsInput/jquery.tagsinput.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/bootstrap-switch/bootstrap-switch.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
-    <link href="<?php echo base_url();?>adminassets/plugins/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/tagsInput/jquery.tagsinput.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/bootstrap-switch/bootstrap-switch.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/plugins/colorpicker/css/colorpicker.css" rel="stylesheet" type="text/css">
 
   <!-- Specific CSS -->
 
 
     <!-- Theme CSS -->
-    <link href="<?php echo base_url();?>adminassets/css/theme.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/css/theme.min.css" rel="stylesheet" type="text/css">
     <!--[if IE]> <link href="css/ie.css" rel="stylesheet" > <![endif]-->
-    <link href="<?php echo base_url();?>adminassets/css/chrome.css" rel="stylesheet" type="text/chrome"> <!-- chrome only css -->
+    <link href="<?php echo base_url(); ?>adminassets/css/chrome.css" rel="stylesheet" type="text/chrome"> <!-- chrome only css -->
 
 
 
     <!-- Responsive CSS -->
-          <link href="<?php echo base_url();?>adminassets/css/theme-responsive.min.css" rel="stylesheet" type="text/css">
+          <link href="<?php echo base_url(); ?>adminassets/css/theme-responsive.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -158,14 +160,14 @@ body
 
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>adminassets/custom/custom.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url(); ?>adminassets/custom/custom.css" rel="stylesheet" type="text/css">
 
 
 
     <!-- Head SCRIPTS -->
-    <script type="text/javascript" src="<?php echo base_url();?>adminassets/js/modernizr.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>adminassets/js/mobile-detect.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>adminassets/js/mobile-detect-modernizr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/modernizr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/mobile-detect.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/mobile-detect-modernizr.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -185,7 +187,7 @@ body
           <div class="vd_top-nav vd_nav-width">
           <div class="vd_panel-header">
           	<div class="logo">
-            	<a href="<?php echo base_url(); ?>"><h2><img alt="logo" src="<?php echo base_url(); ?>assets/images/mobiledarziv.png"></h2></a>
+            	<a href="<?php echo base_url(); ?>"><h2><img alt="logo" src="<?php echo base_url(); ?>assets/images/logo/ansvel_text1.png"></h2></a>
             </div>
             <!-- logo -->
 
@@ -234,7 +236,7 @@ body
               <div class="col-md-12">
                 <div class="panel widget">
                   <div class="panel-heading vd_bg-grey">
-                    <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-magic"></i> </span> MobileDarji | Vendor Registration</h3>
+                    <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-magic"></i> </span> Ansvel | Vendor Registration</h3>
                   </div>
 
 
@@ -262,67 +264,67 @@ body
                         </div>
 
 					<?php
-					if($this->session->userdata('contact'))
-					{
-						$contact=$this->session->userdata('contact');
-					    $query = $this->db->get_where('vendor',array('contact'=>$contact));
-						$data['abttext'] = $query->result();
-						foreach($data['abttext'] as $text)
-					    $contact = $text->contact;
-					   /*	$username = $text->username;*/
-						$password = $text->password;
-						$vendor_name = $text->vendor_name;
-						$email = $text->email;
-						$address = $text->address;
-						$countryname = $text->country;
-						$statename = $text->state;
-						$cityname = $text->city;
-						$pincode = $text->pincode;
-					 }
-					 else
-					 {
-					    $contact = "";
-					   	/*$username = "";*/
-						$password = "";
-						$vendor_name = "";
-						$email = "";
-						$address = "";
-						$countryname = "";
-						$statename = "";
-						$cityname = "";
-						$pincode = "";
-					 }
-				   ?>
+if ($this->session->userdata('contact')) {
+    $contact = $this->session->userdata('contact');
+    $query = $this->db->get_where('vendor', array('contact' => $contact));
+    $data['abttext'] = $query->result();
+    foreach ($data['abttext'] as $text) {
+        $contact = $text->contact;
+    }
+
+    /*    $username = $text->username;*/
+    $password = $text->password;
+    $vendor_name = $text->vendor_name;
+    $email = $text->email;
+    $address = $text->address;
+    $countryname = $text->country;
+    $statename = $text->state;
+    $cityname = $text->city;
+    $pincode = $text->pincode;
+} else {
+    $contact = "";
+    /*$username = "";*/
+    $password = "";
+    $vendor_name = "";
+    $email = "";
+    $address = "";
+    $countryname = "";
+    $statename = "";
+    $cityname = "";
+    $pincode = "";
+}
+?>
 
                         <div class="tab-content no-bd pd-25">
                         <div class="tab-pane" id="tab21">
-                          <form name="form" method="post" action="<?php echo base_url('index.php/Vendor/registration');?>" onsubmit="return Validation()" autocomplete="off">
+                          <form name="form" id="otp-form" method="post" action="<?php echo base_url('index.php/Vendor/registration'); ?>" autocomplete="off">
                             <div class="form-group">
                               <label class="col-md-2 col-sm-3 control-label">Mobile Number</label>
                               <div class="col-sm-3 controls">
-                                <input type="text" class="input-border-btm" placeholder="Enter Mobile Number" id="contact" name="contact" value="<?php echo $contact;?>" maxlength="11" onKeyPress="return isNumberKey(event)" >
+                                <input type="text" class="input-border-btm" placeholder="Enter Mobile Number" id="contact" name="contact" value="<?php echo $contact; ?>" maxlength="11" onKeyPress="return isNumberKey(event)" >
                               </div>
-                              <button class="btn vd_bg-green vd_white" type="submit" id="submit" onClick="valid_nu">Send OTP</button>
+                              <button class="btn vd_bg-green vd_white" type="submit" id="submit">Send OTP</button>
                             </div>
 
 						<div class="form-actions-condensed wizard">
                             <div class="row mgbt-xs-0">
-                              <div class="col-sm-12" align="center"> <a class="btn vd_btn prev" href="javascript:void(0);"><span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-left"></i></span> Previous</a> <a class="btn vd_btn next" id="nextbut">Next <span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-right"></i></span></a> <a class="btn vd_btn vd_bg-green finish" href="javascript:void(0);"><span class="menu-icon"><i class="fa fa-fw fa-check"></i></span> Finish</a> </div>
+                              <div class="col-sm-12" align="center"> <a class="btn vd_btn prev" href="javascript:void(0);"><span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-left"></i></span> Previous</a>
+                              <a class="btn vd_btn next" id="nextbut">Next <span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-right"></i></span></a></div>
                             </div>
                           </div>
-                           <?php echo form_close();?>
+                           <?php echo form_close(); ?>
 
-                            <?php  if($this->session->flashdata('message')){?>
+                            <?php if ($this->session->flashdata('message')) {?>
                               <div class="alert alert-success" style="margin-top:20px;">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true"><i class="icon-cross"></i></button>
                                 <span class="vd_alert-icon">
                                 <i class="fa fa-exclamation-circle vd_green"></i></span>
-                               <?php echo $this->session->flashdata('message');?>
+                               <?php echo $this->session->flashdata('message'); ?>
                               </div>
                             <?php }?>
                           </div>
                           <div class="tab-pane" id="tab22">
-                          <?php echo form_open("",array("class"=>"form-horizontal","id"=>"chk_token","autocomplete"=>"off"));?>
+                          <?php echo form_open("", array("class" => "form-horizontal", "id" => "chk_token", "autocomplete" => "off")); ?>
                             <div class="form-group">
                               <label class="col-sm-2 control-label">OTP Code</label>
                               <div class="col-sm-3 controls">
@@ -333,43 +335,45 @@ body
                             </div>
 							<div class="form-actions-condensed wizard">
                             <div class="row mgbt-xs-0">
-                              <div class="col-sm-9 col-sm-offset-2"> <a class="btn vd_btn prev" href="javascript:void(0);"><span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-left"></i></span> Previous</a> <a class="btn vd_btn next" id="nextbut1">Next <span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-right"></i></span></a> </div>
+                              <div class="col-sm-9 col-sm-offset-2">
+                                <a class="btn vd_btn prev" href="javascript:void(0);"><span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-left"></i></span> Previous</a>
+                                <a class="btn vd_btn next" id="nextbut1">Next <span class="menu-icon"><i class="fa fa-fw fa-chevron-circle-right"></i></span></a> </div>
                             </div>
                           </div>
-                            <?php echo form_close();?>
+                            <?php echo form_close(); ?>
                           </div>
                           <div class="tab-pane" id="tab23">
-                            <?php echo form_open_multipart("",array("class"=>"form-horizontal","id"=>"chk_pdetail","autocomplete"=>"off"));?>
+                            <?php echo form_open_multipart("", array("class" => "form-horizontal", "id" => "chk_pdetail", "autocomplete" => "off")); ?>
                             <!--div class="form-group">
                               <label class="col-sm-2 control-label">User Name</label>
                               <!--div class="col-sm-10 controls">
-                                <input type="text" class="width-30  input-border-btm" name="username" id="username" value="<?php echo $username;?>" required>
+                                <input type="text" class="width-30  input-border-btm" name="username" id="username" value="<?php echo $username; ?>" required>
                               </div-->
                             </div-->
                             <div class="form-group">
                               <label class="col-sm-2 control-label">Password</label>
                               <div class="col-sm-5 controls">
-                                <input type="password" class="width-67  input-border-btm" name="password" id="password" value="<?php echo $password;?>">
+                                <input type="password" class="width-67  input-border-btm" name="password" autocomplete="new-password" id="password" value="<?php echo $password; ?>">
                               </div>
                             </div>
 
                             <div class="form-group">
                               <label class="col-sm-2 control-label">Vendor Name</label>
                               <div class="col-sm-5 controls">
-                                <input type="text" class="width-67  input-border-btm" name="vendor_name" id="vendor_name" value="<?php echo $vendor_name;?>" required>
+                                <input type="text" class="width-67  input-border-btm" name="vendor_name" id="vendor_name" autocomplete="firstname" value="<?php echo $vendor_name; ?>" required>
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="col-sm-2 control-label">Email</label>
                               <div class="col-sm-5 controls">
-                                <input type="text" class="width-67  input-border-btm" name="email" id="email" value="<?php echo $email;?>">
+                                <input type="text" class="width-67  input-border-btm" name="email" id="email" autocomplete="email" value="<?php echo $email; ?>">
                               </div>
 							  <div id="status" style="color:#669900;"></div>
                             </div>
                             <div class="form-group">
                               <label class="col-sm-2 control-label">Address</label>
                               <div class="col-sm-5 controls">
-                                <input type="text" class="width-67  input-border-btm" name="address" id="address" value="<?php  echo $address?>">
+                                <input type="text" class="width-67  input-border-btm" name="address" id="address" autocomplete="address" value="<?php echo $address ?>">
                               </div>
                             </div>
                             <div class="form-group">
@@ -378,11 +382,10 @@ body
                                 <select id="country" name="country" class="form-control">
                                   <option value="">Select Country</option>
                                   <?php
-                                  $country=$this->db->get("countries")->result();
-                                   foreach($country as $country)
-                                   {
-                                  ?>
-                                    <option value="<?php echo $country->id;?>"><?php echo $country->name;?></option>
+$country = $this->db->get("countries")->result();
+foreach ($country as $country) {
+    ?>
+                                    <option value="<?php echo $country->id; ?>"><?php echo $country->name; ?></option>
                                  <?php }?>
                                  </select>
                               </div>
@@ -410,34 +413,48 @@ body
 
 
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Pincode</label>
+                              <label class="col-sm-2 control-label">Postal code</label>
                               <div class="col-sm-10 controls">
-                                <input type="text" class="width-30  input-border-btm" maxlength="6" name="pincode" id="pincode" value="<?php echo $pincode;?>" onKeyPress="return isNumberKey(event)">
+                                <input type="text" class="width-30  input-border-btm" maxlength="6" name="pincode" id="pincode" value="<?php echo $pincode; ?>" onKeyPress="return isNumberKey(event)">
+                                <span style="color: grey;">Not compulsory</span>
                               </div>
                             </div>
-							<div class="form-group">
+                          <div class="form-group">
+                            <label class="col-sm-2 control-label">Category</label>
+                            <div class="col-sm-10 controls">
+                              <label class="control control--radio">Vendor
+                                <input type="radio" class="width-5 input-border-btm type-vendor" name="category" value="Vendor"/>
+                                <div class="control__indicator"></div>
+                              </label>
+                              <label class="control control--radio">Service provider
+                                <input type="radio" class="width-5 input-border-btm type-service-provider" name="category" value="Service provider"/>
+                                <div class="control__indicator"></div>
+                              </label>
+                            </div>
+                          </div>
+							<div class="form-group vendor-type-options">
                               <label class="col-sm-2 control-label">Vendor Type</label>
                               <div class="col-sm-10 controls">
                               <label class="control control--checkbox">Fabric
-							  <input type="checkbox" class="width-5  input-border-btm" name="option[]" value="Fabric" id="vtype"/>
+							  <input type="checkbox" class="width-5 input-border-btm vtype" name="option[]" value="Fabric"/>
 							  <div class="control__indicator"></div>
 							</label>
 							<label class="control control--checkbox">Uniform
-							  <input  type="checkbox" class="width-5  input-border-btm" name="option[]" value="Uniform" id="vtype"/>
+							  <input  type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Uniform"/>
 							  <div class="control__indicator"></div>
 							</label>
 
 							 <label class="control control--checkbox">Accessories
-							  <input type="checkbox" class="width-5  input-border-btm" name="option[]" value="Accessories" id="vtype"/>
+							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Accessories"/>
 							  <div class="control__indicator"></div>
 							</label>
 
 							 <label class="control control--checkbox">More Services
-							  <input type="checkbox" class="width-5  input-border-btm" name="option[]" value="More Services" id="vtype"/>
+							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="More Services"/>
 							  <div class="control__indicator"></div>
 							</label>
 										<label class="control control--checkbox">Online Boutique
-							  <input type="checkbox" class="width-5  input-border-btm" name="option[]" value="Online Boutique" id="vtype"/>
+							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Online Boutique"/>
 							  <div class="control__indicator"></div>
 							</label>
                               </div>
@@ -449,11 +466,10 @@ body
                               <div class="col-sm-5 controls">
 								<select id="id_type" name="id_type" class="form-control">
                                   <option value="">Select Type</option>
-                                   <option value="Pan Card">Pan Card</option>
-								   <option value="Pass Port">Pass Port</option>
-									<option value="Pan Card">Voter Card</option>
-									<option value="Driving License">Driving License</option>
-									<option value="Aadhar Card">Aadhar Card</option>
+								   <option value="Passport">Passport</option>
+									<option value="Voters Card">Voters Card</option>
+									<option value="Drivers License">Drivers License</option>
+									<option value="NIN Card">NIN Card</option>
                                  </select>
                               </div>
                             </div>
@@ -461,7 +477,7 @@ body
                             <div class="form-group">
                               <label class="col-sm-2 control-label">ID Proof</label>
                               <div class="col-sm-5 controls">
-                                <input type="file"  name="id_proof" id="id_proof" >
+                                <input type="file" name="id_proof" id="id_proof" >
                               </div>
                             </div>
 
@@ -474,85 +490,86 @@ body
 							   </div>
                             </div>
                           </div>
-                            <?php echo form_close();?>
+                            <?php echo form_close(); ?>
                           </div>
 
 
                           <div class="tab-pane" id="tab24">
-                          <?php echo form_open("",array("class"=>"form-horizontal","id"=>"chk_bdetail"));?>
+                          <?php echo form_open("", array("class" => "form-horizontal", "id" => "chk_bdetail")); ?>
                             <div class="form-group">
-                              <label class="col-sm-3 control-label">Account Holder Name</label>
+                              <label class="col-sm-3 control-label">Account Name</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-50  input-border-btm" name="acount_holder" id="acount_holder" >
+                                <input type="text" class="width-50  input-border-btm" name="acc_name" id="acc-name">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="col-sm-3 control-label">Account Number</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-50  input-border-btm" name="acc_number" id="acc_number" onKeyPress="return isNumberKey(event)" maxlength="20">
+                                <input type="text" class="width-50  input-border-btm" name="acc_number" id="acc-number" onKeyPress="return isNumberKey(event)" maxlength="10">
                               </div>
                             </div>
                             <div class="form-group">
                               <label class="col-sm-3 control-label">Re-enter Account Number</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-50  input-border-btm" name="re_acc_number" id="re_acc_number" onKeyPress="return isNumberKey(event)" maxlength="20">
-                              </div>
-                            </div>
-
-                            <div class="form-group">
-                              <label class="col-sm-3 control-label">IFSC</label>
-                              <div class="col-sm-9 controls">
-                                <input type="text" class="width-50  input-border-btm" name="bank_ifc" id="bank_ifc" >
+                                <input type="text" class="width-50  input-border-btm" name="re_acc_number" id="re-acc-number" onKeyPress="return isNumberKey(event)" maxlength="20">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-3 control-label">Bank Branch Name</label>
-                              <div class="col-sm-9 controls">
-                                <input type="text" class="width-50  input-border-btm" name="branch_name" id="branch_name">
+                              <label class="col-sm-3 control-label">Select Bank Name</label>
+                              <div class="col-sm-5 controls">
+                                <select id="bank-name" name="bank_name" class="form-control">
+                                  <option value="">Select Bank</option>
+                                </select>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-3 control-label">Account Type</label>
+                              <label class="col-sm-3 control-label">Sort Code</label>
                               <div class="col-sm-9 controls">
-                                <input type="radio" class="width-5  input-border-btm" name="acc_type" value="Current">Current
-                                <input type="radio" class="width-5  input-border-btm" name="acc_type" value="Saving" checked="checked">Saving
+                                <input type="text" class="width-50  input-border-btm" name="sort_code" id="sort-code" onKeyPress="return isNumberKey(event)" maxlength="10">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-3 control-label">Dealing IN</label>
+                              <label class="col-sm-3 control-label">Tax Identification Number</label>
                               <div class="col-sm-9 controls">
-                                <input type="radio" class="width-5  input-border-btm aa" name="deal_type" value="VAt-GST" id="vat_gst" checked="checked">VAT-GST
-                                <input type="radio" class="width-5  input-border-btm bb" name="deal_type" value="No" id="menu_hide">No
+                                <input type="text" class="width-50  input-border-btm" name="tin" id="tin" onKeyPress="return isNumberKey(event)" maxlength="20">
                               </div>
-                              </div>
-
-                              <div id="menu_id" >
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label">Pan Number</label>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Account type</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-5  input-border-btm" name="pan_number" id="pan_number">
+                                <label class="control control--radio">Corporate
+                                  <input type="radio" class="width-5 input-border-btm" name="acc_type" value="Corporate"/>
+                                  <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--radio">Current
+                                  <input type="radio" class="width-5 input-border-btm" name="acc_type" value="Current"/>
+                                  <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--radio">Savings
+                                  <input type="radio" class="width-5 input-border-btm" name="acc_type" value="Savings"/>
+                                  <div class="control__indicator"></div>
+                                </label>
                               </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label">Vat Number</label>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Account class</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-5  input-border-btm" name="vat_number" id="vat_number">
+                                <label class="control control--radio">Individual
+                                  <input type="radio" class="width-5 input-border-btm" name="acc_class" value="Individual"/>
+                                  <div class="control__indicator"></div>
+                                </label>
+                                <label class="control control--radio">Limited liability
+                                  <input type="radio" class="width-5 input-border-btm" name="acc_class" value="Limited liability"/>
+                                  <div class="control__indicator"></div>
+                                </label>
                               </div>
-                              </div>
-                              <div class="form-group">
-                                <label class="col-sm-3 control-label">Tin Number</label>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-3 control-label">Registered Business Name</label>
                               <div class="col-sm-9 controls">
-                                <input type="text" class="width-5  input-border-btm" name="tin_number" id="tin_number">
+                                <input type="text" class="width-50  input-border-btm" name="business_name" id="business-name">
                               </div>
-                              </div>
-							  <div class="form-group">
-                                <label class="col-sm-3 control-label">GST Number</label>
-                              <div class="col-sm-9 controls">
-                                <input type="text" class="width-5  input-border-btm" name="gst_number" id="gst_number">
-                              </div>
-                              </div>
-                              </div>
-                            <!--<button class="btn vd_bg-green vd_white width-10" type="submit" id="bdetail_button">Save</button>-->
+                            </div>
 
 							<div class="form-actions-condensed wizard">
                             <div class="row mgbt-xs-0">
@@ -565,10 +582,10 @@ body
                             </div>
                           </div>
 
-                            <?php echo form_close();?>
+                            <?php echo form_close(); ?>
                           </div>
                           <div class="tab-pane" id="tab25">
-                          <?php echo form_open("",array("class"=>"form-horizontal","id"=>"ques"));?>
+                          <?php echo form_open("", array("class" => "form-horizontal", "id" => "ques")); ?>
                             <div class="form-group">
                             <div class="col-md-12">
                               <label >When was your company started?</label>
@@ -607,7 +624,7 @@ body
 							   </div>
                             </div>
                           </div>
-                              <?php echo form_close();?>
+                              <?php echo form_close(); ?>
                             </div>
                           </div>
                           <!--<div class="form-actions-condensed wizard">
@@ -658,39 +675,38 @@ body
 
 <!-- Javascript =============================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/jquery.js"></script>
 <!--[if lt IE 9]>
   <script type="text/javascript" src="js/excanvas.js"></script>
 <![endif]-->
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/bootstrap.min.js"></script>
-<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/jquery-ui/jquery-ui.custom.min.js'></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src='<?php echo base_url(); ?>adminassets/plugins/jquery-ui/jquery-ui.custom.min.js'></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/caroufredsel.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/plugins.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/caroufredsel.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/plugins.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/breakpoints/breakpoints.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/dataTables/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/breakpoints/breakpoints.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/dataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/prettyPhoto-plugin/js/jquery.prettyPhoto.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/tagsInput/jquery.tagsinput.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/blockUI/jquery.blockUI.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/plugins/pnotify/js/jquery.pnotify.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/tagsInput/jquery.tagsinput.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/bootstrap-switch/bootstrap-switch.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/blockUI/jquery.blockUI.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/plugins/pnotify/js/jquery.pnotify.min.js"></script>
 
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/theme.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/custom/custom.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/jquery.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>adminassets/css/jquery-confirm.css"/>
-<script src="<?php echo base_url();?>adminassets/js/bundled.js"></script>
-<script type="text/javascript" src="<?php echo base_url();?>adminassets/js/jquery-confirm.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/theme.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/custom/custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>adminassets/css/jquery-confirm.css"/>
+<script src="<?php echo base_url(); ?>adminassets/js/bundled.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>adminassets/js/jquery-confirm.js"></script>
 
 <!-- Specific Page Scripts Put Here -->
 <script type="text/javascript">
-<?php  if(!$this->session->userdata('contact')){?>
+<?php if (!$this->session->userdata('contact')) {?>
 
-<?php } ?>
+<?php }?>
 </script>
 
 <script type="text/javascript">
@@ -702,7 +718,7 @@ $("#email").change(function(e){e.preventDefault();
 
          type: "POST",
 
-         url: '<?php echo base_url();?>Vendor/check_email',
+         url: '<?php echo base_url(); ?>Vendor/check_email',
 
          data: {femail:femail},
 
@@ -732,8 +748,6 @@ $("#email").change(function(e){e.preventDefault();
         }
         else
         {
-          //console.log(response.length);
-          //$("#error").html(response);
         }
 
              },
@@ -744,68 +758,11 @@ $("#email").change(function(e){e.preventDefault();
          });
 
 });
-function Validation()
-{
-var a = document.form.contact.value;
-if(a=="")
-{
-
-$.confirm({
-title: 'Alert',
-content: 'please Enter the Contact Number',
-icon: 'fa fa-question-circle',
-animation: 'scale',
-closeAnimation: 'scale',
-opacity: 0.5,
-buttons: {
-  'confirm': {
-      text: 'Ok',
-      btnClass: 'btn-info',
-      action: function () {
-          }
-  },
- }
-});
-
-document.form.contact.focus();
-return false;
-}
-if(isNaN(a))
-{
-//alert("");
-$.confirm({
-title: 'Alert',
-content: 'Enter the valid Mobile Number(Like : 08012345678)',
-icon: 'fa fa-question-circle',
-animation: 'scale',
-closeAnimation: 'scale',
-opacity: 0.5,
-buttons: {
-  'confirm': {
-      text: 'Ok',
-      btnClass: 'btn-info',
-      action: function () {
-          }
-  },
- }
-});
-
-document.form.contact.focus();
-return false;
-}
-if((a.length < 1) || (a.length > 11))
-{
-alert(" Your Mobile Number must be 1 to 10 Integers");
-document.form.contact.select();
-return false;
-}
-}
 </script>
 
-
-<script type="text/javascript" src='<?php echo base_url();?>adminassets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js'></script>
+<script type="text/javascript" src='<?php echo base_url(); ?>adminassets/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js'></script>
 <script>   //no need to specify the language
- $(function(){
+$(function(){
   $('#vat_gst').click(function() {
                 $('#menu_id').show("fast");
         });
@@ -813,66 +770,6 @@ return false;
                 $('#menu_id').hide("fast");
         });
 
-  $("#submitbutton").click(function(e){
-    var a=$('#token').val();
-    if(a=="")
-    {
-      alert('Please Enter OTP Number');
-    }
-
-    $.ajax({
-       url:'<?php echo base_url();?>index.php/Vendor/chk_token',
-       type: 'POST',
-       data: $("#chk_token").serialize(),
-       success: function(respond){
-           if(respond=='true')
-           {
-
-              $.confirm({
-              title: 'Alert',
-              content: 'Your mobile number is verified successfully.Please Click on next..',
-              icon: 'fa fa-question-circle',
-              animation: 'scale',
-              closeAnimation: 'scale',
-              opacity: 0.5,
-              buttons: {
-                'confirm': {
-                    text: 'Ok',
-                    btnClass: 'btn-info',
-                    action: function () {
-                        }
-                },
-               }
-              });
-           }
-           else
-           {
-             //alert("");
-             $.confirm({
-             title: 'Alert',
-             content: 'Please enter valid OTP Number.',
-             icon: 'fa fa-question-circle',
-             animation: 'scale',
-             closeAnimation: 'scale',
-             opacity: 0.5,
-             buttons: {
-               'confirm': {
-                   text: 'Ok',
-                   btnClass: 'btn-info',
-                   action: function () {
-                       }
-               },
-              }
-             });
-			 $('#nextbut1').attr('disabled',true);
-           }
-       },
-       error: function(){
-       alert("Fail");
-       }
-   });
-   e.preventDefault(); // could also use: return false;
- });
 });
 </script>
 
@@ -880,7 +777,7 @@ return false;
  $(function(){
   $("#re_send").click(function(e){
     $.ajax({
-       url:'<?php echo base_url();?>index.php/Vendor/resend_otp',
+       url:'<?php echo base_url(); ?>index.php/Vendor/resend_otp',
        type: 'POST',
        data: $("#chk_token").serialize(),
        success: function(respond){
@@ -905,168 +802,6 @@ return false;
 </script>
 
 <script>
-$(function(){
-  $("#chk_pdetail").submit(function(e){
-e.preventDefault();
-var formData = new FormData( $("#chk_pdetail")[0] );
-    $.ajax({
-       url:'<?php echo base_url();?>index.php/Vendor/registration_insert',
-       type: 'POST',
-
-       data: formData,
-       async : false,
-            cache : false,
-            contentType : false,
-            processData : false,
-       success: function(respond){
- console.log(respond);
-       },
-       error: function(respond){
-        console.log(respond);
-       //alert("Fail");
-       }
-   });
-    // could also use: return false;
-
-
- });
-});
-
-</script>
-
-
-<script>
-$(function(){
-  $("#ques_button").click(function(e){
-    var aa=$('#question1').val();
-    var bb=$('#question2').val();
-    var cc=$('#question3').val();
-    var hh=$('#question4').val();
-    var gg=$('#question5').val();
-    if(aa=="")
-    {
-      alert('All question compulsory.');
-      return false;
-    }
-    if(bb=="")
-    {
-      alert('All question compulsory.');
-      return false;
-    }
-    if(cc=="")
-    {
-      alert('All question compulsory.');
-      return false;
-    }
-    if(hh=="")
-    {
-      alert('All question compulsory.');
-      return false;
-    }
-    if(gg=="")
-    {
-      alert('All question compulsory.');
-      return false;
-    }
-
-    $.ajax({
-       url:'<?php echo base_url();?>index.php/Vendor/insert_question',
-       type: 'POST',
-       data: $("#ques").serialize(),
-       success: function(respond){
-
-          // $(".next").click();
-           if(respond=='true')
-           {
-              $( "#login_button" ).prop( "disabled", false );
-             // alert('All Question inserted Successfully.Please go to login...');
-
-        $.confirm({
-        title: 'Alert',
-        content: 'You will get a confirmation call from Mobile Darzi soon, Once your account will be activated, you will able to access your account.',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                 window.location.href = "<?php echo base_url('Vendor');?>";
-                  }
-          },
-         }
-        });
-           
-           }
-           else
-           {
-            // alert('');
-             $.confirm({
-             title: 'Alert',
-             content: 'Please Enter all Question.',
-             icon: 'fa fa-question-circle',
-             animation: 'scale',
-             closeAnimation: 'scale',
-             opacity: 0.5,
-             buttons: {
-               'confirm': {
-                   text: 'Ok',
-                   btnClass: 'btn-info',
-                   action: function () {
-                       }
-               },
-              }
-             });
-           }
-       },
-       error: function(respond){
-       alert("Fail");
-       console.log(respond);
-       }
-   });
-   e.preventDefault(); // could also use: return false;
- });
-});
-</script>
-
-<script type="text/javascript">
-$( document ).ready(function()
-{
-	  $("#chk_bdetail").submit(function(e)
-	  {
-			e.preventDefault();
-				var acount_holder = $("#acount_holder").val();
-				var acc_number = $("#acc_number").val();
-				var bank_ifc = $("#bank_ifc").val();
-				var branch_name = $("#branch_name").val();
-				var pan_number = $("#pan_number").val();
-				var tin_number = $("#tin_number").val();
-        var vat_number = $("#vat_number").val();
-				var gst_number = $("#gst_number").val();
-				var acc_type = $('input[name=acc_type]:checked').val();
-				var deal_type = $('input[name=deal_type]:checked').val();
-
-//alert(acount_holder+acc_number+branch_name);
-
-				$.ajax({
-					type: "POST",
-					url: "<?php echo base_url();?>index.php/Vendor/registration_bank",
-					data: { acount_holder : acount_holder, acc_number : acc_number, bank_ifc : bank_ifc,  branch_name : branch_name, pan_number : pan_number, tin_number : tin_number, vat_number : vat_number, gst_number : gst_number, acc_type : acc_type,  deal_type : deal_type} ,
-             success: function(respond){
-               console.log(respond);
-             },
-             error: function(respond){
-               console.log(respond);
-             }
-				});
-
- 		});
-	});
-</script>
-
-<script>
   	var id_type = $('#id_type').val();
 	var id_proof = $('#id_proof').val();
     var aaa=$('#acc_number').val();
@@ -1075,33 +810,16 @@ $( document ).ready(function()
     var ccc=$('#bank_ifc').val();
 	var ddd = $('#branch_name').val();
 
-	$('.nextbut4').attr('disabled',true);
-
-		$('#branch_name').keyup(function(){
-			if($(this).val().length !=0)
-				$('.nextbut4').attr('disabled', false);
-			else
-				$('.nextbut4').attr('disabled',true);
-		})
-
 
 $(document).ready(function() {
   "use strict";
 
 	$('#submit').attr('disabled',true);
-<?php  if(!$this->session->userdata('contact')){?>
+<?php if (!$this->session->userdata('contact')) {?>
 	$('#nextbut').attr('disabled',true);
-<?php } else{?>
+<?php } else {?>
 	$('#nextbut').attr('disabled',false);
-<?php } ?>
-
-	$('#contact').keyup(function(){
-		if($(this).val().length !=11)
-			$('#submit').attr('disabled', true);
-		else
-			$('#submit').attr('disabled',false);
-	})
-
+<?php }?>
 	$('#nextbut1').attr('disabled',true);
 	$('#submitbutton').attr('disabled',true);
 
@@ -1125,554 +843,12 @@ $(document).ready(function() {
 		$('#nextbut1').attr('disabled',false);
 		return true;
 	})
-
-  $("#nextbut").click(function(e){
-	  var mobileno = $("#contact").val();
-	  if(mobileno == "")
-	  {
-		//alert("");
-    $.confirm({
-    title: 'Alert',
-    content: 'Please Enter Mobile Number',
-    icon: 'fa fa-question-circle',
-    animation: 'scale',
-    closeAnimation: 'scale',
-    opacity: 0.5,
-    buttons: {
-      'confirm': {
-          text: 'Ok',
-          btnClass: 'btn-info',
-          action: function () {
-              }
-      },
-     }
-    });
-		return false();
-	  }
-  });
-
-   $(".nextbut3").click(function(e){
-    var vname =$('#vendor_name').val();
-  /*  var a=$('#username').val();*/
-    var b=$('#email').val();
-    var c=$('#password').val();
-	var d = $('#address').val();
-	var e = $('#country').val();
-	var f = $('#state').val();
-	var g = $('#city').val();
-    var h=$('#pincode').val();
-  	var id_type = $('#id_type').val();
-	var id_proof = $('#id_proof').val();
-
-    /*if(a=="")
-    {
-
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Enter username.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }*/
-    if(c=="")
-    {
-    //  alert('');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Enter Password.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(vname=="")
-    {
-    //  alert('');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Enter Vendor Name.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(b=="")
-    {
-      //alert('Please Enter Email.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Enter Email.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-
-
-	  var getArrVal = $('input[type="checkbox"][name="option[]"]:checked').map(function(){
-		return this.value;
-	  }).toArray();
-
-	  if(getArrVal.length)
-	  {
-		//execute the code
-		//$('#cont').html(getArrVal.toString());
-		//alert('true');
-	  } else {
-		$(this).prop("checked",true);
-		//$('#cont').html("At least one value must be checked!");
-		//alert('At least one value must be checked!');
-    $.confirm({
-    title: 'Alert',
-    content: 'At least one value must be checked!',
-    icon: 'fa fa-question-circle',
-    animation: 'scale',
-    closeAnimation: 'scale',
-    opacity: 0.5,
-    buttons: {
-      'confirm': {
-          text: 'Ok',
-          btnClass: 'btn-info',
-          action: function () {
-              }
-      },
-     }
-    });
-
-		return false();
-	  };
-    if(d == "")
-    {
-      alert('Please Enter Address.');
-      $.confirm({
-      title: 'Alert',
-      content: 'At least one value must be checked!',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(e == "")
-    {
-    //  alert('Please Select Country Name.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Select Country Name.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(f == "")
-    {
-      //alert('Please Select State Name.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Select State Name.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(g == "")
-    {
-    //  alert('Please Select City Name.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Select City Name.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(h == "")
-    {
-      //alert('Please Enter Pincode.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Enter Pincode.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-    if(id_type=="")
-    {
-    //  alert('Please Select ID Type.');
-      $.confirm({
-      title: 'Alert',
-      content: 'Please Select ID Type.',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-      return false();
-    }
-	if(id_proof.lastIndexOf("jpg")===id_proof.length-3 || id_proof.lastIndexOf("png")===id_proof.length-3 || id_proof.lastIndexOf("JPG")===id_proof.length-3 || id_proof.lastIndexOf("PNG")===id_proof.length-3 || id_proof.lastIndexOf("jpeg")===id_proof.length-3 || id_proof.lastIndexOf("JPEG")===id_proof.length-3)
-	{
-		return true;
-	}
-    else
-	{
-        //alert("Select ID Proof jpg or png format");
-        $.confirm({
-        title: 'Alert',
-        content: 'Select ID Proof jpg or png format',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-		return false();
-	}
-
-
- });
-
-   $(".nextbut4").click(function(e)
-   {
-
-		   e.preventDefault();
-
-			var bbb=$('#acount_holder').val();
-			var aaa=$('#acc_number').val();
-			var aaaa =$('#re_acc_number').val();
-			var ccc=$('#bank_ifc').val();
-			var ddd = $('#branch_name').val();
-
-			if(bbb.length<8)
-			{
-				//alert("Holder Name  8 character long");
-        $.confirm({
-        title: 'Alert',
-        content: 'Holder Name  8 character long',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-				return false();
-			}
-			/*if(aaa.length<20)
-			{
-			//	alert("");
-        $.confirm({
-        title: 'Alert',
-        content: 'Account No. 16 character long',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-				return false();
-			}
-			if(aaaa.length<16)
-			{
-				//alert("");
-        $.confirm({
-        title: 'Alert',
-        content: 'Confirm Account no. 16 character long',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-        return false();
-			}*/
-			if(ccc.length<8)
-			{
-				//alert("");
-        $.confirm({
-        title: 'Alert',
-        content: 'IFSC Code 8 character long',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-				return false();
-			}
-			if(ddd.length<8)
-			{
-				//alert("");
-        $.confirm({
-        title: 'Alert',
-        content: 'Branch Name 8 character long',
-        icon: 'fa fa-question-circle',
-        animation: 'scale',
-        closeAnimation: 'scale',
-        opacity: 0.5,
-        buttons: {
-          'confirm': {
-              text: 'Ok',
-              btnClass: 'btn-info',
-              action: function () {
-                  }
-          },
-         }
-        });
-				return false();
-			}
-		    if ($('#acc_number').attr('value') != $('#re_acc_number').attr('value'))
-			{
-		      //alert('');
-          $.confirm({
-          title: 'Alert',
-          content: 'Account Number Not Matche.',
-          icon: 'fa fa-question-circle',
-          animation: 'scale',
-          closeAnimation: 'scale',
-          opacity: 0.5,
-          buttons: {
-            'confirm': {
-                text: 'Ok',
-                btnClass: 'btn-info',
-                action: function () {
-                    }
-            },
-           }
-          });
-		      return false();
-			}
-			else
-			{
-				var acount_holder = $("#acount_holder").val();
-				var acc_number = $("#acc_number").val();
-				var bank_ifc = $("#bank_ifc").val();
-				var branch_name = $("#branch_name").val();
-				var pan_number = $("#pan_number").val();
-        var vat_number = $("#vat_number").val();
-        var tin_number = $("#tin_number").val();
-				var gst_number = $("#gst_number").val();
-				var acc_type = $('input[name=acc_type]:checked').val();
-				var deal_type = $('input[name=deal_type]:checked').val();
-
-				$.ajax({
-					type: "POST",
-					url: "<?php echo base_url();?>index.php/Vendor/registration_bank",
-					data: { acount_holder : acount_holder, acc_number : acc_number, bank_ifc : bank_ifc,  branch_name : branch_name, pan_number : pan_number, vat_number : vat_number,  tin_number : tin_number, gst_number : gst_number, acc_type : acc_type,  deal_type : deal_type},
-          success: function(response){
-          // $("#filterproducts").html(response);
-          //console.log(response);
-          //alert('success');
-        },error:  function(response){
-          alert('fail');
-          console.log(response);
-        }
-				});
-
-		    }
-
-
-		//    if(aaa=="")
-		//    {
-		//      alert('Please Enter Account Number.');
-		//      return false();
-		//    }
-		//    if(aaaa=="")
-		//    {
-		//      alert('Please Re-enter Account Number.');
-		//      return false();
-		//    }
-		//    if ($('#acc_number').attr('value') !== $('#re_acc_number').attr('value'))
-		//	{
-		//      alert('Account Number Not Matche.');
-		//      return false();
-		//    }
-		//
-		//    if(bbb=="")
-		//    {
-		//      alert('Please Enter Branch Name.');
-		//      return false();
-		//    }
-		//    if(ccc=="")
-		//    {
-		//      alert('Please Enter IFSC code.');
-		//      return false();
-		//    }
-		 });
  });
 </script>
 
 
 
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>					-->
-<script type="text/javascript">
-$(document).ready(function(){
-	$('.nextbut4').click(function(evt) {
-		evt.preventDefault();
-		if ($('#acc_number').val() === $('#re_acc_number').val())
-		{
-			//alert('values match');
-			//evt.preventDefault();
-
-		} else {
-			//alert('');
-      $.confirm({
-      title: 'Alert',
-      content: 'Account Number not match',
-      icon: 'fa fa-question-circle',
-      animation: 'scale',
-      closeAnimation: 'scale',
-      opacity: 0.5,
-      buttons: {
-        'confirm': {
-            text: 'Ok',
-            btnClass: 'btn-info',
-            action: function () {
-                }
-        },
-       }
-      });
-			evt.preventDefault();
-			return false();
-		}
-	});
-});
-</script>
-
-
-
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -1841,7 +1017,7 @@ $(document).ready(function(){
 		//alert(country);
 		$.ajax({
 			type: "POST",
-			url: "<?php echo base_url();?>index.php/Vendor/selectcontry",
+			url: "<?php echo base_url(); ?>index.php/Vendor/selectcontry",
 			data: { country : country }
 		}).done(function(data){
 			$("#states").html(data);
@@ -1852,7 +1028,7 @@ $(document).ready(function(){
 
 
 <!--<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>-->
-<script src="<?php echo base_url();?>mailgun/mailgun_validator.js"></script>
+<script src="<?php echo base_url(); ?>mailgun/mailgun_validator.js"></script>
 <script>
       // document ready
       $(function() {
@@ -1877,7 +1053,7 @@ $(document).ready(function(){
       });
       // while the lookup is performing
       function validation_in_progress() {
-        $('#status').html("<img src='<?php  echo base_url();?>mailgun/loading.gif' height='16'/>");
+        $('#status').html("<img src='<?php echo base_url(); ?>mailgun/loading.gif' height='16'/>");
       }
       // if email successfull validated
       function validation_success(data) {
