@@ -1480,23 +1480,20 @@ $('#newsletterModal').modal({
     keyboard: false  // to prevent closing with Esc button (if you want this too)
 });
 
+function count_cart() {
+    var url = "<?php echo base_url() ?>" + "welcome/count_cart";
+    $.ajax({
+        url: url,
+        success: (result) => {
+            if (result == '') {
+                $("#citems").html('0');
+                $("#count_cart").html('0');
+            } else {
 
-   function count_cart() {
-     var url = "<?php echo base_url() ?>"+"welcome/count_cart";
-      //console.log(url);
-    $.ajax({url: url, success: function(result){
-      //console.log(result);
-      if(result=='')
-      {
-        $("#citems").html('0');
-         $("#count_cart").html('0');
-      }else{
-
-        $("#citems").html(result);
-         $("#count_cart").html(result);
-      }
-      }
-    }});
-}
-
+                $("#citems").html(result);
+                $("#count_cart").html(result);
+            }
+        }
+    })
+};
 </script>
