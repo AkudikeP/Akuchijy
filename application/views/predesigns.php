@@ -58,7 +58,7 @@
    bottom: 1px;
 ">
                 <h5 class="product-category__info__ribbon__title"><?php echo $pre->dname;?></h5>
-                 <i class="fa fa-inr"></i> <?php echo $pre->dprice;?>/-</h5>
+                 &#8358; <?php echo $pre->dprice;?>/-</h5>
                 
               </div>
             </div>

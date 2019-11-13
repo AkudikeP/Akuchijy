@@ -65,7 +65,7 @@
 
                           <td><?php echo $fab->title;?></td>
                           <td><?php if($fab->category==1) echo "Women" ;?><?php if($fab->category==2) echo "Men" ;?><?php if($fab->category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $fab->price;?></td>
+                          <td>&#8358; <?php echo $fab->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/product/add_fabric/<?php echo $fab->id;?>"><i class="fa fa-edit"></i></a> 
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_fabric" id="<?php echo $fab->id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -87,7 +87,7 @@
 
                           <td><?php echo $uni->school_name;?></td>
                           <td><?php echo $uni->uni_category; ?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $uni->price;?></td>
+                          <td>&#8358; <?php echo $uni->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>product/add_uniform/<?php echo $uni->uniform_id;?>"><i class="fa fa-edit"></i></a> 
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_uni" id="<?php echo $uni->uniform_id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -110,7 +110,7 @@
 
                           <td><?php echo $acc->brand;?></td>
                           <td><?php if($acc->main_category==1) echo "Women" ;?><?php if($acc->main_category==2) echo "Men" ;?><?php if($acc->main_category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $acc->price;?></td>
+                          <td>&#8358; <?php echo $acc->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/product/add_accessories/<?php echo $acc->acc_id;?>"><i class="fa fa-edit"></i></a> 
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_acc" id="<?php echo $acc->acc_id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -132,7 +132,7 @@
 
                           <td><?php echo $onb->brand;?></td>
                           <td><?php if($onb->main_category==1) echo "Women" ;?><?php if($onb->main_category==2) echo "Men" ;?><?php if($onb->main_category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $onb->price;?></td>
+                          <td>&#8358; <?php echo $onb->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/product/add_online/<?php echo $onb->id;?>"><i class="fa fa-edit"></i></a> 
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_online" id="<?php echo $onb->id;?>" type="button"><i class="fa fa-trash-o"></i></button>

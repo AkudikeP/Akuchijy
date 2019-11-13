@@ -442,7 +442,7 @@ $(function() {
 
 
 
-												<div class="price-box"><span class="price-box__new" id="price"><i class="fa fa-inr"></i> <?php echo $more['price'];?>/-</span>
+												<div class="price-box"><span class="price-box__new" id="price">&#8358; <?php echo $more['price'];?>/-</span>
 												</div>
 
 

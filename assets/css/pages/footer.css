@@ -1,0 +1,40 @@
+footer .link-black, footer a.link-black:hover {
+    color: black;
+}
+
+footer > *, footer h5, footer ul li a {
+    font-size: 15px!important;
+}
+
+footer ul li a {
+    font-size: 90%!important;
+}
+
+/* .collapse#collapse-sm {
+    display: block;
+} */
+
+/* .collapse#collapse-sm {
+    display: block;
+} */
+
+/* @media (max-width: 567px) {
+    .collapse#collapse-sm {
+        display: block
+    }
+} */
+
+@media (min-width: 567px) {
+    .collapse#collapse-1 {
+        display: block
+    }
+    .collapse#collapse-2 {
+        display: block
+    }
+    .collapse#collapse-3 {
+        display: block
+    }
+    .collapse#collapse-4 {
+        display: block
+    }
+}

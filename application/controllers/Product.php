@@ -217,9 +217,9 @@ class Product extends MY_Controller
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi!</h2>
+                            <h2>Welcome to ansvel!</h2>
                             <br>
 
 
@@ -233,7 +233,7 @@ class Product extends MY_Controller
                             <br>
                             <p>Welcome and Thanks!</p>
 
-                            <p>MobileDarzi Team</p>
+                            <p>ansvel Team</p>
                             <br>
 
 
@@ -262,7 +262,7 @@ class Product extends MY_Controller
         $mail_count = count($to_mail);
         for ($i = 0; $i < $mail_count; $i++) {
             $mail_id = TRIM($to_mail[$i]);
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($mail_id);
             $this->email->subject($this->input->post('subject'));
             $this->email->message($message);
@@ -751,7 +751,7 @@ class Product extends MY_Controller
             $data1->User_Id = "UMD-" . $user->userid;
             $data1->User_Name = $user->bname;
             $data1->Title = $user->pname;
-            if ($user->order_type == 'stitch') {$data1->Title = 'Personal';} elseif ($user->order_type == 'stitch with fabric') {$data1->Title = 'Mobile Darzi';}
+            if ($user->order_type == 'stitch') {$data1->Title = 'Personal';} elseif ($user->order_type == 'stitch with fabric') {$data1->Title = 'Ansvel';}
             $data1->Status = $user->ostatus;
             //$data1->Size = $user->size;
             //$data1->Color =$user->color;
@@ -1145,15 +1145,15 @@ class Product extends MY_Controller
                     if (($current_date >= $fab->from_date) and ($current_date <= $fab->to_date)) {
                         if ($fab->offer_type == 'Percentage') {
                             $value = 100 - $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round(($fab->price / 100) * $value);
+                            $html .= '&#8358;' . round(($fab->price / 100) * $value);
                         } elseif ($fab->offer_type == 'Amount') {
                             $value = $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round($fab->price - $value);}
+                            $html .= '&#8358;' . round($fab->price - $value);}
 
                     } else {
                         $html .= "-";
                     }
-                    $html .= '</td><td style="padding:1%"><i class="fa fa-inr"></i>' . $fab->price . '</td>
+                    $html .= '</td><td style="padding:1%">&#8358;' . $fab->price . '</td>
 
                         </tr>';
                     $i++;}}}
@@ -1251,16 +1251,16 @@ class Product extends MY_Controller
                     if (($current_date >= $fab->from_date) and ($current_date <= $fab->to_date)) {
                         if ($fab->offer_type == 'Percentage') {
                             $value = 100 - $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round(($fab->price / 100) * $value);
+                            $html .= '&#8358;' . round(($fab->price / 100) * $value);
                         } elseif ($fab->offer_type == 'Amount') {
                             $value = $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round($fab->price - $value);}
+                            $html .= '&#8358;' . round($fab->price - $value);}
 
                     } else {
                         $html .= "-";
                     }
 
-                    $html .= '</td><td style="padding:1%"><i class="fa fa-inr"></i>' . $fab->price . '</td>
+                    $html .= '</td><td style="padding:1%">&#8358;' . $fab->price . '</td>
 
                         </tr>';
                     $i++;}}}
@@ -1346,17 +1346,17 @@ class Product extends MY_Controller
                     if (($current_date >= $fab->from_date) and ($current_date <= $fab->to_date)) {
                         if ($fab->offer_type == 'Percentage') {
                             $value = 100 - $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round(($fab->price / 100) * $value);
+                            $html .= '&#8358;' . round(($fab->price / 100) * $value);
                         } elseif ($fab->offer_type == 'Amount') {
                             $value = $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round($fab->price - $value);}
+                            $html .= '&#8358;' . round($fab->price - $value);}
 
                     } else {
                         $html .= "-";
                     }
 
                     $html .= '</td>
-                          <td style="padding:1%"><i class="fa fa-inr"></i>' . $fab->price . '</td>
+                          <td style="padding:1%">&#8358;' . $fab->price . '</td>
 
                         </tr>';
                     $i++;}}}
@@ -1429,7 +1429,7 @@ class Product extends MY_Controller
                     } else {
                         $html .= "Admin product";}
 
-                    $html .= '</td><td style="padding:1%"><i class="fa fa-inr"></i>' . $fab->price . '</td>
+                    $html .= '</td><td style="padding:1%">&#8358;' . $fab->price . '</td>
 
                         </tr>';
                     $i++;}}}
@@ -1519,7 +1519,7 @@ class Product extends MY_Controller
                     }
 
                     $html .= '</td>
-                          <td style="padding:1%"><i class="fa fa-inr"></i>' . $fab->price . '</td><td>' . $fab->quantity . '</td><td>';
+                          <td style="padding:1%">&#8358;' . $fab->price . '</td><td>' . $fab->quantity . '</td><td>';
                     $count = $this->db->query('select sum(`qty`) as qty from `order_items` where `status` != "cancel" and `status` !="return" and `pid`=' . $fab->acc_id . ' and `pname` Like "' . preg_replace('/[^A-Za-z0-9 ]/u', '', strip_tags($fab->brand)) . '"')->row()->qty;
 
                     $html .= ((int) $fab->quantity) - ((int) $count) . "</td><td>";
@@ -1528,10 +1528,10 @@ class Product extends MY_Controller
                     if (($current_date >= $fab->from_date) and ($current_date <= $fab->to_date)) {
                         if ($fab->offer_type == 'Percentage') {
                             $value = 100 - $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round(($fab->price / 100) * $value);
+                            $html .= '&#8358;' . round(($fab->price / 100) * $value);
                         } elseif ($fab->offer_type == 'Amount') {
                             $value = $fab->offer_price;
-                            $html .= '<i class="fa fa-inr"></i>' . round($fab->price - $value);}
+                            $html .= '&#8358;' . round($fab->price - $value);}
 
                     } else {
                         $html .= "-";
@@ -3137,31 +3137,31 @@ $("#"+response_id).html(response);
                 <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                     <div id="inouter" style="border-bottom:2px dashed #444;">
                     <br>
-                    <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                    <img src="<?=base_url();?>assets/images/logo2.jpg">
                     <br>
-                    <h2>Welcome to MobileDarzi!</h2>
+                    <h2>Welcome to ansvel!</h2>
                     <br>
 
                     <p>Dear  Customer,</p>
-                    <p>You made request for notification for a product when it is in stock... we are mobiledarzi </p>
+                    <p>You made request for notification for a product when it is in stock... we are ansvel </p>
 
 
                     <br>
 
-                    <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                    <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                     <p>We hope you enjoy our products and services.</p>
 
                     <p>Best Regards,</p>
                     <br>
-                    <p>Team MobileDarzi</p>
+                    <p>Team ansvel</p>
                     <br>
                     <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                     <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                     <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                     </div>
-                    <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                    <p class="small" style="text-align: center;">Copyright  &copy 2017 ansvel.com Powered by Absolute Innovations</p>
                 </div>
                 </body>
                 </html>';
@@ -3180,10 +3180,10 @@ $("#"+response_id).html(response);
             'crlf' => "\r\n",
             'newline' => "\r\n",
         ));
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
 //$this->email->cc('another@another-example.com');
-        $this->email->subject('Mobile Darzi Notification');
+        $this->email->subject('Ansvel Notification');
         $this->email->message($message);
         $this->email->send();
         redirect(base_url() . 'product/notifyme');
@@ -3264,7 +3264,7 @@ $("#"+response_id).html(response);
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -3305,11 +3305,11 @@ $("#"+response_id).html(response);
   <span class="expecteddate">Expect Date ' . $_POST['date'] . '</span>
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
   <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -3332,7 +3332,7 @@ $("#"+response_id).html(response);
             if (!empty($vinfo->contact)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $vinfo->contact;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Your returned product will come to you on" . $_POST['date'];
                 $route = 4;
                 $postData = array(
@@ -3371,10 +3371,10 @@ $("#"+response_id).html(response);
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -3393,7 +3393,7 @@ $("#"+response_id).html(response);
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 // $message1 = "We will come to you to pickup product that your requested to return on ".$_POST['date'];
 
                 $message1 = "Dear " . $uinfo->name . ", Your return request has approved. We will come to you to pick up the returnable product on " . $_POST['date'] . ".Please ensure your availability.";
@@ -3435,10 +3435,10 @@ $("#"+response_id).html(response);
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi Pickup From User');
+            $this->email->subject('Ansvel Pickup From User');
             $this->email->message($message);
             $this->email->send();
 
@@ -3541,7 +3541,7 @@ img{margin:2%;}
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
 <div id="inouter">
 <br>
 
@@ -3555,7 +3555,7 @@ img{margin:2%;}
 
 
 
-<p>Your order OMD ' . $pinfo[0]->oid . ' from MobileDarzi has been dispatched. You will receive your shipment on ' . date("d-M-Y", strtotime($_POST['date'])) . ' by the end of the day.
+<p>Your order OMD ' . $pinfo[0]->oid . ' from ansvel has been dispatched. You will receive your shipment on ' . date("d-M-Y", strtotime($_POST['date'])) . ' by the end of the day.
 </p>
 <p><b>Note:</b> Please note that a signature is required for the delivery of the package. If no one will be available to sign for the package , you may wish to make alternate delivery arrangement with the shipping department.</p>';} elseif ($_POST['shipping_status'] == 'Delivered') {
             $message .= ',</p>
@@ -3611,16 +3611,16 @@ Following are the item(s) in this package:
 
         $message .= '</table>
 
-<p>This email can\'t receive replies. If you have any questions or need help with something regarding our services or our products, Please contact our customer support at support@mobiledarzi.com or call us at +91 9644409191 or 0731-2557166 (Working hours 10:30am to 7pm, Monday-Saturday)
+<p>This email can\'t receive replies. If you have any questions or need help with something regarding our services or our products, Please contact our customer support at support@ansvel.com or call us at +91 9644409191 or 0731-2557166 (Working hours 10:30am to 7pm, Monday-Saturday)
 </p>
           <p>We hope you\'ll enjoy our products and services.
 </p>
           <br>
-<p>Regards,<br>Team MobileDarzi</p>
+<p>Regards,<br>Team ansvel</p>
 <br>
 <div class="footer"><center><a href="https://play.google.com/store/apps/details?id=com.hsup.hello&hl=en"><img src="' . base_url() . '/assets/sociallinks/playstore.png"></a><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
 <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-<center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+<center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
 </div>
 <p class="center small"><u>Unsubscribe</u><br></p>
 <p class="center small">Follow us on: <br>
@@ -3639,7 +3639,7 @@ Following are the item(s) in this package:
         if ($_POST['shipping_status'] == 'Pickup From Vendor') {
             $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $vinfo->contact;
-            $senderId = 'MDARZI';
+            $senderId = 'ANSVEL';
 
             $message1 = "Your order is ready to dispatch \norder id " . $_POST['pid'] . $msg2 . "\ntotal is" . $order_total->ototal;
             $route = 4;
@@ -3678,13 +3678,13 @@ Following are the item(s) in this package:
                 if ($order_total->bphone != $uinfo->mobile) {
                     $mobileNumber = $uinfo->mobile . "," . $order_total->bphone;
                 }
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
 
                 //$message1 = "Your order is ready to dispatch \norder id ".$_POST['pid'].$msg2."\ntotal is".$order_total->ototal;
                 if ($order_total->pay_method == 'COD') {
-                    $message1 = "Your order from MobileDarzi is dispatched. It will be delivered " . date("d-M-Y", strtotime($_POST['date'])) . " by the end of the day. Amount payable is Rs " . $order_total->ototal . ". Please ensure your availability. ";
+                    $message1 = "Your order from ansvel is dispatched. It will be delivered " . date("d-M-Y", strtotime($_POST['date'])) . " by the end of the day. Amount payable is Rs " . $order_total->ototal . ". Please ensure your availability. ";
                 } else if ($order_total->pay_method == 'PAYU') {
-                    $message1 = "Dear " . $uinfo->name . ", Your order from MobileDarzi is dispatched.It will be delivered " . date("d-M-Y", strtotime($_POST['date'])) . " by end of the day. Please ensure your availability.";
+                    $message1 = "Dear " . $uinfo->name . ", Your order from ansvel is dispatched.It will be delivered " . date("d-M-Y", strtotime($_POST['date'])) . " by end of the day. Please ensure your availability.";
                 }
                 $route = 4;
                 $postData = array(
@@ -3712,7 +3712,7 @@ Following are the item(s) in this package:
             $this->load->library('email');
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -3723,11 +3723,11 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
 
             /*  $this->email->initialize(array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.mobiledarzi.com',
+            'smtp_host' => 'mail.ansvel.com',
             'smtp_user' => 'absoluteinnovationspl2@gmail.com',
             'smtp_pass' => 'admin@111',
             'smtp_port' => 587,
@@ -3737,10 +3737,10 @@ Following are the item(s) in this package:
             'crlf' => "\r\n",
             'newline' => "\r\n"
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');*/
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');*/
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -3778,7 +3778,7 @@ Following are the item(s) in this package:
                 if ($order_total->bphone != $uinfo->mobile) {
                     $mobileNumber = $uinfo->mobile . "," . $order_total->bphone;
                 }
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "We are pleased to inform you the order OMD" . $order_total->oid . " has been delivered. For more detail please check your mail.";
                 //$message1 = "Thankyou for shoping with us. Your order is delivered on".$_POST['date']." \norder id ".$_POST['pid'].$msg2."\ntotal is".$order_total->ototal;
                 $route = 4;
@@ -3807,7 +3807,7 @@ Following are the item(s) in this package:
             $this->load->library('email');
             /*$this->email->initialize(array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.mobiledarzi.com',
+            'smtp_host' => 'mail.ansvel.com',
             'smtp_user' => 'absoluteinnovationspl2@gmail.com',
             'smtp_pass' => 'admin@111',
             'smtp_port' => 587,
@@ -3817,10 +3817,10 @@ Following are the item(s) in this package:
             'crlf' => "\r\n",
             'newline' => "\r\n"
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');*/
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');*/
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -3831,10 +3831,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -3868,7 +3868,7 @@ Following are the item(s) in this package:
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Your returned product will come to you on" . $_POST['date'] . " \norder id " . $_POST['pid'] . $msg2;
                 $route = 4;
                 $postData = array(
@@ -3906,10 +3906,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -3947,7 +3947,7 @@ Following are the item(s) in this package:
                 echo $query->tphone . 'll';die;
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $query->tphone;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Oeder no " . $_POST['pid'] . "is dispatch from admin on" . $_POST['date'] . " \n " . $msg2 . "\ntotal is" . $order_total->ototal;
                 $route = 4;
                 $postData = array(
@@ -3993,8 +3993,8 @@ Following are the item(s) in this package:
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
-                $message1 = "Dear " . $uinfo->name . ", You have stitching pickup appointment with MobileDarzi on " . $_POST['date'] . ". Please ensure your availability.";
+                $senderId = "ANSVEL";
+                $message1 = "Dear " . $uinfo->name . ", You have stitching pickup appointment with ansvel on " . $_POST['date'] . ". Please ensure your availability.";
                 /*$message1 = "We will pickup cloth from vendor on".$_POST['date']." \norder id ".$_POST['pid'].$msg2."\ntotal is".$order_total->ototal;*/
                 $route = 4;
                 $postData = array(
@@ -4032,10 +4032,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -4067,8 +4067,8 @@ Following are the item(s) in this package:
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
-                $message1 = "Dear " . $uinfo->name . ", You have stitching pickup appointment with MobileDarzi on " . $_POST['date'] . ". Please ensure your availability.";
+                $senderId = "ANSVEL";
+                $message1 = "Dear " . $uinfo->name . ", You have stitching pickup appointment with ansvel on " . $_POST['date'] . ". Please ensure your availability.";
                 /*$message1 = "We will pickup cloth from user on".$_POST['date']." \norder id ".$_POST['pid'].$msg2."\ntotal is".$order_total->ototal;*/
                 $route = 4;
                 $postData = array(
@@ -4106,10 +4106,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -4147,7 +4147,7 @@ Following are the item(s) in this package:
             if (!empty($query->tphone)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $query->tphone;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Picked From Tailor.";
                 $route = 4;
                 $postData = array(
@@ -4198,7 +4198,7 @@ Following are the item(s) in this package:
             <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='wrapper'>
                 <tr>
                     <td align='center' valign='top' style='padding: 15px 0;' class='logo'>
-                            <img alt='Logo' src='http://mobiledarzi.com/assets/images/logo2.jpg'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
+                            <img alt='Logo' src='<?=base_url();?>assets/images/logo2.jpg'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
                     </td>
                 </tr>
             </table>
@@ -4361,7 +4361,7 @@ Following are the item(s) in this package:
                         " . $site_address->office_add . "
                         <br>
                         <span style='font-family: Arial, sans-serif; font-size: 12px; color: #444444;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <a href='http://mobiledarzi.com' target='_blank' style='color: #666666; text-decoration: none;'>Mobile Darzi</a>
+                        <a href='http://ansvel.com' target='_blank' style='color: #666666; text-decoration: none;'>Ansvel</a>
                     </td>
                 </tr>
             </table>
@@ -4379,7 +4379,7 @@ Following are the item(s) in this package:
         if ($_POST['shipping_status'] == 'Picked From Vendor') {
             $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $vinfo->contact;
-            $senderId = 'MDARZI';
+            $senderId = 'ANSVEL';
             $message = 'Product picked Successfully.';
             $route = 4;
             $postData = array(
@@ -4423,7 +4423,7 @@ Following are the item(s) in this package:
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Your Product is on the way.";
                 $route = 4;
                 $postData = array(
@@ -4451,7 +4451,7 @@ Following are the item(s) in this package:
             $this->load->library('email');
             /*  $this->email->initialize(array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.mobiledarzi.com',
+            'smtp_host' => 'mail.ansvel.com',
             'smtp_user' => 'absoluteinnovationspl2@gmail.com',
             'smtp_pass' => 'admin@111',
             'smtp_port' => 587,
@@ -4461,11 +4461,11 @@ Following are the item(s) in this package:
             'crlf' => "\r\n",
             'newline' => "\r\n"
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');*/
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');*/
 
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -4476,11 +4476,11 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
 
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -4497,7 +4497,7 @@ Following are the item(s) in this package:
             if (!empty($uinfo->mobile)) {
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $uinfo->mobile;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Thank You For Shopping.";
                 $route = 4;
                 $postData = array(
@@ -4525,7 +4525,7 @@ Following are the item(s) in this package:
             $this->load->library('email');
             /* $this->email->initialize(array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.mobiledarzi.com',
+            'smtp_host' => 'mail.ansvel.com',
             'smtp_user' => 'absoluteinnovationspl2@gmail.com',
             'smtp_pass' => 'admin@111',
             'smtp_port' => 587,
@@ -4535,10 +4535,10 @@ Following are the item(s) in this package:
             'crlf' => "\r\n",
             'newline' => "\r\n"
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');*/
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');*/
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -4549,10 +4549,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -4579,7 +4579,7 @@ Following are the item(s) in this package:
                 //echo $query->tphone;die;
                 $authKey = "136895AdMGPnqo6n5875df12";
                 $mobileNumber = $query->tphone;
-                $senderId = "MDARZI";
+                $senderId = "ANSVEL";
                 $message1 = "Dispatch To Tailor.";
                 $route = 4;
                 $postData = array(
@@ -4619,10 +4619,10 @@ Following are the item(s) in this package:
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
@@ -6827,7 +6827,7 @@ $unique_order_ids=$data2->oid;
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -6835,7 +6835,7 @@ $unique_order_ids=$data2->oid;
   <p>Dear ' . $user_info->name . ',</p>
 
 
-  <p>Your request for cancel product is disapproved by MobileDarzi. </p>
+  <p>Your request for cancel product is disapproved by ansvel. </p>
   <b>Reason:</b>' . $this->input->post("reason") . '<br>
 
   <br>
@@ -6861,11 +6861,11 @@ $unique_order_ids=$data2->oid;
 
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
   <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -6893,18 +6893,18 @@ $unique_order_ids=$data2->oid;
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Cancel request is disapproved by mobiledarzi \n ";
+        $message1 = "Your Cancel request is disapproved by ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -7022,7 +7022,7 @@ $unique_order_ids=$data2->oid;
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -7030,7 +7030,7 @@ $unique_order_ids=$data2->oid;
   <p>Dear ' . $user_info->name . ',</p>
 
 
-  <p>Your request for return product is disapproved by MobileDarzi.</p>
+  <p>Your request for return product is disapproved by ansvel.</p>
   <b>Reason:</b>' . $this->input->post("reason") . '<br>
 
   <br>
@@ -7056,11 +7056,11 @@ $unique_order_ids=$data2->oid;
 
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
   <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -7088,18 +7088,18 @@ $unique_order_ids=$data2->oid;
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Return request is disapproved by mobiledarzi \n ";
+        $message1 = "Your Return request is disapproved by ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -7210,7 +7210,7 @@ $unique_order_ids=$data2->oid;
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -7244,11 +7244,11 @@ $unique_order_ids=$data2->oid;
 
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
   <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -7276,18 +7276,18 @@ $unique_order_ids=$data2->oid;
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Cancel request is approved by mobiledarzi \n ";
+        $message1 = "Your Cancel request is approved by ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -7395,7 +7395,7 @@ $unique_order_ids=$data2->oid;
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -7429,11 +7429,11 @@ $unique_order_ids=$data2->oid;
 
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
   <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: absoluteinnovationspl2@gmail.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -7461,18 +7461,18 @@ $unique_order_ids=$data2->oid;
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Return request is approved by mobiledarzi \n ";
+        $message1 = "Your Return request is approved by ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -8262,9 +8262,9 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
         redirect("Product/shipping");
     }
 
-    public function view_mobiledarzi()
+    public function view_ansvel()
     {
-        $all = $this->db->get("mobiledarzi");
+        $all = $this->db->get("ansvel");
         $data['totalpro'] = $all->num_rows();
         $data['fab'] = $all->result();
         $this->template['middle'] = $this->load->view($this->middle = 'admin/view_links', $data, true);
@@ -8753,13 +8753,13 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                               <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                                   <div id="inouter" style="border-bottom:2px dashed #444;">
                                   <br>
-                                  <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                                  <img src="<?=base_url();?>assets/images/logo2.jpg">
                                   <br>
 
                                   <br>
 
                                   <p>Dear ' . $userdata->name . ',</p>
-                                  <p>Thank you for making an bridal appointment with MobileDarzi, Your appointment is confirmed with following details:. </p>
+                                  <p>Thank you for making an bridal appointment with ansvel, Your appointment is confirmed with following details:. </p>
                                   <table>
                                   <tr><td>Contact</td><td>:</td><td>' . $userdata->contact . '</td></tr>
                                   <tr><td>Address</td><td>:</td><td>' . $userdata->address . '</td></tr>
@@ -8773,20 +8773,20 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
 
                                   <br>
 
-                                  <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                                  <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                                   <p>We hope you enjoy our products and services.</p>
 
                                   <p>Best Regards,</p>
                                   <br>
-                                  <p>Team MobileDarzi</p>
+                                  <p>Team ansvel</p>
                                   <br>
                                   <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                                   <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                                   <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                                   </div>
-                                  <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                                  <p class="small" style="text-align: center;">Copyright  &copy 2017 ansvel.com Powered by Absolute Innovations</p>
                               </div>
                               </body>
                               </html>';
@@ -8805,18 +8805,18 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi Bridal Appointment');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel Bridal Appointment');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
             /**/
             $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $userdata->contact;
-            $senderId = 'MDARZI';
-            $message1 = "Dear " . $userdata->name . "\n Your Appointment for bridal on mobile darzi has been confirmed with following detail\nContact:" . $userdata->contact . "\nAddress:" . $userdata->address . "\nCity:" . $userdata->city . "\nAppointment Date:" . $userdata->app_date . "\nAppointment Time:" . $userdata->app_time . "\nQuery:" . $userdata->query;
+            $senderId = 'ANSVEL';
+            $message1 = "Dear " . $userdata->name . "\n Your Appointment for bridal on Ansvel has been confirmed with following detail\nContact:" . $userdata->contact . "\nAddress:" . $userdata->address . "\nCity:" . $userdata->city . "\nAppointment Date:" . $userdata->app_date . "\nAppointment Time:" . $userdata->app_time . "\nQuery:" . $userdata->query;
 
             $route = 4;
             $postData = array(
@@ -8876,13 +8876,13 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                               <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                                   <div id="inouter" style="border-bottom:2px dashed #444;">
                                   <br>
-                                  <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                                  <img src="<?=base_url();?>assets/images/logo2.jpg">
                                   <br>
 
                                   <br>
 
                                   <p>Dear ' . $userdata->user_name . ',</p>
-                                  <p>Thank you for booking more-service appointment with MobileDarzi. We are looking forward to meet you and discuss your design needs. Following are your appointment details. </p>
+                                  <p>Thank you for booking more-service appointment with ansvel. We are looking forward to meet you and discuss your design needs. Following are your appointment details. </p>
                                   <p>Please ensure your availability on given date and place.</p><br><br>
 
                                   <table>
@@ -8898,20 +8898,20 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
 
                                   <br>
 
-                                  <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                                  <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                                   <p>We hope you enjoy our products and services.</p>
 
                                   <p>Best Regards,</p>
                                   <br>
-                                  <p>Team MobileDarzi</p>
+                                  <p>Team ansvel</p>
                                   <br>
                                   <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                                   <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                                   <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                                   </div>
-                                  <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                                  <p class="small" style="text-align: center;">Copyright  &copy 2017 ansvel.com Powered by Absolute Innovations</p>
                               </div>
                               </body>
                               </html>';
@@ -8930,18 +8930,18 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi More Services');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel More Services');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
             /**/
             /* $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $userdata->contact;
-            $senderId = 'MDARZI';
-            $message1 = "Dear ".$userdata->name."\n Your Appointment for bridal on mobile darzi has been confirmed with following detail\nContact:".$userdata->contact."\nAddress:".$userdata->address."\nCity:".$userdata->city."\nAppointment Date:".$userdata->app_date."\nAppointment Time:".$userdata->app_time."\nQuery:".$userdata->query;
+            $senderId = 'ANSVEL';
+            $message1 = "Dear ".$userdata->name."\n Your Appointment for bridal on Ansvel has been confirmed with following detail\nContact:".$userdata->contact."\nAddress:".$userdata->address."\nCity:".$userdata->city."\nAppointment Date:".$userdata->app_date."\nAppointment Time:".$userdata->app_time."\nQuery:".$userdata->query;
 
             $route = 4;
             $postData = array(
@@ -8994,31 +8994,31 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                                <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                                    <div id="inouter" style="border-bottom:2px dashed #444;">
                                    <br>
-                                   <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                                   <img src="<?=base_url();?>assets/images/logo2.jpg">
                                    <br>
 
                                    <br>
 
                                    <p>Dear ' . $userdata->name . ',</p>
-                                   <p>Thank you for making an bridal appointment with MobileDarzi, but due to some reasons your appointment is canceled. </p>
+                                   <p>Thank you for making an bridal appointment with ansvel, but due to some reasons your appointment is canceled. </p>
 
 
                                    <br>
 
-                                   <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                                   <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                                    <p>We hope you enjoy our products and services.</p>
 
                                    <p>Best Regards,</p>
                                    <br>
-                                   <p>Team MobileDarzi</p>
+                                   <p>Team ansvel</p>
                                    <br>
                                    <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                                    <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                                    <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                                    </div>
-                                   <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                                   <p class="small" style="text-align: center;">Copyright  &copy 2017 ansvel.com Powered by Absolute Innovations</p>
                                </div>
                                </body>
                                </html>';
@@ -9037,18 +9037,18 @@ $data['totalpro']=$count1+$count2+$count3+$count4;*/
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi Bridal Appointment');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel Bridal Appointment');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
             /**/
             $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $userdata->contact;
-            $senderId = 'MDARZI';
-            $message1 = "Dear " . $userdata->name . "\n Your Appointment for bridal on mobile darzi has been cancel due to some reasons.";
+            $senderId = 'ANSVEL';
+            $message1 = "Dear " . $userdata->name . "\n Your Appointment for bridal on Ansvel has been cancel due to some reasons.";
 
             $route = 4;
             $postData = array(
@@ -11141,7 +11141,7 @@ if(check.length==k)
 
     }
 
-    public function add_mobiledarzi($edit = false)
+    public function add_ansvel($edit = false)
     {
         if ($edit == true) {
             // echo "sdf";exit;
@@ -11149,12 +11149,12 @@ if(check.length==k)
                 $data = array("heading" => $this->input->post("heading"),
                     "link" => $this->input->post("link"));
                 $this->db->where("id", $this->uri->segment(3));
-                if ($this->db->update('mobiledarzi', $data)) {
+                if ($this->db->update('ansvel', $data)) {
                     $msg = " Updated Successfully.";
                 } else {
                     $msg = " Couldnot be Updated.";
                 }
-                redirect("Product/add_mobiledarzi/" . $this->uri->segment(3));
+                redirect("Product/add_ansvel/" . $this->uri->segment(3));
 
             }
 
@@ -11162,18 +11162,18 @@ if(check.length==k)
             if ($this->input->post("heading")) {
                 $data = array("heading" => $this->input->post("heading"),
                     "link" => $this->input->post("link"));
-                if ($this->db->insert('mobiledarzi', $data)) {
+                if ($this->db->insert('ansvel', $data)) {
                     $msg = "Added Successfully.";
                 } else {
                     $msg = "Couldnot be Added.";
                 }
-                redirect("Product/add_mobiledarzi");
+                redirect("Product/add_ansvel");
 
             }
 
         }
 
-        $this->middle = 'admin/add_mobiledarzi';
+        $this->middle = 'admin/add_ansvel';
         $this->adminlayout();
 
     }
@@ -14447,7 +14447,7 @@ $data['post'] = $this->db->get_where("timeline", array("postid" => $this->db->in
     public function link_menu_enable()
     {
         $this->db->where('id', $_POST['sid']);
-        $this->db->update('mobiledarzi', array('status_enable' => 'enable'));
+        $this->db->update('ansvel', array('status_enable' => 'enable'));
     }
 
     public function faq_enable()
@@ -14495,7 +14495,7 @@ $data['post'] = $this->db->get_where("timeline", array("postid" => $this->db->in
     public function link_menu_disable()
     {
         $this->db->where('id', $_POST['sid']);
-        $this->db->update('mobiledarzi', array('status_enable' => 'disable'));
+        $this->db->update('ansvel', array('status_enable' => 'disable'));
     }
     public function update_heading($id)
     {

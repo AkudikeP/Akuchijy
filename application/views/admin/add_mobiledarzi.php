@@ -78,7 +78,7 @@
               <div class="col-sm-12 col-md-4 col-lg-12">
                 <div class="form-wizard condensed mgbt-xs-20">
                   <ul class="nav nav-tabs nav-stacked">
-                    <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Mobile Darzi Link </a></li>                
+                    <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Ansvel Link </a></li>                
                   </ul>
                 </div>
               </div>
@@ -95,8 +95,8 @@
                       <div id="tabinfo" class="tab-pane active">
                        <?php 
 					   if($this->uri->segment(3)){
-              $edit=$this->db->get_where("mobiledarzi",array("id"=>$this->uri->segment(3)))->row();
-               echo form_open_multipart("Product/add_mobiledarzi/".$this->uri->segment(3),array("class"=>"form-horizontal"));?>
+              $edit=$this->db->get_where("ansvel",array("id"=>$this->uri->segment(3)))->row();
+               echo form_open_multipart("Product/add_ansvel/".$this->uri->segment(3),array("class"=>"form-horizontal"));?>
                              
                           <h3 class="mgtp-15 mgbt-xs-20"> Details</h3>
 
@@ -128,7 +128,7 @@
                
              }else{
              
-             echo form_open_multipart("Product/add_mobiledarzi",array("class"=>"form-horizontal"));?>
+             echo form_open_multipart("Product/add_ansvel",array("class"=>"form-horizontal"));?>
                         
                         
                           <h3 class="mgtp-15 mgbt-xs-20"> Details</h3>
@@ -271,7 +271,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved 
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved 
                 </div>
               </div>
             </div><!-- row -->

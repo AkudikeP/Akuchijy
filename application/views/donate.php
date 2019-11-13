@@ -263,7 +263,7 @@
       <div class="modal-content">
 
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-     <h3 align="center"><strong>Donate now at Mobile Darzi</strong></h3>
+     <h3 align="center"><strong>Donate now at Ansvel</strong></h3>
         <div class="modal-body">
 <?php $user_data = $this->db->get_where('users',array('uid'=>$this->session->userdata("userid")))->row(); ?>
 

@@ -159,7 +159,7 @@ $url =  str_replace("--","-",base_url().'online-boutique/'.$catname->mcat_name.'
                 $value = $access->offer_price;
                 $x=$access->price - $value;
             ?>
-             <div class="product-preview__label product-preview__label--left product-preview__label--sale"><span><i class="fa fa-inr"></i><?php echo $access->offer_price;?> OFF</span></div>
+             <div class="product-preview__label product-preview__label--left product-preview__label--sale"><span>&#8358;<?php echo $access->offer_price;?> OFF</span></div>
 
             <?php
               }
@@ -176,9 +176,9 @@ $url =  str_replace("--","-",base_url().'online-boutique/'.$catname->mcat_name.'
             if($access->offer_type=='Percentage' OR $access->offer_type=='Amount')
               {
             ?>
-              <span class="price-box__old"><i class="fa fa-inr"></i> <?php echo round($access->price);?></span>
+              <span class="price-box__old">&#8358; <?php echo round($access->price);?></span>
 
-            <span class="price-box__new"><i class="fa fa-inr"></i> <?php echo round($x);?></span>
+            <span class="price-box__new">&#8358; <?php echo round($x);?></span>
 
             <?php
               }
@@ -187,7 +187,7 @@ $url =  str_replace("--","-",base_url().'online-boutique/'.$catname->mcat_name.'
 
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <?php echo round($x);?></span>
+            <span class="price-box__new">&#8358; <?php echo round($x);?></span>
 
             <?php
               }

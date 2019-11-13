@@ -111,7 +111,7 @@
                          
                           <td width="200px;"><?php echo $fab->subcategory;?></td>
                           <td class="center"><?php echo $fab->vendor_name."&nbsp"; ?><?php if(!empty($fab->vendor_id)){echo 'VMD-'.$fab->vendor_id;}else{echo 'Admin\' product';} ?></td>
-                          <td><i class="fa fa-inr"></i><?php echo $fab->price;?></td>
+                          <td>&#8358;<?php echo $fab->price;?></td>
                           </td>
                           <td>
                           <a data-toggle="tooltip" title="Edit" class="btn btn-xs btn-warning" href="<?php echo base_url();?>index.php/product/more_services/<?php echo $fab->id;?>"><i class="fa fa-edit"></i></a> 

@@ -143,7 +143,7 @@
                          
                           $qty = $fab->quantity;
                           echo (int)$qty-(int)$count;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $fab->price;?></td>
+                          <td>&#8358; <?php echo $fab->price;?></td>
                           <td><?php
 
             $current_date=date('Y-m-d');
@@ -154,13 +154,13 @@
             <?php if($fab->offer_type=='Percentage')
               {
                 $value = 100 - $fab->offer_price;
-                echo $x='<i class="fa fa-inr"></i>'.round(($fab->price/100)*$value);
+                echo $x='&#8358;'.round(($fab->price/100)*$value);
                 
               }
               elseif($fab->offer_type=='Amount')
               {
                 $value = $fab->offer_price;
-                echo $x='<i class="fa fa-inr"></i>'.round($fab->price - $value);
+                echo $x='&#8358;'.round($fab->price - $value);
             
               }
 

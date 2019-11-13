@@ -115,7 +115,7 @@
                 <i class="icon-users"></i>
             </span>-->
             <span class="menu-value">
-                <i class="fa fa-inr"></i> <?php echo $paid;?>
+                &#8358; <?php echo $paid;?>
             </span>
         </div>
         <div class="menu-text clearfix">
@@ -138,7 +138,7 @@
                 <i class="fa fa-tasks"></i>
             </span>-->
             <span class="menu-value">
-               <i class="fa fa-inr"></i> <?php echo $due;?>
+               &#8358; <?php echo $due;?>
             </span>
         </div>
         <div class="menu-text clearfix">

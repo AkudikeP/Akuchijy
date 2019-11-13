@@ -889,7 +889,7 @@ $social = $wish->login_with; ?>
                           </a></h2>
                         </div>
                         <div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
-  <div class="price-box "><span class="price-box__new"><i class="fa fa-inr"></i> <?php echo $wish_data['price']; ?></span> </div>
+  <div class="price-box "><span class="price-box__new">&#8358; <?php echo $wish_data['price']; ?></span> </div>
   <div class="overlay2 btn btn-default" id="<?php echo $value->id; ?>">Remove</div><div id="caddtocart<?php echo $wish_data['id'];?>" class=" btn btn-default" href="<?php echo $wish_data['type']; ?>" ><i class="fa fa-shopping-cart"></i>Add To Cart</div>
                       </div>
 

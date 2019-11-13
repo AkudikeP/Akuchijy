@@ -184,7 +184,7 @@
                           <td>
                            <?php echo $fab->vendor_name."&nbsp"; ?><br><?php if(!empty($fab->vendor_id)){echo 'VMD-'.$fab->vendor_id;}else{echo 'Admin\' product';} ?>
                            </td>                  
-                          <td><i class="fa fa-inr"></i><?php echo $fab->price;?></td>
+                          <td>&#8358;<?php echo $fab->price;?></td>
                           
                           </td>
                           <td>

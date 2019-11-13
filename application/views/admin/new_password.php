@@ -13,7 +13,7 @@ if($this->session->userdata('a_id')=='')
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Admin</title>
+    <title>Ansvel | Admin</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
     <meta name="description" content="Login Pages - Responsive Admin HTML Template">
     <meta name="author" content="Venmond">
@@ -121,7 +121,7 @@ body
             <div class="vd_login-page">
               <div class="heading clearfix">
                 <div class="logo">
-                  <h2 class="mgbt-xs-5"><img src="http://mobiledarzi.com/assets/images/logo2.jpg" alt="logo"></h2>
+                  <h2 class="mgbt-xs-5"><img src="<?=base_url();?>assets/images/logo2.jpg" alt="logo"></h2>
                 </div>
                 <h4 class="text-center font-semibold vd_grey">CREATE NEW PASSWORD</h4>
               </div>

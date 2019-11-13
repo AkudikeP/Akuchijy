@@ -66,7 +66,7 @@
 
                           <td><?php echo $fabric->title;?></td>
                           <td><?php if($fabric->category==1) echo "Women" ;?><?php if($fabric->category==2) echo "Men" ;?><?php if($fabric->category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $fabric->price;?></td>
+                          <td>&#8358; <?php echo $fabric->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/vendor/add_fabric/<?php echo $fabric->id;?>"><i class="fa fa-edit"></i></a>
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_fabric" id="<?php echo $fabric->id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -86,7 +86,7 @@
 
                           <td><?php echo $uniform->school_name;?></td>
                           <td><?php echo $uniform->uni_category; ?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $uniform->price;?></td>
+                          <td>&#8358; <?php echo $uniform->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>vendor/add_uniform/<?php echo $uniform->uniform_id;?>"><i class="fa fa-edit"></i></a>
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_uni" id="<?php echo $uniform->uniform_id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -106,7 +106,7 @@
 
                           <td><?php echo $acce->brand;?></td>
                           <td><?php if($acce->main_category==1) echo "Women" ;?><?php if($acce->main_category==2) echo "Men" ;?><?php if($acce->main_category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $acce->price;?></td>
+                          <td>&#8358; <?php echo $acce->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/vendor/add_accessories/<?php echo $acce->acc_id;?>"><i class="fa fa-edit"></i></a>
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_acc" id="<?php echo $acce->acc_id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -125,7 +125,7 @@
 
                           <td><?php echo $online->brand;?></td>
                           <td><?php if($online->main_category==1) echo "Women" ;?><?php if($online->main_category==2) echo "Men" ;?><?php if($online->main_category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $online->price;?></td>
+                          <td>&#8358; <?php echo $online->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/vendor/add_online/<?php echo $online->id;?>"><i class="fa fa-edit"></i></a>
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_online" id="<?php echo $online->id;?>" type="button"><i class="fa fa-trash-o"></i></button>
@@ -142,7 +142,7 @@
 
                           <td><?php echo $more->subcategory;?></td>
                           <td><?php if($more->category==1) echo "Women" ;?><?php if($more->category==2) echo "Men" ;?><?php if($more->category==3) echo "Kids" ;?></td>
-                          <td><i class="fa fa-inr"></i> <?php echo $more->price;?></td>
+                          <td>&#8358; <?php echo $more->price;?></td>
                           <td>
                           <a class="btn btn-xs btn-warning" data-toggle="tooltip" title="Edit" href="<?php echo base_url();?>index.php/vendor/add_online/<?php echo $more->id;?>"><i class="fa fa-edit"></i></a>
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_online" id="<?php echo $more->id;?>" type="button"><i class="fa fa-trash-o"></i></button>

@@ -41,9 +41,9 @@
 
                 <div class="shopping-cart__item__info__option">Qty: <?php echo $cart['qty'];?></div>
 
-                  <div class="shopping-cart__item__info__option">SubTotal: <i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?></div>
+                  <div class="shopping-cart__item__info__option">SubTotal: &#8358; <?php echo $cart['subtotal'];?></div>
 
-                   <!-- <div class="shopping-cart__item__info__price"><i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?>/-</div>-->
+                   <!-- <div class="shopping-cart__item__info__price">&#8358; <?php echo $cart['subtotal'];?>/-</div>-->
 
 
 
@@ -61,7 +61,7 @@
 
 										<div class="pull-left"><span class="shopping-cart__total">
 
-                                        <i class="fa fa-inr"></i> <?php echo $this->cart->total();?></span></div>
+                                        &#8358; <?php echo $this->cart->total();?></span></div>
 
 										<div class="pull-right">
 

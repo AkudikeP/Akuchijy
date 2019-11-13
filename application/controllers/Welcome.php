@@ -212,7 +212,7 @@ class Welcome extends MY_Controller
             $authKey = '136895AdMGPnqo6n5875df12';
             $mobileNumber = $uinfo->mobile;
             $senderId = 'Ansvel';
-            $message1 = "Your order has been placed with mobiledarzi \norder id " . $oid . $msg2 . "\ntotal is" . $order_total->ototal;
+            $message1 = "Your order has been placed with ansvel \norder id " . $oid . $msg2 . "\ntotal is" . $order_total->ototal;
 
             $route = 4;
             $postData = array(
@@ -357,7 +357,7 @@ class Welcome extends MY_Controller
         $message = "Your account has been created.
         Please click this link to activate your account:
         base_url()index.php/welcome/verify_email/$id";
-        $this->email->from($from_email, 'Mobile Darzi');
+        $this->email->from($from_email, 'Ansvel');
         $this->email->to($to_email);
         $this->email->subject($subject);
         $this->email->message($message);
@@ -389,9 +389,9 @@ class Welcome extends MY_Controller
         $authKey = "136895AdMGPnqo6n5875df12";
         $mobileNumber = $this->input->post('country_code') . $this->input->post('contact');
         //Sender ID,While using route4 sender id should be 6 characters long.
-        $senderId = "MDARZI";
+        $senderId = "ANSVEL";
         //Your message to send, Add URL encoding here.
-        $message = "Thank You For Registration With Mobile Darzi. Your Account Activation Code is " . $status;
+        $message = "Thank You For Registration With Ansvel. Your Account Activation Code is " . $status;
         //Define route
         $route = 4;
         //Prepare you post parameters
@@ -2428,7 +2428,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($fab['title'], 0, 35);
             if (strlen($fab['title']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $fab['price']; ?></div>
 
       </div>
 
@@ -2464,7 +2464,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($acc['brand'], 0, 35);
             if (strlen($acc['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $acc['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $acc['price']; ?></div>
 
       </div>
 
@@ -2500,7 +2500,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($on['brand'], 0, 35);
             if (strlen($on['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $on['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $on['price']; ?></div>
 
       </div>
 
@@ -2541,7 +2541,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($fab['title'], 0, 35);
             if (strlen($fab['title']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $fab['price']; ?></div>
 
       </div>
 
@@ -2577,7 +2577,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($acc['brand'], 0, 35);
             if (strlen($acc['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $acc['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $acc['price']; ?></div>
 
       </div>
 
@@ -2613,7 +2613,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($on['brand'], 0, 35);
             if (strlen($on['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $on['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $on['price']; ?></div>
 
       </div>
 
@@ -2651,7 +2651,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($fab['title'], 0, 35);
             if (strlen($fab['title']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $fab['price']; ?></div>
 
       </div>
 
@@ -2687,7 +2687,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($acc['brand'], 0, 35);
             if (strlen($acc['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $acc['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $acc['price']; ?></div>
 
       </div>
 
@@ -2723,7 +2723,7 @@ $keyword = $this->session->userdata('city_session');
           <h2><a href="#"><?php echo substr($on['brand'], 0, 35);
             if (strlen($on['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $on['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $on['price']; ?></div>
 
       </div>
 
@@ -2780,7 +2780,7 @@ $keyword = $this->session->userdata('city_session');
         <h2><a href="#"><?php echo substr($fab['title'], 0, 35);
             if (strlen($fab['title']) > 35) {echo '...';} ?></a></h2>
 </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $fab['price']; ?></div>
 
       </div>
 
@@ -2818,7 +2818,7 @@ $keyword = $this->session->userdata('city_session');
             if (strlen($acc['brand']) > 35) {echo '...';} ?></a></h2>
 
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $acc['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $acc['price']; ?></div>
 
       </div>
 
@@ -2855,7 +2855,7 @@ $keyword = $this->session->userdata('city_session');
             <h2><a href="#"><?php echo substr($on['brand'], 0, 35);
             if (strlen($on['brand']) > 35) {echo '...';} ?></a></h2>
         </div>
-        <div class="price-box"><i class="fa fa-inr"></i> <?php echo $on['price']; ?></div>
+        <div class="price-box">&#8358; <?php echo $on['price']; ?></div>
 
 
       </div>
@@ -2949,7 +2949,7 @@ $keyword = $this->session->userdata('city_session');
               <h2 class="text-uppercase"><a href="#"><?php echo $st->add_on_name; ?></a></h2>
             </div>
 
-            <div class="price-box"><span class="price-box__new" style="font-size:14px;padding:1%;"><i class="fa fa-inr"></i> <?php echo $st->add_on_price; ?>/-</span> </div>
+            <div class="price-box"><span class="price-box__new" style="font-size:14px;padding:1%;">&#8358; <?php echo $st->add_on_price; ?>/-</span> </div>
           </div></div><?php
 }
 
@@ -2966,7 +2966,7 @@ $keyword = $this->session->userdata('city_session');
               <h2 class="text-uppercase"><a href="#"><?php echo $st->style; ?></a></h2>
             </div>
 
-            <div class="price-box"><span class="price-box__new" style="font-size:14px;padding:1%;"><i class="fa fa-inr"></i> <?php echo $st->sprice; ?>/-</span> </div>
+            <div class="price-box"><span class="price-box__new" style="font-size:14px;padding:1%;">&#8358; <?php echo $st->sprice; ?>/-</span> </div>
           </div></div><?php
 }}
     public function session_addon()
@@ -3017,7 +3017,7 @@ $keyword = $this->session->userdata('city_session');
               <h2 class="text-uppercase"><a href="#"><?php echo $ims->dname; ?></a></h2>
             </div>
 
-            <div class="price-box"><span class="price-box__new"><i class="fa fa-inr"></i> <?php echo $ims->dprice; ?></span> </div>
+            <div class="price-box"><span class="price-box__new">&#8358; <?php echo $ims->dprice; ?></span> </div>
           </div>
           </div><?php
 }
@@ -3269,7 +3269,6 @@ $keyword = $this->session->userdata('city_session');
     }
     public function addtocart_bundle()
     {
-        print_r($_POST); die();
         $this->load->library('session');
         $total = 0;
         $vendor_id = '';
@@ -3298,12 +3297,6 @@ $keyword = $this->session->userdata('city_session');
             } else {
                 $x = round($data->price);
             }
-/*print_r($this->session->userdata('fabric_id'));
-print_r($this->session->userdata('qty'));
-print_r($this->session->userdata('size'));
-print_r($this->session->userdata('color'));
-print_r($this->session->userdata('sku'));
-print_r($this->session->userdata('productlink'));*/
 
             $data = array(
                 'part_ids' => $fabric_id,
@@ -3318,19 +3311,70 @@ print_r($this->session->userdata('productlink'));*/
             );
             $this->db->insert('bundle', $data);
             $total = $data['fabric_price'];
-//echo $fabric_name; die;
-            //$this->db->last_query();die;
         }
+        $this->load->library('upload');
+        $config['upload_path'] = './assets/images/';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
+        $config['max_size'] = '20480';
+        $config['max_filename'] = '200';
+        $config['file_ext_tolower'] = true;
+        $config['max_filename_increment'] = '10';
+        $config['encrypt_name'] = true;
+        $this->upload->initialize($config);
 
-        if (isset($_POST['c_image'])) {
+        if ( ! empty($_FILES['right_view']['name'])  && $this->upload->do_upload('right_view')) {
+            $file = $this->upload->data()['file_name'];
             $data = array(
-                'image' => $_POST['c_image'],
+                'image' => $file,
                 'desc' => $_POST['upload_desc'],
             );
             $this->db->insert('upload_designs', $data);
             $insert_id = $this->db->insert_id();
-
-            //echo  $insert_id;
+            $data = array(
+                'part_ids' => $insert_id,
+                'bundle_no' => $bundle_no,
+                'addon_or_not' => 3,
+            );
+            $this->db->insert('bundle', $data);
+        }
+        if ( ! empty($_FILES['right_view']['name'])  && $this->upload->do_upload('right_view')) {
+            $file = $this->upload->data()['file_name'];
+            $data = array(
+                'image' => $file,
+                'desc' => 'Right view'
+            );
+            $this->db->insert('upload_designs', $data);
+            $insert_id = $this->db->insert_id();
+            $data = array(
+                'part_ids' => $insert_id,
+                'bundle_no' => $bundle_no,
+                'addon_or_not' => 3,
+            );
+            $this->db->insert('bundle', $data);
+        }
+        if ( ! empty($_FILES['left_view']['name'])  && $this->upload->do_upload('left_view')) {
+            $file = $this->upload->data()['file_name'];
+            $data = array(
+                'image' => $file,
+                'desc' => 'Left view'
+            );
+            $this->db->insert('upload_designs', $data);
+            $insert_id = $this->db->insert_id();
+            $data = array(
+                'part_ids' => $insert_id,
+                'bundle_no' => $bundle_no,
+                'addon_or_not' => 3
+            );
+            $this->db->insert('bundle', $data);
+        }
+        if ( ! empty($_FILES['back_view']['name'])  && $this->upload->do_upload('back_view')) {
+            $file = $this->upload->data()['file_name'];
+            $data = array(
+                'image' => $file,
+                'desc' => 'Back view',
+            );
+            $this->db->insert('upload_designs', $data);
+            $insert_id = $this->db->insert_id();
             $data = array(
                 'part_ids' => $insert_id,
                 'bundle_no' => $bundle_no,
@@ -3358,9 +3402,6 @@ print_r($this->session->userdata('productlink'));*/
                 foreach ($form as $key => $value) {
                     if ($value != "") {
                         if ($key != 'fabric' && $key != 'custom' && $key != 'qty') {
-
-                            //  print_r($value);
-                            //echo gettype($value);
                             if ($key == 'predesign') {
                                 $this->db->select("id,dfront,dprice");
                                 $this->db->where("id", $value);
@@ -3716,9 +3757,9 @@ print_r($this->session->userdata('productlink'));*/
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi</h2>
+                            <h2>Welcome to ansvel</h2>
                             <br>
 
                             <p>Dear  ' . $this->session->userdata('name') . ',</p>
@@ -3734,7 +3775,7 @@ print_r($this->session->userdata('productlink'));*/
 
                             <p>Your Sincerely,</p>
                             <br>
-                            <p>MobileDarzi Team</p>
+                            <p>ansvel Team</p>
                             <br>
 
 
@@ -3757,9 +3798,9 @@ print_r($this->session->userdata('productlink'));*/
                                 'crlf' => "\r\n",
                                 'newline' => "\r\n",
                             ));
-                            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+                            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
                             $this->email->to($tellyourfriend->own);
-                            $this->email->subject('Mobile Darzi');
+                            $this->email->subject('Ansvel');
                             $this->email->message($message2);
                             $this->email->send();} else {
                             return "Invalid Coupon code";
@@ -3862,9 +3903,9 @@ where id = $value");
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi</h2>
+                            <h2>Welcome to ansvel</h2>
                             <br>
 
                             <p>Dear  ' . $this->session->userdata('name') . ',</p>
@@ -3879,7 +3920,7 @@ where id = $value");
 
                             <p>Your Sincerely,</p>
                             <br>
-                            <p>MobileDarzi Team</p>
+                            <p>ansvel Team</p>
                             <br>
 
 
@@ -3898,13 +3939,13 @@ where id = $value");
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi</h2>
+                            <h2>Welcome to ansvel</h2>
                             <br>
 
                             <p>Dear  ' . $this->input->post("emailFriend") . ',</p>
-                            <p>Your friend ( ' . $this->session->userdata('name') . ' ) has sent you a special 10% stitching discount for <a href="' . base_url() . '">www.MobileDarzi.com</a>. MobileDarzi is the first online custom made tailoring store and provides the highest quality garments and alteration for the lowest price.</p>
+                            <p>Your friend ( ' . $this->session->userdata('name') . ' ) has sent you a special 10% stitching discount for <a href="' . base_url() . '">www.ansvel.com</a>. ansvel is the first online custom made tailoring store and provides the highest quality garments and alteration for the lowest price.</p>
 
 
                             <br>
@@ -3918,7 +3959,7 @@ where id = $value");
 
                             <p>Your Sincerely,</p>
                             <br>
-                            <p>MobileDarzi Team</p>
+                            <p>ansvel Team</p>
                             <br>
 
 
@@ -3941,15 +3982,15 @@ where id = $value");
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($this->input->post("emailOwn"));
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
 
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($this->input->post("emailFriend"));
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message2);
             $this->email->send();
 
@@ -4158,7 +4199,7 @@ where id = $value");
         $helper = $fb->getRedirectLoginHelper();
 
         $permissions = ['email']; // Optional permissions
-        $loginUrl = $helper->getLoginUrl('http://mobiledarzi.com/welcome/facebook', $permissions);
+        $loginUrl = $helper->getLoginUrl('<?=base_url();?>welcome/facebook', $permissions);
 
 //echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
         $data['fb_login_url'] = htmlspecialchars($loginUrl);
@@ -4208,13 +4249,13 @@ where id = $value");
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi</h2>
+                            <h2>Welcome to ansvel</h2>
                             <br>
 
 
-                            <p>Thank you for joining MobileDarzi. To finish subscription, you just need to confirm that we got your email right.</p>
+                            <p>Thank you for joining ansvel. To finish subscription, you just need to confirm that we got your email right.</p>
 
                             <p><b><a href="' . $url . '">To confirm your email, please click on this link</a>
 
@@ -4222,7 +4263,7 @@ where id = $value");
                             <br>
                             <p>Thanks and Regards</p>
                             <br>
-                            <p>MobileDarzi Team</p>
+                            <p>ansvel Team</p>
                             <br>
 
 
@@ -4246,10 +4287,10 @@ where id = $value");
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             $this->email->send();
             //
@@ -4615,33 +4656,33 @@ where id = $value");
                         <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                             <div id="inouter" style="border-bottom:2px dashed #444;">
                             <br>
-                            <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                            <img src="<?=base_url();?>assets/images/logo2.jpg">
                             <br>
-                            <h2>Welcome to MobileDarzi</h2>
+                            <h2>Welcome to ansvel</h2>
                             <br>
 
                             <p>Dear  ' . $this->input->post("name") . ',</p>
-                            <p>Welcome and Thank you for registering on Mobiledarzi. Your account has been created, use your e-mail address for login to your account at <a href="http://mobiledarzi.com/">http://mobiledarzi.com/:</a></p>
+                            <p>Welcome and Thank you for registering on ansvel. Your account has been created, use your e-mail address for login to your account at <a href="<?=base_url();?>"><?=base_url();?>:</a></p>
 
                             <p><b><a href="' . $url . '">Please click on this link to verify your account</a>
 
                           </p>
                             <br>
-                            <p>As a Mobiledarzi customer, you will surely experience the convenience and peace of mind that comes with having your customized garment and other tailoring products like alteration and fabric securely delivered right to your doorstep. At MobileDarzi.com, we like to give you the BEST experience possible when you shop online for all your tailoring needs.</p><br>
-                            <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                            <p>As a ansvel customer, you will surely experience the convenience and peace of mind that comes with having your customized garment and other tailoring products like alteration and fabric securely delivered right to your doorstep. At ansvel.com, we like to give you the BEST experience possible when you shop online for all your tailoring needs.</p><br>
+                            <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                             <p>We hope you\'ll enjoy our products and services.</p>
 
                             <p>Best Regards,</p>
                             <br>
-                            <p>Team MobileDarzi</p>
+                            <p>Team ansvel</p>
                             <br>
                             <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                             <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                             <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                             </div>
-                            <p class="small" style="text-align: center;">Copyright  &copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                            <p class="small" style="text-align: center;">Copyright  &copy 2017 ansvel.com Powered by Absolute Innovations</p>
                         </div>
                         </body>
                         </html>';
@@ -4650,8 +4691,8 @@ where id = $value");
                 $this->load->library('email');
                 /* $this->email->initialize(array(
                 'protocol' => 'smtp',
-                'smtp_host' => 'mail.mobiledarzi.com',
-                'smtp_user' => 'info@mobiledarzi.com',
+                'smtp_host' => 'mail.ansvel.com',
+                'smtp_user' => 'info@ansvel.com',
                 'smtp_pass' => 'admin@111',
                 'smtp_port' => 587,
                 'mailtype' => 'html',
@@ -4660,10 +4701,10 @@ where id = $value");
                 'crlf' => "\r\n",
                 'newline' => "\r\n"
                 ));
-                $this->email->from('info@mobiledarzi.com', 'Mobile Darzi');*/
+                $this->email->from('info@ansvel.com', 'Ansvel');*/
                 $this->email->initialize(array(
                     'protocol' => 'smtp',
-                    //'smtp_host' => 'mail.mobiledarzi.com',
+                    //'smtp_host' => 'mail.ansvel.com',
                     'smtp_host' => 'ssl://smtp.googlemail.com',
                     'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                     'smtp_pass' => 'Abs@2017',
@@ -4674,11 +4715,11 @@ where id = $value");
                     'crlf' => "\r\n",
                     'newline' => "\r\n",
                 ));
-                $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+                $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
 
                 $this->email->to($to_email);
                 //$this->email->cc('another@another-example.com');
-                $this->email->subject('Mobile Darzi');
+                $this->email->subject('Ansvel');
                 $this->email->message($message);
                 $this->email->send();
                 $this->session->set_flashdata('msg', 'A verification link has been sent to your email.');
@@ -5138,7 +5179,7 @@ where id = $value");
           </head>
           <body>
           <div id="outer">
-          <h2>MobileDarzi.com</h2>
+          <h2>ansvel.com</h2>
           <div id="inouter">
           <br>
 
@@ -5211,16 +5252,16 @@ where id = $value");
             $message .= '</table>
 
 
-          <p>This email can\'t receive replies. If you have any questions or need help with something regarding our services or our products, Please contact our customer support at support@mobiledarzi.com or call us at +91 9644409191 or 0731-2557166 (Working hours 10:30am to 7pm, Monday-Saturday)
+          <p>This email can\'t receive replies. If you have any questions or need help with something regarding our services or our products, Please contact our customer support at support@ansvel.com or call us at +91 9644409191 or 0731-2557166 (Working hours 10:30am to 7pm, Monday-Saturday)
 </p>
           <p>We hope you\'ll enjoy our products and services.
 </p>
           <br>
-          <p>Regards,<br>Team MobileDarzi</p>
+          <p>Regards,<br>Team ansvel</p>
           <br>
           <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
-          <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@mobiledarzi.com</p></center>
-          <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+          <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@ansvel.com</p></center>
+          <center><p class="blur">Your received this message because you\'re a member of ansvel</p></center>
           </div>
           <p class="center small"><u>Unsubscribe</u><br></p>
           <p class="center small">Follow us on: <br>
@@ -5243,9 +5284,9 @@ where id = $value");
             } else {
                 $mobileNumber = $uinfo->mobile;
             }
-            $senderId = 'MDARZI';
-            // $message1 = "Your order has been placed with mobiledarzi \norder id ".$oid.$msg2."\ntotal is".$order_total->ototal;
-            $message1 = "Your order has been successfully placed. Thanks for shopping at MobileDarzi. We are getting your order ready to be shipped. For detail please check your e-mail.";
+            $senderId = 'ANSVEL';
+            // $message1 = "Your order has been placed with ansvel \norder id ".$oid.$msg2."\ntotal is".$order_total->ototal;
+            $message1 = "Your order has been successfully placed. Thanks for shopping at ansvel. We are getting your order ready to be shipped. For detail please check your e-mail.";
             $route = 4;
             $postData = array(
                 'authkey' => $authKey,
@@ -5274,7 +5315,7 @@ where id = $value");
             $this->load->library('email');
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -5285,10 +5326,10 @@ where id = $value");
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
             //$this->email->cc('another@another-example.com');
-            $this->email->subject('Mobile Darzi');
+            $this->email->subject('Ansvel');
             $this->email->message($message);
             if ($this->email->send()) {
                 $data['message'] = "Mail sent...";
@@ -6242,9 +6283,9 @@ $i++;
               margin-left:107px;
             }
                       </style>
-                     <h3>Styles : <span class="tt4"><i class="fa fa-inr"></i></span><span id="total_price_style" class="tt1"></span> </h3><br>
-                     <h3>Addons : <span class="tt5"><i class="fa fa-inr"></i></span><span id="total_price_addons" class="tt2"></span> </h3><br><hr>
-                     <h3><b>Total :</b><b><span class="tt6"><i class="fa fa-inr"></i></span><span id="total_price" class="tt3"></span></b></h3>
+                     <h3>Styles : <span class="tt4">&#8358;</span><span id="total_price_style" class="tt1"></span> </h3><br>
+                     <h3>Addons : <span class="tt5">&#8358;</span><span id="total_price_addons" class="tt2"></span> </h3><br><hr>
+                     <h3><b>Total :</b><b><span class="tt6">&#8358;</span><span id="total_price" class="tt3"></span></b></h3>
 
 </h2>
                      </div></div><?php
@@ -6252,7 +6293,6 @@ $i++;
 
     public function predesigns()
     {
-
         $data['pre'] = $this->db->get_where("predesign", array("catid" => $_POST['fid']))->result();
         $this->load->view("predesigns", $data);
     }
@@ -6402,7 +6442,7 @@ $i++;
                 <tr>
                     <td align='center' valign='top' style='padding: 15px 0;' class='logo'>
                         <a href='http://litmus.com' target='_blank'>
-                            <img alt='Logo' src='http://mobiledarzi.com/assets/images/logo2.png'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
+                            <img alt='Logo' src='<?=base_url();?>assets/images/logo2.png'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
                         </a>
                     </td>
                 </tr>
@@ -6481,7 +6521,7 @@ $i++;
                         " . $site_address->office_add . "
                         <br>
                         <span style='font-family: Arial, sans-serif; font-size: 12px; color: #444444;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        <a href='http://mobiledarzi.com' target='_blank' style='color: #666666; text-decoration: none;'>Mobile Darzi</a>
+                        <a href='http://ansvel.com' target='_blank' style='color: #666666; text-decoration: none;'>Ansvel</a>
                     </td>
                 </tr>
             </table>
@@ -6505,7 +6545,7 @@ $i++;
             'newline' => '\r\n',
         ));
         $this->email->from($from_email);
-        $this->email->to('info@mobiledarzi.com');
+        $this->email->to('info@ansvel.com');
         $this->email->subject('Contact Message');
         $this->email->message($message);
         if ($this->email->send()) {
@@ -6536,33 +6576,33 @@ $i++;
                           <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                               <div id="inouter" style="border-bottom:2px dashed #444;">
                               <br>
-                              <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                              <img src="<?=base_url();?>assets/images/logo2.jpg">
                               <br>
-                              <h2>Welcome to MobileDarzi</h2>
+                              <h2>Welcome to ansvel</h2>
                               <br>
 
                               <p>Dear  ' . $chk4->name . ',</p>
-                              <p>Thank you for registering with MobileDarzi. Please use your e-mail address to log in to your account at <a href="http://mobiledarzi.com/">http://mobiledarzi.com/:</a></p>
+                              <p>Thank you for registering with ansvel. Please use your e-mail address to log in to your account at <a href="<?=base_url();?>"><?=base_url();?>:</a></p>
 
                               <p><b><a href="' . base_url("welcome/fpassword?email=$email
 
                                 ") . '">Create New Password</a></p>
                               <br>
 
-                              <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                              <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                               <p>We hope you enjoy our products and services.</p>
 
                               <p>Best Regards,</p>
                               <br>
-                              <p>Team MobileDarzi</p>
+                              <p>Team ansvel</p>
                               <br>
                               <p class="footer" style="background-color: #27638e;color:#fff;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                               <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                               <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                               </div>
-                              <p class="small" style="text-align: center;">Copyright&copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                              <p class="small" style="text-align: center;">Copyright&copy 2017 ansvel.com Powered by Absolute Innovations</p>
                           </div>
                           </body>
                           </html>';
@@ -6580,9 +6620,9 @@ $i++;
                 'newline' => "\r\n",
             ));
 
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($email);
-            $this->email->subject('Mobile Darzi Forgot Password');
+            $this->email->subject('Ansvel Forgot Password');
             $this->email->message($message);
             $this->email->send();
             $this->email->clear();
@@ -6633,39 +6673,39 @@ $i++;
                   <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                       <div id="inouter" style="border-bottom:2px dashed #444;">
                       <br>
-                      <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                      <img src="<?=base_url();?>assets/images/logo2.jpg">
                       <br>
-                      <h2>Welcome to MobileDarzi</h2>
+                      <h2>Welcome to ansvel</h2>
                       <br>
 
                       <p>Dear  ' . $ainfo->username . ',</p>
-                      <p>Thank you for registering with MobileDarzi. Please use your e-mail address to log in to your account at <a href="http://mobiledarzi.com/">http://mobiledarzi.com/:</a></p>
+                      <p>Thank you for registering with ansvel. Please use your e-mail address to log in to your account at <a href="<?=base_url();?>"><?=base_url();?>:</a></p>
 
                       <p><b><a href="' . base_url("Welcome/newpassword2") . '">Create New Password</a></p>
                       <br>
 
-                      <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                      <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@ansvel.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                       <p>We hope you enjoy our products and services.</p>
 
                       <p>Best Regards,</p>
                       <br>
-                      <p>Team MobileDarzi</p>
+                      <p>Team ansvel</p>
                       <br>
                       <p class="footer" style="background-color: #27638e;color:#fff;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                       <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                       <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
 
                       </div>
-                      <p class="small" style="text-align: center;">Copyright&copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                      <p class="small" style="text-align: center;">Copyright&copy 2017 ansvel.com Powered by Absolute Innovations</p>
                   </div>
                   </body>
                   </html>';
             $this->load->library('email');
             /*$this->email->initialize(array(
             'protocol' => 'smtp',
-            'smtp_host' => 'mail.mobiledarzi.com',
-            'smtp_user' => 'info@mobiledarzi.com',
+            'smtp_host' => 'mail.ansvel.com',
+            'smtp_user' => 'info@ansvel.com',
             'smtp_pass' => 'admin@111',
             'smtp_port' => 587,
             'mailtype' => 'html',
@@ -6678,11 +6718,11 @@ $i++;
             $to_email = $_POST['femail'];
 
             //$mail_count= count($to_mail);
-            /* $this->email->from('info@mobiledarzi.com', 'Mobile Darzi');*/
+            /* $this->email->from('info@ansvel.com', 'Ansvel');*/
 
             $this->email->initialize(array(
                 'protocol' => 'smtp',
-                //'smtp_host' => 'mail.mobiledarzi.com',
+                //'smtp_host' => 'mail.ansvel.com',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
                 'smtp_user' => 'absoluteinnovationspl2@gmail.com',
                 'smtp_pass' => 'Abs@2017',
@@ -6693,10 +6733,10 @@ $i++;
                 'crlf' => "\r\n",
                 'newline' => "\r\n",
             ));
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
 
             $this->email->to($to_email);
-            $this->email->subject('Mobile Darzi Forgot Password');
+            $this->email->subject('Ansvel Forgot Password');
             $this->email->message($message);
             $this->email->send();
             $this->email->clear();

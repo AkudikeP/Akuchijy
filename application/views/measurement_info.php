@@ -47,7 +47,7 @@ line-height: 0.7em;
         <div class="container">
 
             <ol class="breadcrumb breadcrumb--wd pull-left" style="margin:0">
-              <li><a href="http://mobiledarzi.com/" style="color: #000;">Home</a></li>
+              <li><a href="<?=base_url();?>" style="color: #000;">Home</a></li>
                     <li><a href="<?php echo base_url() ?>measurement-guide" style="color: #000;">Measurement Guide</a></li>
           <li><a href="<?php echo current_url(); ?>" style="color: #000;"><?php echo ucwords($this->uri->segment(2)); ?></a></li>
 

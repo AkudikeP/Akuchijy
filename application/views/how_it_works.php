@@ -28,7 +28,7 @@
    background-color:#000;
    }
    .bg-video {
-    background: url("http://mobiledarzi.com/assets/images/tailor.jpg") no-repeat 0px 0px;
+    background: url("<?=base_url();?>assets/images/tailor.jpg") no-repeat 0px 0px;
     background-attachment: fixed;
     background-size: cover;
     padding: 100px 0px;

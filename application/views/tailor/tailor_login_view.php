@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Tailor Login</title>
+    <title>Ansvel | Tailor Login</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
     <meta name="description" content="Login Pages - Responsive Admin HTML Template">
     <meta name="author" content="Venmond">

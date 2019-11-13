@@ -111,7 +111,7 @@
                       <div class="form-group">
                             <label for="wholesale_price" class="control-label col-lg-6"> Price </label>
                             <div class="col-lg-6">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="text" name="sprice" maxlength="14" value="<?php echo $style_update['sprice']; ?>">
                               </div>
                             </div>
@@ -175,7 +175,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                    Copyright &copy;2016 MobileDarji. All Rights Reserved 
+                    Copyright &copy;2016 Ansvel. All Rights Reserved 
                 </div>
               </div>
             </div><!-- row -->

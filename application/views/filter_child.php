@@ -103,7 +103,7 @@ foreach($pros as $fab){
                 $value = $fab->offer_price;
                 $x=$fab->price - $value;
             ?>
-             <div class="product-preview__label product-preview__label--left product-preview__label--sale"><span><i class="fa fa-inr"></i><?php echo $fab->offer_price;?> OFF</span></div>
+             <div class="product-preview__label product-preview__label--left product-preview__label--sale"><span>&#8358;<?php echo $fab->offer_price;?> OFF</span></div>
 
             <?php
               }
@@ -153,8 +153,8 @@ foreach($pros as $fab){
             if($fab->offer_type=='Percentage' OR $fab->offer_type=='Amount')
               {
             ?>
-             <span class="price-box__old"><i class="fa fa-inr"></i> <?php echo round($fab->price);?></span>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <?php echo round($x);?></span>
+             <span class="price-box__old">&#8358; <?php echo round($fab->price);?></span>
+            <span class="price-box__new">&#8358; <?php echo round($x);?></span>
              
 
             <?php
@@ -164,7 +164,7 @@ foreach($pros as $fab){
 
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <?php echo round($x);?></span>
+            <span class="price-box__new">&#8358; <?php echo round($x);?></span>
 
             <?php
               }

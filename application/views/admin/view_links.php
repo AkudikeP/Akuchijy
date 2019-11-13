@@ -40,7 +40,7 @@
                           <td><?php echo $fab->heading;?></td>
                           <td><?php echo $fab->link;?></td>
                           <td>
-                          <a data-toggle="tooltip" title="Edit" class="btn btn-xs btn-warning" href="<?php echo base_url();?>index.php/product/add_mobiledarzi/<?php echo $fab->id;?>"><i class="fa fa-edit"></i></a> 
+                          <a data-toggle="tooltip" title="Edit" class="btn btn-xs btn-warning" href="<?php echo base_url();?>index.php/product/add_ansvel/<?php echo $fab->id;?>"><i class="fa fa-edit"></i></a> 
 
                            <?php if($fab->status_enable=='enable'){
                               echo"<button data-toggle='tooltip' title='Enable' class='btn btn-xs btn-success services_disable' id='$fab->id'><i class='fa fa-lightbulb-o'></i></button>";

@@ -161,7 +161,7 @@ $(document).scroll(function() {
 <h5 class="product-category__info__ribbon__title fx" > <?php echo $alt['subcategory'];?> </h5>
                 <h5 class="product-category__info__ribbon__title" style="
     margin-top: 5px;
-">Price- <i class="fa fa-inr"></i> <?php echo $alt['price'];?> </h5>
+">Price- &#8358; <?php echo $alt['price'];?> </h5>
 
               </div>
 

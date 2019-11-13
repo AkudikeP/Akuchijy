@@ -145,8 +145,8 @@ ul{
                             </div>
                             <div style="height: 0px;" id="acco1" class="accordion-body collapse">
                               <div class="accordion-inner">
-                               <p>login to website www.mobiledarzi.com to track your order Or, reach us at
-Call: (+91) 9644409191 Email: care@mobiledarzi.com WhatsApp: (+91) 9644409191</p>
+                               <p>login to website www.ansvel.com to track your order Or, reach us at
+Call: (+91) 9644409191 Email: care@ansvel.com WhatsApp: (+91) 9644409191</p>
                               </div>
                             </div>
                           </div> 
@@ -229,8 +229,8 @@ For booking an order with us, just log in on our website, choose from a range of
                             </div>
                             <div style="height: 0px;" id="acc1" class="accordion-body collapse">
                               <div class="accordion-inner">
-                               <p>login to website www.mobiledarzi.com to track your order Or, reach us at
-Call: (+91) 9644409191 Email: care@mobiledarzi.com WhatsApp: (+91) 9644409191</p>
+                               <p>login to website www.ansvel.com to track your order Or, reach us at
+Call: (+91) 9644409191 Email: care@ansvel.com WhatsApp: (+91) 9644409191</p>
                               </div>
                             </div>
                           </div> 

@@ -60,6 +60,8 @@
 }
 </style>
 <script src="<?php echo base_url();?>assets/vendor/mousewheel/jquery.mousewheel.min.js"></script>
+<script>baseUrl="<?=base_url();?>";</script>
+<script src="<?php echo base_url();?>assets/js/customnew.js"></script>
 
 <script type="text/javascript">
 
@@ -318,7 +320,7 @@ and (orientation : portrait)
 	<?php $heading_data = $this->db->get('stitching_headings')->row(); ?>
     <section class="content" >
 
-      <div class="container">
+      <div class="container" adafos="lkjosi">
       <input type="hidden" id="totattr" value="" />
         <div class="row product-info-outer">
         <div class="panel panel-default panel-table">
@@ -342,7 +344,7 @@ and (orientation : portrait)
 
                 <ul class="nav nav-tabs nav-tabs--wd" role="tablist" style="display:none;" id="uls">
           <li class="active col-md-4 col-sm-4 firstd">
-          <a href="<?php echo base_url();?>welcome/custom/<?php echo $this->uri->segment(3);?>"  class="text-uppercase tbsss" style="font-size:17px;">Design Yourself </a>
+          <a href="#Tab1" role="tab" data-toggle="tab" class="text-uppercase tbsss" style="font-size:17px;">Design Yourself </a>
           </li>
           <li class="col-md-4 col-sm-4 middled"><a href="#Tab2" id="upload_design" role="tab" data-toggle="tab" class="text-uppercase tbsss" style="font-size:17px;">Upload Your Design </a></li>
           <li class="col-md-4 col-sm-4 lastd"><a href="#Tab3" id="pre_design" role="tab" data-toggle="tab" class="text-uppercase tbsss" style="font-size:17px;">Choose From Catalogue </a></li>
@@ -506,22 +508,21 @@ and (orientation : portrait)
 
         var formdata=jq("#bundle").serialize();
         var upload_desc= 'none';
-					//alert(formdata);
 					jq(this).text("Adding to Your Cart...");
 					jq(this).attr("disabled","disabled");
 					if(jq('#blah').attr('src')!='#')
 					{
 						var custom_image = jq('#blah').attr('src');
-             var upload_desc = jq('#upload_desc').val();
-            //alert('inblah');
-
+            var upload_desc = jq('#upload_desc').val();
+            var right_view = jq('.upload-design img').first().attr('src');
+            var left_view = jq('.upload-design img').eq(1).attr('src');
+            var back_view = jq('.upload-design img').last().attr('src');
 					}
-          console.log('afterblah');
 
 					jq.ajax({
 						 type: "POST",
 						 url: "<?php echo base_url();?>index.php/Welcome/addtocart_bundle",
-						 data: {"formdata":formdata,"mdata":mdata,"c_image":custom_image,"upload_desc":upload_desc},
+						 data: {"formdata":formdata,"mdata":mdata,"c_image":custom_image,"upload_desc":upload_desc,"right_view": right_view, "left_view": left_view, "back_view": back_view},
 						 success: function(response){
 							//console.log(response);
 							setTimeout(function() {
@@ -534,146 +535,6 @@ and (orientation : portrait)
 
 						 });
 
-			});
-
-
-
-			jq(".nextstep").click(function(e){
-				jq("#uls").show();
-				e.preventDefault();
-				//alert(kkk);
-        var blah = jq(".nextstep").attr("alt");
-        if(blah=='blah'){
-          var upload_desc = jq("#upload_desc").val();
-          //alert(upload_desc.length);
-          if(upload_desc.length<2)
-          {
-            jq.confirm({
-                           title: 'Alert',
-                            content: 'Description is Required',
-                            icon: 'fa fa-question-circle',
-                            animation: 'scale',
-                            closeAnimation: 'scale',
-                            opacity: 0.5,
-                            buttons: {
-                                'confirm': {
-                                    text: 'Ok',
-                                    btnClass: 'btn-info',
-                                    action: function () {
-                                      //this.value='';
-                                      jq("#input1").val('');
-                                      // console.log(sid);
-                                        }
-                                },
-
-                               }
-
-                        });
-            return false;
-          }else{
-            var upload_desc = jq('#upload_desc').val();
-            jq("#upload_desc2").html(upload_desc);
-          }
-        }
-				var step=parseInt(jq(this).attr("href"))+1;
-				var final=jq("#totattr").val();
-				//alert(jq(".nextstep").attr("disabled"));
-				jq(".nextstep").attr("disabled","disabled");
-
-				//alert(step);
-
-
-			if(step==0)
-				{
-					jq(".prevstep").css("display","none");
-					var step=parseInt(jq(this).attr("href"))+2;
-				}
-				if(step==1)
-				{
-					//alert('one');
-					jq(".prevstep").attr("disabled","disabled");
-
-
-				}
-
-
-				if(step>0 && step<2)
-				{
-					jq("#uls").show();
-				}
-				else{
-				jq("#uls").hide();
-				}
-				//alert(step+'='+final);
-
-				if(step>final){
-					//alert(jq("#thumb2").text().length);
-					//alert(jq('#blah').attr('src'));
-					jq("#uls").hide();
-					if(jq('#blah').attr('src')!='#'){
-						jq('#dyna').hide();
-						jq('#thumb2').show();
-						jq('#Tab2').css('display','none');
-					}
-
-					else if (jq("#thumb2").text().length > 50) {
-           // alert(jq("#thumb2").text().length);
-            //alert('intrue');
-     jq('#dyna').hide();
-     jq('#thumb2').show();
-   } else{
-   	jq('#dyna').show();
-   	jq('#thumb2').hide();
-   }
-				jq("#finalprev").show();
-				jq("#dyna_heading").hide();
-				jq("#simple_text").hide();
-
-				jq("#uls").hide();
-				jq("#design").hide();
-				jq(".nextstep").hide();
-				jq(".prevstep").attr("href",step);
-				jq(".measur").css("display", "block");
-				jq("#Tab1").addClass("active");
-				jq("#Tab3").removeClass("active");
-				jq("#Tab14").addClass("active");
-				jq("#Tab5").removeClass("active");
-				jq("#Tab6").removeClass("active");
-
-				//jq(".firstd").addClass("active");
-				//jq(".lastd").removeClass("active");
-				return false;
-				}
-
-
-				else{
-					jq("#finalprev").hide();
-					//jq("#uls").hide();
-					jq("#dyna_heading").show();
-					jq("#design").show();
-					jq(".prevstep").removeAttr("disabled");
-					jq(".prevstep").css("display","inline");
-					//jq("#uls").show();
-				}
-				jq("#design").html("<img style='margin-top:100px;' src='<?php echo base_url();?>assets/images/01-progress.gif'>");
-				jq(this).attr("href",step);
-				jq(".prevstep").attr("href",step);
-
-				var cid=jq("#nid").val();
-				jq.ajax({
-				 type: "POST",
-				 url: '<?php echo base_url();?>index.php/Welcome/show_fabric',
-				 data: {cid:cid,step:step},
-				 success: function(response){
-					jq("#design").html(response);
-					//console.log(response);
-					 //jq("#design").html(response);
-					 },
-				 error: function(response){
-        alert("fail");
-        //console.log(response);
-    }
-				 });
 			});
 
 			jq(".prevstep").click(function(e){
@@ -856,7 +717,7 @@ and (orientation : portrait)
 			});
 
 
-			jq("#upfile1").click(function () {
+			jq("#upfile1, #blah1").click(function () {
          jq('#dragyour').hide();
                  jq('#or').html('');
                  jq(".nextstep").attr("alt",'blah');
@@ -1051,7 +912,7 @@ background-color: rgba(0, 0, 0, 0.06);
               }
             ?>
 
-           <i class="fa fa-inr"></i> <?php echo $x*$this->session->userdata('qty');?>
+           &#8358; <?php echo $x*$this->session->userdata('qty');?>
            </div>
             </div>
             </div>
@@ -1218,14 +1079,37 @@ background-color: rgba(0, 0, 0, 0.06);
       				 <img src="<?php // echo base_url(); ?>/adminassets/styles/100button.png" style="width: 100%" />
        				 <figcaption>Upload Your Design</figcaption>
          </figure-->
+    <style>
+      .mb-1 {
+        margin-bottom: 1rem;
+      }
+
+      .ml-1 {
+        margin-left: 1rem;
+      }
+
+      .d-none {
+        display: none!important;
+      }
+    </style>
 		<input type="file" id="imgInp"  class="file1" style="display:none" />
 		<center>You can upload images from your computer, tablet or phone.<br></br><div id="div">
-		<img id="blah1" src="<?php echo base_url(); ?>/adminassets/styles/default_upload.png" alt="your image" width="50%" />
+		<img style="cursor: pointer;" id="blah1" src="<?php echo base_url(); ?>/adminassets/styles/default_upload.png" alt="your image" width="50%" />
 		</div><h3 id="dragyour" style="color:#ccc;"><b>Drag your reference design here</b></h3>
 		<p id="or">-- or --</p>
 		<span>
-    <span id="upfile1" class="btn btn-success">Upload your design</span>
-    <span class="btn btn-success" id="delete">Cancel</span></span>
+    <span id="upfile1" class="btn btn-success">Upload your design (Front view)</span>
+    <span class="btn btn-danger" id="delete">Cancel</span></span>
+    <br>
+    <br>
+    <div class="mb-1 upload-design"><span class="btn btn-success" data-view="RIGHT">Add right side view of your design</span><input type="file" class="d-none"><img class="design-view-image d-none" src=""><span class="ml-1 btn btn-danger d-none">&times;</span></div>
+    <div class="mb-1 upload-design"><span class="btn btn-success" data-view="LEFT">Add left side view of your design</span><input type="file" class="d-none"><img class="design-view-image d-none" src=""><span class="ml-1 btn btn-danger d-none">&times;</span></div>
+    <div class="upload-design"><span class="btn btn-success" data-view="BACK">Add back side view of your design</span><input type="file" class="d-none"><img class="design-view-image d-none" src=""><span class="ml-1 btn btn-danger d-none">&times;</span></div>
+    <br>
+    <div class="upload_d" style="margin-bottom: 5rem;">
+      <label class="lb">Description*</label>
+      <textarea rows="3" value="" id="upload_desc" name="upload_desc" style="min-height:50px;border:1px solid #aaa" type="text" class="input--wd input--wd--full" required ></textarea>
+    </div>
     <br>
     <p>Acceptable File Format</p><br>
     <div class="col-md-12">
@@ -1235,14 +1119,9 @@ background-color: rgba(0, 0, 0, 0.06);
          <img class="file-sm" src="<?php echo base_url(); ?>assets/images/gif.png">
 
     </div>
-	<div class="upload_d">
-		<label class="lb">Description*</label>
-
-                <textarea rows="3" value="" id="upload_desc" name="upload_desc" style="min-height:50px;border:1px solid #aaa" type="text" class="input--wd input--wd--full" required ></textarea>
-        </div>
 		</center>
         <p class="note" style="font-weight: 600;">
-        	Note : For any queries or suggetions please contact us on 9644409191
+        	Note : For any queries or suggetions please contact us on 0703416342
         </p>
 
 

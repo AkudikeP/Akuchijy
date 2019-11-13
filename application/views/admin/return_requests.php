@@ -57,7 +57,7 @@
                           <td width="200px"><?php echo $order_item->pname;?></td>
                           <td class="center"><?php echo "&nbsp"; ?><br><?php if(!empty($order_item->vendor_id)){echo 'VMD-00'.$order_item->vendor_id; $isvendor=1;}else{echo "Admin's Product";} ?></td>
 
-                          <td><i class="fa fa-inr"></i><?php echo $order_item->price;?></td>
+                          <td>&#8358;<?php echo $order_item->price;?></td>
                           <td>
 
                           <?php if($isvendor==1){
@@ -140,7 +140,7 @@
               </div>
               <div class="col-xs-5 col-md-offset-1 col-md-5">
                 
-                    <p><b><?php echo $order_item->pname;?></b> <i class="fa fa-inr"></i><?php echo $order_item->price; ?></p>
+                    <p><b><?php echo $order_item->pname;?></b> &#8358;<?php echo $order_item->price; ?></p>
                     
                     
                       <?php echo form_open('product/cancel_item_request_reject'); ?>
@@ -251,7 +251,7 @@
               </div>
               <div class="col-xs-5 col-md-offset-1 col-md-5">
 
-                    <p><b><?php echo $order_item->pname;?></b> <i class="fa fa-inr"></i><?php echo $order_item->price; ?></p>
+                    <p><b><?php echo $order_item->pname;?></b> &#8358;<?php echo $order_item->price; ?></p>
 
 
                       <?php echo form_open('product/return_item_request_reject'); ?>

@@ -14,7 +14,7 @@ if($this->session->userdata('vn_id')=='')
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Vendor</title>
+    <title>Ansvel | Vendor</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
     <meta name="description" content="Login Pages - Responsive Admin HTML Template">
     <meta name="author" content="Venmond">
@@ -135,7 +135,7 @@ if($this->session->userdata('vn_id')=='')
               <div class="panel widget">
               
                 <div class="panel-body">
-                 <div class="login-icon entypo-icon"> <img src="http://mobiledarzi.com/assets/images/Mobiledarzilogo.png" alt="logo" width="80%"> </div>
+                 <div class="login-icon entypo-icon"> <img src="<?=base_url();?>assets/images/ansvellogo.png" alt="logo" width="80%"> </div>
                     <div id="hide_div">                
                     <div class="form-group  mgbt-xs-20">
                       <div class="col-md-12">

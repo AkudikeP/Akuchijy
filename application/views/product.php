@@ -249,8 +249,8 @@ $this->db->update('fabric', $data);
             if($pro->offer_type=='Percentage' OR $pro->offer_type=='Amount')
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <b id="price"><?php echo $x*$pro->min_quan_to_buy;?></b></span>
-              <span class="price-box__old"><i class="fa fa-inr"></i> <b id="oldprice"><?php echo $pro->price*$pro->min_quan_to_buy;?></b></span>
+            <span class="price-box__new">&#8358; <b id="price"><?php echo $x*$pro->min_quan_to_buy;?></b></span>
+              <span class="price-box__old">&#8358; <b id="oldprice"><?php echo $pro->price*$pro->min_quan_to_buy;?></b></span>
 
             <?php
               }
@@ -259,7 +259,7 @@ $this->db->update('fabric', $data);
 
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <b id="price"><?php echo $x*$pro->min_quan_to_buy;?></b></span>
+            <span class="price-box__new">&#8358; <b id="price"><?php echo $x*$pro->min_quan_to_buy;?></b></span>
 
             <?php
               }
@@ -292,7 +292,7 @@ $this->db->update('fabric', $data);
                // echo $x;
             ?>
 
-             <span class="product-info__sku ">&nbsp;&nbsp;<span class="label label-success" style="font-size: 12px;"><i class="fa fa-inr"></i> <?php echo $pro->offer_price;?> OFF</span></span>
+             <span class="product-info__sku ">&nbsp;&nbsp;<span class="label label-success" style="font-size: 12px;">&#8358; <?php echo $pro->offer_price;?> OFF</span></span>
 
 
             <?php
@@ -1062,7 +1062,7 @@ $rating =$this->db->get_where('rating',array('p_id'=>$review_my[0]->p_id,'p_name
 
               <h5 class="margin-top"><?php echo substr($rela->title, 0,30);
                           if(strlen($rela->title)>30){echo '...';}?></h5>
-                          <h5><i class="fa fa-inr"></i> <?php echo $rela->price; ?></h5>
+                          <h5>&#8358; <?php echo $rela->price; ?></h5>
 
           </div>
 

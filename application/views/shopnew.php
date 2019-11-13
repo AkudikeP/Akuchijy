@@ -25,7 +25,7 @@ foreach($fab as $fab_ids){
 
 img.lazy {
         /* optional way, set loading as background */
-        background-image: url('http://mobiledarzi.com/assets/images/01-progress.gif');
+        background-image: url('<?=base_url();?>assets/images/01-progress.gif');
         background-repeat: no-repeat;
         background-position: 58% 49%;
     }
@@ -331,7 +331,7 @@ $(function() {
         											$(this).closest("div.main_cat").addClass("selected");
         											var id = $(this).attr("id");
         											//var type = <?php //echo $this->uri->segment(3);?>;
-        											 /*$.post("http://localhost/mobiledarzi/index.php/Welcome/shop/"+type, function(data, status){
+        											 /*$.post("http://localhost/ansvel/index.php/Welcome/shop/"+type, function(data, status){
 													        alert("Data: " + data + "\nStatus: " + status);
 													    });*/
 
@@ -617,7 +617,7 @@ if($('.noUi-handle.noUi-handle-upper .tooltip.top .tooltip-inner span').html()==
 													<h2><a href="#"><?php echo $fab['title'];?></a></h2>
 												</div>
 												<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>
-												<div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price'];?></div>
+												<div class="price-box">&#8358; <?php echo $fab['price'];?></div>
 												 <div class="product-preview__label product-preview__label--left product-preview__label--new"><span>new</span></div>
               <div class="product-preview__label product-preview__label--right product-preview__label--sale"><span>sale<br>
                 -10%</span></div>

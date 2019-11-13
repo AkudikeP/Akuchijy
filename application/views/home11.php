@@ -429,7 +429,7 @@
 													<li><a href="#"><span class="swatch-label"><img src="<?php echo base_url();?>assets/images/colors/red.png" width="10" height="10" alt=""/></span></a></li>
 													<li><a href="#"><span class="swatch-label"><img src="<?php echo base_url();?>assets/images/colors/white.png" width="10" height="10" alt=""/></span></a></li>
 												</ul>-->
-												<div class="price-box "><span class="price-box__new"><i class="fa fa-inr"></i> <?php echo $fab->price;?></span> <span class="price-box__old">$84.00</span></div>
+												<div class="price-box "><span class="price-box__new">&#8358; <?php echo $fab->price;?></span> <span class="price-box__old">$84.00</span></div>
 												<div class="product-preview__info__description">
 													<p>Nulla at mauris leo. Donec quis ex elementum, tincidunt elit quis, cursus tortor. Sed sollicitudin enim metus, ut hendrerit orci dignissim venenatis.</p>
 													<p>Suspendisse consectetur odio diam, ut consequat quam aliquet at.</p>

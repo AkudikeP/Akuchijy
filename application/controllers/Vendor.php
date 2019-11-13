@@ -177,7 +177,7 @@ class Vendor extends MY_Controller
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>Ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -185,7 +185,7 @@ class Vendor extends MY_Controller
   <p>Dear ' . $user_info->name . ',</p>
 
 
-  <p>Your request for return product is disapproved by MobileDarzi.</p>
+  <p>Your request for return product is disapproved by Ansvel.</p>
    <b>Reason:</b>' . $this->input->post("reason") . '<br>
 
 
@@ -213,11 +213,11 @@ class Vendor extends MY_Controller
 
 
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team Ansvel</p>
   <br>
   <div class="footer"><center><img src="' . base_url() . '/assets/sociallinks/playstore.png"><img src="' . base_url() . '/assets/sociallinks/apple.png"></center>
-  <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@mobiledarzi.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@ansvel.com</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of Ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br>
@@ -245,18 +245,18 @@ class Vendor extends MY_Controller
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Return request is disapproved by mobiledarzi \n ";
+        $message1 = "Your Return request is disapproved by Ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -366,7 +366,7 @@ class Vendor extends MY_Controller
 </head>
 <body>
 <div id="outer">
-<h2>MobileDarzi.com</h2>
+<h2>Ansvel.com</h2>
   <div id="inouter">
   <br>
 
@@ -402,11 +402,11 @@ class Vendor extends MY_Controller
   <p><b>Delivery Address:</b></p>
   <p></p>
   <br>
-  <p>Regards,<br>Team MobileDarzi</p>
+  <p>Regards,<br>Team Ansvel</p>
   <br>
   <div class="footer"><center><img src="logo2.jpg"><img src="logo2.jpg"></center>
-  <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@mobiledarzi.com</p></center>
-  <center><p class="blur">Your received this message because you\'re a member of MobileDarzi</p></center>
+  <center><p class="footeremail"><span class="lightblur">Contact Us at Email</span>: info@ansvel.com</p></center>
+  <center><p class="blur">Your received this message because you\'re a member of Ansvel</p></center>
   </div>
   <p class="center small"><u>Unsubscribe</u><br></p>
   <p class="center small">Follow us on: <br></p>
@@ -433,18 +433,18 @@ class Vendor extends MY_Controller
 
         //$mail_count= count($to_mail);
 
-        $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+        $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
         $this->email->to($to_email);
-        $this->email->subject('Mobile Darzi Retrun Product');
+        $this->email->subject('Ansvel Retrun Product');
         $this->email->message($message);
         $this->email->send();
         $this->email->clear();
 
         $authKey = '136895AdMGPnqo6n5875df12';
         $mobileNumber = $vinfo->contact;
-        $senderId = 'MDARZI';
+        $senderId = 'ANSVEL';
 
-        $message1 = "Your Return request is approved by mobiledarzi \n ";
+        $message1 = "Your Return request is approved by Ansvel \n ";
         $route = 4;
         $postData = array(
             'authkey' => $authKey,
@@ -471,9 +471,20 @@ class Vendor extends MY_Controller
         //redirect('welcome/orders');
 
     }
-    public function vendor_registration()
+    public function vendor_registration($referred_by = '')
     {
-        $this->load->view("vendor/vendor_registration");
+        $this->form_validation->set_data(array('referred_by' => $referred_by));
+        $this->form_validation->set_rules('referred_by', 'Referral id', 'max_length[10]|numeric|trim',
+            array(
+                'max_length' => 'Invalid referral id! Please ensure that your sign-up link is correct.',
+                'numeric' => 'Invalid referral id! Please ensure that your sign-up link is correct.'
+            )
+        );
+        $data['referred_by'] = $referred_by != '' ? '/' . $referred_by : '';
+        if ($this->form_validation->run() === FALSE) {
+            $this->session->set_flashdata('message', validation_errors());
+        }
+        $this->load->view("vendor/vendor_registration", $data);
     }
 
     public function vendor_home()
@@ -1269,19 +1280,26 @@ echo $item->subtotal; ?>/- </td>
         curl_close($ch);
     }
 
-    public function registration()
+    public function registration($referred_by = '')
     {
-        $this->form_validation->set_rules('contact', 'Contact', 'required|exact_length[11]|numeric|trim');
-        if ($this->form_validation->run() === false) {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect("Vendor/vendor_registration");
-        }
         $contact = $this->input->post('contact');
+        $this->form_validation->set_data(array('contact' => $contact, 'referred_by' => $referred_by));
+        $this->form_validation->set_rules('contact', 'Contact', 'required|exact_length[11]|numeric|trim');
+        $this->form_validation->set_rules('referred_by', 'Referral id', 'max_length[10]|numeric|trim',
+            array(
+                'max_length' => 'Invalid referral id! Please ensure that your sign-up link is correct.',
+                'numeric' => 'Invalid referral id! Please ensure that your sign-up link is correct.'
+            )
+        );
+        if ($this->form_validation->run() === FALSE) {
+            $this->session->set_flashdata('message', validation_errors());
+            redirect("Vendor/vendor_registration/".$referred_by);
+        }
         $where = 'contact=' . $contact . ' AND question1!=""';
         $query = $this->db->where($where)->get('vendor');
         if ($query->num_rows() > 0) {
-            $this->session->set_flashdata('message', 'Sorry this mobile number already exists.' . $this->db->last_query());
-            redirect("Vendor/vendor_registration");
+            $this->session->set_flashdata('message', 'Sorry this mobile number already exists.');
+            redirect("Vendor/vendor_registration/".$referred_by);
         }
         $activation_code = $this->_gen_random_string();
 
@@ -1324,17 +1342,19 @@ echo $item->subtotal; ?>/- </td>
                 $contactSess = array('contact' => $contact,
                     'token' => $activation_code);
                 $this->session->set_userdata($contactSess);
-                $this->db->where(array('contact' => $contact));
-                $info = $this->db->update('vendor', $data);
+                $this->db->where(array('contact' => $contact, 'referred_by' => $referred_by));
+                $this->db->update('vendor', $data);
             } else {
                 $data = array('contact' => $mobileNumber,
                     'reg_date' => date('Y-m-d'),
-                    'token' => $activation_code);
+                    'token' => $activation_code,
+                    'referred_by' => $referred_by
+                );
                 $this->load->library('session');
                 $contact = array('contact' => $mobileNumber,
                     'token' => $activation_code);
                 $this->session->set_userdata($contact);
-                $info = $this->db->insert('vendor', $data);
+                $this->db->insert('vendor', $data);
             }
         } else {
             $this->session->set_flashdata('message', 'An error occured. Please try again');
@@ -1444,7 +1464,7 @@ echo $item->subtotal; ?>/- </td>
         $config['max_filename_increment'] = '10';
         $config['encrypt_name'] = true;
         $this->upload->initialize($config);
-        $this->form_validation->set_rules('vendor_name', 'Vendor name', 'required|min_length[2]|max_length[50]|trim');
+        $this->form_validation->set_rules('vendor_name', 'Vendor name', 'required|min_length[2]|max_length[100]|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|max_length[1024]|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|min_length[5]|max_length[250]|valid_email|is_unique[vendor.email]|trim',
             array(
@@ -1458,9 +1478,10 @@ echo $item->subtotal; ?>/- </td>
         $this->form_validation->set_rules('pincode', 'Pincode', 'min_length[1]|max_length[20]|numeric|trim');
         $this->form_validation->set_rules('category', 'Category', 'required|in_list[Vendor,Service provider]|trim');
         $this->form_validation->set_rules('id_type', 'ID type', 'required|in_list[Passport,Voters Card,Drivers License,NIN Card]|trim');
+        $this->form_validation->set_rules('bio', 'Bio', 'max_length[6143]|trim');
 
         $contact = $this->session->userdata('contact');
-        switch (true) {
+        switch (TRUE) {
             case empty($_FILES["id_proof"]["name"]):
                 echo 'id proof file not selected';
                 break;
@@ -1473,16 +1494,25 @@ echo $item->subtotal; ?>/- </td>
                 echo $this->upload->display_errors();
                 break;
 
-            case $this->form_validation->run() === false:
+            case $this->form_validation->run() === FALSE:
                 echo validation_errors();
                 break;
 
             default:
-                $pic = $this->upload->data();
-                $file = $pic['file_name'];
+                $file = $this->upload->data()['file_name'];
+                $image = $banner = $referral_link = '';
+                if( ! empty($_FILES["image"]["name"]))
+                {
+                    $this->upload->do_upload('image');
+                    $image = $this->upload->data()['file_name'];
+                }
+                if( ! empty($_FILES["banner"]["name"]))
+                {
+                    $this->upload->do_upload('banner');
+                    $banner = $this->upload->data()['file_name'];
+                }
                 $data = array(
                     'vendor_name' => $this->input->post('vendor_name'),
-                    // 'username' => $this->input->post('username'),
                     'password' => md5($this->input->post('password')),
                     'email' => $this->input->post('email'),
                     'address' => $this->input->post('address'),
@@ -1492,10 +1522,21 @@ echo $item->subtotal; ?>/- </td>
                     'pincode' => $this->input->post('pincode'),
                     'category' => $this->input->post('category'),
                     "id_type" => $this->input->post("id_type"),
-                    "id_proof" => $file);
-                $data['option'] = $data['category'] == 'Service provider' ? 'Service provider' : implode(",", $this->input->post("option"));
+                    "id_proof" => $file,
+                    "bio" => $this->input->post("bio"),
+                    "image" => $image,
+                    "banner" => $banner
+                );
+                $data['option'] = $data['category'] == 'Service provider' ? '' : implode(",", $this->input->post("option"));
                 $where = array('contact' => $contact);
                 if ($this->db->set($data)->where($where)->update('vendor')) {
+                    if($this->input->post('category') == 'Service provider')
+                    {
+                        $referral_link = '<p>Please find below, your referral links for vendor registration. 
+                        Please note that for you to earn commission on vendor sales activity, the vendor has to register with this link.<br>
+                        '.base_url() . 'vendor/vendor_registration/' . $this->db->insert_id(). '</p>';
+                    }
+                
                     $message = '<!DOCTYPE html>
             <html>
             <head>
@@ -1505,20 +1546,20 @@ echo $item->subtotal; ?>/- </td>
             <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                 <div id="inouter" style="border-bottom:2px dashed #444;">
                 <br>
-                <img src=' . base_url() . '"assets/images/logo2.jpg">
+                <img src="' . base_url() . 'assets/images/logo2.jpg">
                 <br>
                 <h2>Welcome to Ansvel!</h2>
                 <br>
-                <p>Dear  ' . $this->input->post("vendor_name") . ',</p>
+                <p>Dear ' . $this->input->post("vendor_name") . ',</p>
                 <p>Thank you for registering with Ansvel. Please use your e-mail address to log in to your account at <a href="https://ansvel.com/vendor">https://ansvel.com/vendor:</a></p>
-                <br>
-                <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a >support@ansvel.com</a> or call us at 07034176342 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                '.$referral_link.'
+                <p>This email can\'t receive replies. If you have any questions or need help with something regarding our products, please contact our customer support at <a href="mailto:support@ansvel.com">support@ansvel.com</a> or call us at 07034176342 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
                 <p>We hope you enjoy our products and services.</p>
                 <p>Best Regards,</p>
                 <br>
                 <p>Team Ansvel</p>
                 <br>
-                <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
+                <p class="footer" style="background-color: #27638e;color:white;padding: 2%;font-size: 13px;">Need Help? Call us on +2347034176342 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                 <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                 <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
                 </div>
@@ -1544,7 +1585,7 @@ echo $item->subtotal; ?>/- </td>
                     $this->email->to($to_email);
                     $this->email->subject('Ansvel');
                     $this->email->message($message);
-                    $this->email->send();
+                    ENVIRONMENT == 'production' ? $this->email->send() : NULL;
 
                     $this->session->set_flashdata('message', 'Your Personal information inserted Successfully.Please go to next...');
                     echo 'true';
@@ -1561,8 +1602,8 @@ echo $item->subtotal; ?>/- </td>
         $this->form_validation->set_rules('question3', 'Question 3', 'required|max_length[120]|trim');
         $this->form_validation->set_rules('question4', 'Question 4', 'required|max_length[120]|trim');
         $this->form_validation->set_rules('question5', 'Question 5', 'required|max_length[120]|trim');
-        switch (true) {
-            case $this->form_validation->run() === false;
+        switch (TRUE) {
+            case $this->form_validation->run() === FALSE;
                 echo validation_errors();
                 break;
 
@@ -1723,30 +1764,30 @@ echo $item->subtotal; ?>/- </td>
                     <div id="outer" style="border:1px solid #ddd; width: 80%;margin:auto;padding:1%;">
                         <div id="inouter" style="border-bottom:2px dashed #444;">
                         <br>
-                        <img src="http://mobiledarzi.com/assets/images/logo2.jpg">
+                        <img src="http://ansvel.com/assets/images/logo2.jpg">
                         <br>
-                        <h2>Welcome to MobileDarzi!</h2>
+                        <h2>Welcome to Ansvel!</h2>
                         <br>
 
                         <p>Dear  ' . $vinfo->vendor_name . ',</p>
-                        <p>Thank you for registering with MobileDarzi. Please use your e-mail address to log in to your account at <a href="http://mobiledarzi.com/">http://mobiledarzi.com/:</a></p>
+                        <p>Thank you for registering with Ansvel. Please use your e-mail address to log in to your account at <a href="http://ansvel.com/">http://ansvel.com/:</a></p>
 
                         <p><b><a href="' . base_url("Vendor/newpassword") . '">Create New Password</a></p>
                         <br>
 
-                        <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@mobiledarzi.com</a> or call us at +91 9644409191 or 0731-4213190 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
+                        <p>This email can\'t receive replies. If you have any questionsor need help with something regarding our products, please contact our customer support at <a href="#">support@ansvel.com</a> or call us at +2347034176342 (Working hour: 10:30am to 7pm, Monday - Saturday).</p>
 
                         <p>We hope you enjoy our products and services.</p>
 
                         <p>Best Regards,</p>
                         <br>
-                        <p>Team MobileDarzi</p>
+                        <p>Team Ansvel</p>
                         <br>
-                        <p class="footer" style="background-color: #27638e;color:#fff;padding: 2%;font-size: 13px;">Need Help? Call us on +919644409191 / 0731-4213190 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
+                        <p class="footer" style="background-color: #27638e;color:#fff;padding: 2%;font-size: 13px;">Need Help? Call us on +2347034176342 <img src="' . base_url("assets/sociallinks/cod.png") . '" style="float: right;"></p>
                         <p class="center small" style="color:#555;font-size: 12px;text-align: center;">CONNECT WITH US <br></p>
                         <p align="center"><img width="4%" src="' . base_url("assets/sociallinks/facebook_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/twitter_square-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/google_square-24.png") . '"> <img src="' . base_url("assets/sociallinks/tumblr.png") . '" width="4%"> <img width="4%" src="' . base_url("assets/sociallinks/instagram_square_color-24.png") . '"> <img width="4%" src="' . base_url("assets/sociallinks/youtube_square_color-24.png") . '"></p>
                         </div>
-                        <p class="small" style="text-align: center;">Copyright&copy 2017 MobileDarzi.com Powered by Absolute Innovations</p>
+                        <p class="small" style="text-align: center;">Copyright&copy 2017 Ansvel.com Powered by Absolute Innovations</p>
                         </div>
                     </body>
                 </html>';
@@ -1767,9 +1808,9 @@ echo $item->subtotal; ?>/- </td>
             $to_email = $_POST['femail'];
 
             //$mail_count= count($to_mail);
-            $this->email->from('absoluteinnovationspl2@gmail.com', 'Mobile Darzi');
+            $this->email->from('absoluteinnovationspl2@gmail.com', 'Ansvel');
             $this->email->to($to_email);
-            $this->email->subject('Mobile Darzi Forgot Password');
+            $this->email->subject('Ansvel Forgot Password');
             $this->email->message($message);
             $this->email->send();
             $this->email->clear();
@@ -1796,7 +1837,7 @@ echo $item->subtotal; ?>/- </td>
                 $this->session->unset_userdata('vn_id');
                 echo "true";
             } else {
-                echo "Password Couldnot be Changed.";
+                echo "Password Could not be Changed.";
             }
         } else {
             echo "Incorrect Password.";
@@ -3624,15 +3665,135 @@ echo $item->subtotal; ?>/- </td>
         $this->vendorlayout();
     }
 
+    public function fetch_type()
+    {
+        $mid = $this->input->post('mid');
+        $mtitle = $this->db
+                        ->group_by('mtitle')
+                        ->where(array('mid' => $mid, 'status'=>'enable'))
+                        ->order_by('cid', 'asc')
+                        ->get('category')->result();
+        echo json_encode($mtitle);
+    }
+    
+    public function add_designs()
+    {
+
+        if (!$this->session->userdata('vendor_loggedin')) {
+            redirect('Vendor');
+        }
+        $vendor_id = $this->session->userdata('vid');
+        $this->form_validation->set_rules('name', 'Name', 'required|min_length[2]|max_length[100]|trim');
+        $this->form_validation->set_rules('category', 'Category', 'required|numeric|in_list[1,2,3]|trim');
+        $this->form_validation->set_rules('type', 'Type', 'required|in_list[Ethnic,Western,Shirts,Trouser,Blazers and Waistcoats,Shirts,Girls,Boys,Traditional]|trim');
+        $this->form_validation->set_rules('design-price', 'Design price', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
+        $this->form_validation->set_rules('material-price', 'Material price', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
+        $this->form_validation->set_rules('desc', 'Description', 'required|max_length[1024]|trim');
+        
+        $config['upload_path']              = './assets/images/uniform/';
+        $config['allowed_types']            = 'gif|jpg|png|jpeg';
+        $config['max_size']                 = '1000000';
+        $config['max_filename']             = '200';
+        $config['file_ext_tolower']         = TRUE;
+        $config['max_filename_increment']   = '10';
+        $config['encrypt_name']             = TRUE;
+        $this->upload->initialize($config);
+
+        switch(TRUE)
+        {
+            case $this->form_validation->run():
+                $this->session->set_flashdata('message', validation_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case ! empty($_FILES['cover']) && ! $this->upload->do_upload('cover'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($cover = $this->upload->data()['file_name']):
+            break;
+
+            case ! empty($_FILES['front']) && ! $this->upload->do_upload('front'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($front = $this->upload->data()['file_name']):
+            break;
+
+            case ! empty($_FILES['back']) && ! $this->upload->do_upload('back'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($back = $this->upload->data()['file_name']):
+            break;
+
+            case ! empty($_FILES['right']) && ! $this->upload->do_upload('right'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($right = $this->upload->data()['file_name']):
+            break;
+
+            case ! empty($_FILES['left']) && ! $this->upload->do_upload('left'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($left = $this->upload->data()['file_name']):
+            break;
+
+            case ! empty($_FILES['design-sizing-guide']) && ! $this->upload->do_upload('design-sizing-guide'):
+                $this->session->set_flashdata('message', $this->upload->display_errors());
+                redirect('Vendor/add_designs');
+            break;
+
+            case empty($sizing_guide = $this->upload->data()['file_name']):
+            break;
+
+            case empty($data = array(
+                'name' => $this->input->post('name'),
+                'mid' => $this->input->post('category'),
+                'type' => $this->input->post('type'),
+                'desc' => $this->input->post('desc'),
+                'design_cost' => $this->input->post('design-cost'),
+                'material_cost' => $this->input->post('material-cost'),
+                'cover' => $cover,
+                'front' => $front,
+                'back' => $back,
+                'right' => $right,
+                'left' => $left,
+                'sizing_guide' => $sizing_guide,
+                'date' => date('Y-m-d'),
+                'vendor_id' => $vendor_id
+                )):
+            break;
+
+            case ! $this->db->set($data)->insert('catalog_design_category'):
+                $this->session->set_flashdata('message', 'An error occured. Please try again.');
+                redirect('Vendor/add_designs');
+            break;
+
+            default:
+                $this->session->set_flashdata('message', 'Catalogue added successfully.');
+        }
+        $this->load->view('vendor/header');
+        $this->load->view('vendor/add_designs_view');
+        $this->load->view('vendor/index');
+    }
+
+
     public function add_uniform($edit = false)
     {
-        if (!$this->session->userdata("vendor_loggedin")) {
+        if ( ! $this->session->userdata('vendor_loggedin')) {
             redirect("Vendor");
         }
         $userName = $this->session->userdata('username');
         $vid = $this->session->userdata('vid');
         if ($edit == true) {
-            // echo "sdf";exit;
             if ($this->input->post("uni_category")) {
                 $config['upload_path'] = './assets/images/uniform/';
                 $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -4111,7 +4272,7 @@ $this->vendorlayout();
 <table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 500px;' class='wrapper'>
 <tr>
 <td align='center' valign='top' style='padding: 15px 0;' class='logo'>
-<img alt='Logo' src='http://mobiledarzi.com/assets/images/logo2.jpg'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
+<img alt='Logo' src='http://ansvel.com/assets/images/logo2.jpg'  style='display: block; font-family: Helvetica, Arial, sans-serif; color: #ffffff; font-size: 16px;' border='0'>
 </td>
 </tr>
 </table>
@@ -4272,7 +4433,7 @@ $message.="
 ".$site_address->office_add."
 <br>
 <span style='font-family: Arial, sans-serif; font-size: 12px; color: #444444;'>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<a href='http://mobiledarzi.com' target='_blank' style='color: #666666; text-decoration: none;'>Mobile Darzi</a>
+<a href='http://ansvel.com' target='_blank' style='color: #666666; text-decoration: none;'>Ansvel</a>
 </td>
 </tr>
 </table>
@@ -4283,7 +4444,7 @@ $message.="
         if (!empty($site_address->mobile)) {
             $authKey = "136895AdMGPnqo6n5875df12";
             $mobileNumber = $site_address->mobile;
-            $senderId = "MDARZI";
+            $senderId = "ANSVEL";
             $message1 = "Ready To Pickup.";
             $route = 4;
             $postData = array(
@@ -4322,7 +4483,7 @@ $message.="
         'newline' => "\r\n"
         ));
         $this->email->from($from_email, 'Vendor');
-        $this->email->to('info@mobiledarzi.com');
+        $this->email->to('info@ansvel.com');
         $this->email->subject('Vendor Message');
         $this->email->message($message);
         $this->email->send();*/

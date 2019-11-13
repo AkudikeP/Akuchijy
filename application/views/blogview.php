@@ -49,7 +49,7 @@
 <script>
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
-s.src = '//mobiledarzi-com.disqus.com/embed.js';
+s.src = '//ansvel-com.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
@@ -61,7 +61,7 @@ s.setAttribute('data-timestamp', +new Date());
       
       </div>
     </section>
-    <script id="dsq-count-scr" src="//mobiledarzi-com.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="//ansvel-com.disqus.com/count.js" async></script>
     
     <script id="dsq-count-scr" src="//tailor-piresearch-in.disqus.com/count.js" async></script>
      

@@ -44,10 +44,10 @@
  <div class="pull-left col-md-12">
  <?php if(isset($excel)){
   ?>
-<a href="http://mobiledarzi.com/product/all_alt"><button class="btn btn-primary">Excel</button></a>
+<a href="<?=base_url();?>product/all_alt"><button class="btn btn-primary">Excel</button></a>
   <?php
   }else{ ?>
-<a href="http://mobiledarzi.com/product/all_stitch"><button class="btn btn-primary">Excel</button></a>
+<a href="<?=base_url();?>product/all_stitch"><button class="btn btn-primary">Excel</button></a>
 <?php } ?>
       </div>
               <div class="col-md-12">
@@ -87,7 +87,7 @@
                          <tr class="gradeA">
                           <td align="center"><?php echo $i; ?></td>
                           <td><?php echo 'OMD-'.$fab['oid'];?></td>
-                          <td><?php if($stch['order_type']=='stitch'){echo 'Personal';} elseif($stch['order_type']=='stitch with fabric'){echo 'Mobile Darzi';}?></td>
+                          <td><?php if($stch['order_type']=='stitch'){echo 'Personal';} elseif($stch['order_type']=='stitch with fabric'){echo 'Ansvel';}?></td>
                           <th><?php echo date("d M Y",strtotime($fab['odate']));?></th>
                           <td width="100px"><?php echo $stch['pname'];?>
                           </td>
@@ -141,7 +141,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

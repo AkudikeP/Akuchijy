@@ -152,7 +152,7 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="about" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Appears in the body of product detail.">About Mobile Darzi </span> </label>
+                            <label for="about" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Appears in the body of product detail.">About Ansvel </span> </label>
                             <div class="col-lg-8 mgbt-xs-10 mgbt-lg-0">
                               <textarea name="about"  id="about" data-rel="ckeditor" rows="3" ><?php echo $edit->about;?></textarea>
                             </div>
@@ -227,7 +227,7 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="about" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Appears in the body of product detail.">About Mobile Darzi </span> </label>
+                            <label for="about" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="Appears in the body of product detail.">About Ansvel </span> </label>
                             <div class="col-lg-8 mgbt-xs-10 mgbt-lg-0">
                               <textarea name="about"  id="about" data-rel="ckeditor" rows="3" ></textarea>
                             </div>
@@ -345,7 +345,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved 
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved 
                 </div>
               </div>
             </div><!-- row -->

@@ -120,7 +120,7 @@ $(document).ready(function(){
                         <h5 class="title text-uppercase mobile-collapse__title"><?php if(isset($menu_link->link_menu_name)){echo $menu_link->link_menu_name;}?></h5>
                         <div class="v-links-list mobile-collapse__content"><ul>
                         <!-- help -->
-                        <?php $mlink = $this->db->get_where("mobiledarzi",array("status_enable"=>'enable'))->result();
+                        <?php $mlink = $this->db->get_where("ansvel",array("status_enable"=>'enable'))->result();
                         foreach ($mlink as $mlink) { ?>
                           <li><a href="<?php if(isset($mlink->link)){echo base_url() . $mlink->link;}?>"><?php if(isset($mlink->heading)){echo $mlink->heading;}?></a></li><?php } ?></ul>
                         </div></div>
@@ -196,7 +196,7 @@ foreach ($ilink as $ilink) { ?><li><a href="<?php if(isset($ilink->info_link_add
 
 
 <!--div class="row">
-<div class="col-md-12 col-sm-12 foot hidden-xs" ><h6  style="color:#000; padding-top:20px;">Most Searched on Mobile Darzi </h6> <p>
+<div class="col-md-12 col-sm-12 foot hidden-xs" ><h6  style="color:#000; padding-top:20px;">Most Searched on Ansvel </h6> <p>
 <?php
 $keyword = $this->session->userdata('city_session');
             $this->db->where("city LIKE '%$keyword%'");

@@ -77,7 +77,7 @@
                     <i class="icon-network"></i>
                 </span>
                 <span class="menu-value">
-                    <i class="fa fa-inr"></i> <?php echo $gt;?>/- 
+                    &#8358; <?php echo $gt;?>/- 
                 </span>  
             </div>   
             <div class="menu-text clearfix">

@@ -333,7 +333,7 @@ li a{
       display: initial;
       }}
      /* .sizes-example{
-        background-image:url('http://mobiledarzi.com/assets/images/logo2.jpg');
+        background-image:url('<?=base_url();?>assets/images/logo2.jpg');
         background-size: 100%;
       }*/
 </style>
@@ -383,7 +383,7 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
             {
                 // alert(variable[2]);
                  //console.log(variable[2]);
-              jqc(this).attr('src','http://mobiledarzi.com/assets/images/fabrics/cover.jpg');
+              jqc(this).attr('src','<?=base_url();?>assets/images/fabrics/cover.jpg');
             }else{
 
             }}
@@ -811,9 +811,9 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
 
                 <div class="shopping-cart__item__info__option">Qty: <?php echo $cart['qty'];?></div>
 
-                  <div class="shopping-cart__item__info__option">SubTotal: <i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?></div>
+                  <div class="shopping-cart__item__info__option">SubTotal: &#8358; <?php echo $cart['subtotal'];?></div>
 
-                   <!-- <div class="shopping-cart__item__info__price"><i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?>/-</div>-->
+                   <!-- <div class="shopping-cart__item__info__price">&#8358; <?php echo $cart['subtotal'];?>/-</div>-->
 
 
 
@@ -833,7 +833,7 @@ if( variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' &&
 
                     <div class="pull-left"><span class="shopping-cart__total">
 
-                                        <i class="fa fa-inr"></i> <?php
+                                        &#8358; <?php
                     if($this->session->userdata("dis")){
                       echo $this->cart->total()-$this->session->userdata("dis");
                     }
@@ -1313,9 +1313,9 @@ if($heading->id=="10"){
 
                 <div class="shopping-cart__item__info__option">Qty: <?php echo $cart['qty'];?></div>
 
-                  <div class="shopping-cart__item__info__option">SubTotal: <i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?>/-</div>
+                  <div class="shopping-cart__item__info__option">SubTotal: &#8358; <?php echo $cart['subtotal'];?>/-</div>
 
-                   <!-- <div class="shopping-cart__item__info__price"><i class="fa fa-inr"></i> <?php echo $cart['subtotal'];?>/-</div>-->
+                   <!-- <div class="shopping-cart__item__info__price">&#8358; <?php echo $cart['subtotal'];?>/-</div>-->
 
 
 
@@ -1335,7 +1335,7 @@ if($heading->id=="10"){
 
                     <div class="pull-left"><span class="shopping-cart__total">
 
-                                        <i class="fa fa-inr"></i> <?php echo $this->cart->total();?></span></div>
+                                        &#8358; <?php echo $this->cart->total();?></span></div>
 
                     <div class="pull-right">
 

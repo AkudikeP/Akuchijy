@@ -78,7 +78,7 @@
               <div class="col-sm-12 col-md-4 col-lg-12">
                 <div class="form-wizard condensed mgbt-xs-20">
                   <ul class="nav nav-tabs nav-stacked">
-                    <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Mobile Darzi Link </a></li>                
+                    <li class="active"><a href="#tabinfo" data-toggle="tab"> <i class="fa fa-info-circle append-icon"></i> Ansvel Link </a></li>                
                   </ul>
                 </div>
               </div>
@@ -271,7 +271,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved 
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved 
                 </div>
               </div>
             </div><!-- row -->

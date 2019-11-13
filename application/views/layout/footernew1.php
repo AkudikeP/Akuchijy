@@ -658,7 +658,7 @@
 
 ">
 All rights reserved. ©
-Mobile Darzi
+Ansvel
 </div>
 </div>
 

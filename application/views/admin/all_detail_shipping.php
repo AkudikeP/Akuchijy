@@ -31,7 +31,7 @@
                     <?php echo $site_address->mobile;
                     ?>
                     <br />
-                    <abbr>Email :</abbr> info@mobiledarzi.com
+                    <abbr>Email :</abbr> info@ansvel.com
                     </address>
                     <br/>
 
@@ -142,7 +142,7 @@
 
                             <td><?php echo $item->pname;?></td>
                           <td><?php echo $item->qty?></td>
-                          <td class="text-right"><i class="fa fa-inr"></i> <?php echo $item->price.' ';?></td>
+                          <td class="text-right">&#8358; <?php echo $item->price.' ';?></td>
                           <td class="text-right"> <?php echo $item->subtotal;?>/-</td>
                           <td class="text-right"> <!---->
 

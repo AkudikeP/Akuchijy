@@ -75,13 +75,13 @@
             <?php if($uni->offer_type=='Percentage')
               {
                 $value = 100 - $uni->offer_price;
-                echo $x='<i class="fa fa-inr"></i>'.round(($uni->price/100)*$value);
+                echo $x='&#8358;'.round(($uni->price/100)*$value);
                 
               }
               elseif($uni->offer_type=='Amount')
               {
                 $value = $uni->offer_price;
-                echo $x='<i class="fa fa-inr"></i>'.round($uni->price - $value);
+                echo $x='&#8358;'.round($uni->price - $value);
             
               }
 

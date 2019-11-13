@@ -181,7 +181,7 @@
                           <td>
                            <?php echo $uni->vendor_name."&nbsp"; ?><br><?php if(!empty($uni->vendor_id)){echo 'VMD-'.$uni->vendor_id;}else{echo 'Admin\' product';} ?>
                            </td>
-                          <td><i class="fa fa-inr"></i><?php echo $uni->price;?></td>
+                          <td>&#8358;<?php echo $uni->price;?></td>
                           <td>
                           <a data-toggle="tooltip" title="Edit" class="btn btn-xs btn-warning" href="<?php echo base_url();?>index.php/Product/uniform_status/<?php echo $uni->uniform_id;?>"><i class="fa fa-edit"></i></a> 
                           <button data-toggle="tooltip" title="Delete" class="btn btn-xs vd_btn vd_bg-red del_fabric" id="<?php echo $uni->uniform_id;?>" type="button"><i class="fa fa-trash-o"></i></button></td>

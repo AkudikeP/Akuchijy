@@ -605,7 +605,7 @@ iframe {
                       <div class="form-group">
                             <label for="wholesale_price" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Price</span> </label>
                             <div class="col-lg-4">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="text" placeholder="1000" id="wholesale_price" name="styleprice" maxlength="14" required="">
                               </div>
                             </div>
@@ -694,7 +694,7 @@ iframe {
                       <div class="form-group">
                             <label for="wholesale_price" class="control-label col-lg-3"> <span title="" data-toggle="tooltip" class="label-tooltip" data-original-title="The wholesale price is the price you paid for the product. Do not include the tax.">Price</span> </label>
                             <div class="col-lg-4">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="number" placeholder="1000" id="wholesale_price" name="styleprice" maxlength="14" required="">
                               </div>
                             </div>

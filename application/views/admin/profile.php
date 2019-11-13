@@ -1,7 +1,7 @@
  <link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css"><div class="vd_title-section clearfix">
             <div class="vd_panel-header">
-              <h1>MobileDarji Admin</h1>
+              <h1>Ansvel Admin</h1>
               <!--<small class="subtitle">Form for user profile</small> --></div>
           </div>
           

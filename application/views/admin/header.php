@@ -77,7 +77,7 @@
           <div class="vd_top-nav vd_nav-width">
           <div class="vd_panel-header">
             <div class="logo">
-              <a href="<?php echo base_url();?>product"><h2><img alt="logo" src="<?php echo base_url();?>assets/images/Mobiledarzilogo.png"></h2></a>
+              <a href="<?php echo base_url();?>product"><h2><img alt="logo" src="<?php echo base_url();?>assets/images/ansvellogo.png"></h2></a>
             </div>
             <!-- logo -->
             <div class="vd_panel-menu  hidden-sm hidden-xs" data-intro="<strong>Minimize Left Navigation</strong><br/>Toggle navigation size to medium or small size. You can set both button or one button only. See full option at documentation." data-step=1>
@@ -2093,13 +2093,13 @@ if(!empty($data) && $data->vendor_id!=0){
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>product/add_mobiledarzi">
-                        <span class="menu-text">Add Mobile darzi</span>
+                    <a href="<?php echo base_url();?>product/add_ansvel">
+                        <span class="menu-text">Add Ansvel</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url();?>product/view_mobiledarzi">
-                        <span class="menu-text">View Mobile darzi</span>
+                    <a href="<?php echo base_url();?>product/view_ansvel">
+                        <span class="menu-text">View Ansvel</span>
                     </a>
                 </li>
                 <li>
@@ -2358,7 +2358,7 @@ if(variable[2]!='com/-Biz7tWEakHM/AAAAAAAAAAI/AAAAAAAAAEE/mV4_Um9s5GY/photo' && 
             {
                 // alert(variable[2]);
                  //console.log(variable[2]);
-              $(this).attr('src','http://mobiledarzi.com/assets/images/online_boutique/cover.jpg');
+              $(this).attr('src','<?=base_url();?>assets/images/online_boutique/cover.jpg');
             }else{
 
             }}

@@ -4,7 +4,7 @@
 <!--[if gt IE 9]><!-->  <html><!--<![endif]-->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Vendor Registration</title>
+    <title>Ansvel | Vendor Registration</title>
    
     
     <!-- Fav and touch icons -->
@@ -185,7 +185,7 @@ body
           <div class="vd_top-nav vd_nav-width">
           <div class="vd_panel-header">
           	<div class="logo">
-            	<a href="http://mobiledarzi.com/"><h2><img alt="logo" src="http://mobiledarzi.com/assets/images/mobiledarziv.png"></h2></a>
+            	<a href="<?=base_url();?>"><h2><img alt="logo" src="<?=base_url();?>assets/images/ansvelv.png"></h2></a>
             </div>
             <!-- logo -->
             
@@ -234,7 +234,7 @@ body
               <div class="col-md-12">
                 <div class="panel widget">
                   <div class="panel-heading vd_bg-grey">
-                    <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-magic"></i> </span> MobileDarji | Vendor Registration</h3>
+                    <h3 class="panel-title"> <span class="menu-icon"> <i class="fa fa-magic"></i> </span> Ansvel | Vendor Registration</h3>
                   </div>
 				  
 				  
@@ -869,7 +869,7 @@ $(function(){
            {
               $( "#login_button" ).prop( "disabled", false );
              // alert('All Question inserted Successfully.Please go to login...');
-			  alert('You will get a confirmation call from Mobile Darzi soon, Once your account will be activated, you will able to access your account.');
+			  alert('You will get a confirmation call from Ansvel soon, Once your account will be activated, you will able to access your account.');
               window.location.href = "<?php echo base_url('Vendor');?>";
            }
            else

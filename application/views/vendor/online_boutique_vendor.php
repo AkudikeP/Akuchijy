@@ -290,7 +290,7 @@
                             <div class="col-lg-5">
                               <div class="row">
                                 <div class="col-sm-9">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="number" value="<?php echo $edit->price_without_tax;?>" onChange="this.value = this.value.replace(/,/g, '.');" placeholder="500" id="wholesale_price" name="wholesale_price" required>
                               </div>
                             </div>
@@ -574,7 +574,7 @@
                              <div class="col-lg-5">
                               <div class="row">
                                 <div class="col-sm-9">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="number" min="1" onChange="this.value = this.value.replace(/,/g, '.');" placeholder="500" id="wholesale_price" name="wholesale_price" required="">
                               </div>
                             </div>
@@ -1494,7 +1494,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

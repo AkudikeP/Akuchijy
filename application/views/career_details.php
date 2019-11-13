@@ -167,21 +167,21 @@
                      
                      <div><h6>Your Mission </h6>
                      
-                     <p>Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself. </p>
+                     <p>Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself. </p>
                      </div>
                      <br />
                      <div><h6>About Re - engagement</h6>
                      
-                     <p>Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
+                     <p>Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
                      </div>
                      <br />
                      <div><h6>As the re-engagement PM you will</h6>
                      
-                     <p>Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself. </p>
+                     <p>Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself. </p>
                      </div>
                      <br />
                      <h4 class="clr-red"> Requirements  </h4><br /> 
-                     <p>Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
+                     <p>Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
                      
                      <br /><br /><br />
                      <div align="center">  <button class="btn btn-red wave waves-effect">Apply for this job

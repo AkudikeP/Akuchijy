@@ -66,7 +66,7 @@ $("#orders_sorting_table").html(response);
 
           <div class="row">
 <div class="col-md-12 pull-left">
-<a href="http://mobiledarzi.com/vendor/all_orders_excel"><button class="btn btn-primary">Excel</button></a>
+<a href="<?=base_url();?>vendor/all_orders_excel"><button class="btn btn-primary">Excel</button></a>
       </div>
 
             <div class="col-md-12">

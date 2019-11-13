@@ -15,7 +15,7 @@
                     <?php echo $site_address->mobile;
                     ?>
                     <br />
-                    <abbr>Email :</abbr> info@mobiledarzi.com
+                    <abbr>Email :</abbr> info@ansvel.com
                     </address>
                     <br/>
 

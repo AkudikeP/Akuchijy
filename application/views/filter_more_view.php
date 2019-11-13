@@ -117,7 +117,7 @@ foreach($pros as $fab){
 
 												</ul>-->
 
-												<div class="price-box "><span class="price-box__new"><i class="fa fa-inr"></i> <?php echo $fab->price;?></span> <!--<span class="price-box__old">$84.00</span>--></div>
+												<div class="price-box "><span class="price-box__new">&#8358; <?php echo $fab->price;?></span> <!--<span class="price-box__old">$84.00</span>--></div>
 
 												<div class="product-preview__info__description">
 

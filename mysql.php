@@ -74,5 +74,31 @@ ALTER TABLE `vendor` ADD sort_code VARCHAR(50) NOT NULL;
 ALTER TABLE `vendor` ADD tin VARCHAR(50) NOT NULL;
 ALTER TABLE `vendor` ADD acc_class VARCHAR(50) NOT NULL;
 ALTER TABLE `vendor` ADD business_name VARCHAR(50) NOT NULL;
-ALTER TABLE `vendor` ADD category VARCHAR(50)l
+ALTER TABLE `vendor` ADD category VARCHAR(50);
+
+ALTER TABLE `vendor` ADD bio TEXT NOT NULL;
+ALTER TABLE `vendor` ADD banner VARCHAR(255) NOT NULL DEFAULT 'default_banner.jpg';
+ALTER TABLE `vendor` ADD referred_by VARCHAR(20) NOT NULL;
 // ALTER TABLE `posts_product_files` CHANGE `posts_product_id` `file_id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+// rename the mobiledarzi table to ansvel
+CREATE TABLE catalog_design_category (
+    catalog_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255) NOT NULL,
+    mid INT(11) NOT NULL,
+    type VARCHAR (50) NOT NULL,
+    `desc` TEXT NOT NULL,
+    design_cost INT(11) NOT NULL,
+    material_cost INT(11) NOT NULL,
+    cover VARCHAR(255) NOT NULL,
+    front VARCHAR(255) NOT NULL,
+    back VARCHAR(255) NOT NULL,
+    `right` VARCHAR(255) NOT NULL,
+    `left` VARCHAR(255) NOT NULL,
+    sizing_guide VARCHAR(255) NOT NULL,
+    date VARCHAR (50) NOT NULL,
+    vendor_id INT (50) NOT NULL,
+    status VARCHAR (50) NOT NULL DEFAULT 'disable',
+    date_added DATETIME DEFAULT CURRENT_TIMESTAMP,
+    last_edit TIMESTAMP
+);

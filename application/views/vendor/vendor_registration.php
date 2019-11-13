@@ -271,8 +271,6 @@ if ($this->session->userdata('contact')) {
     foreach ($data['abttext'] as $text) {
         $contact = $text->contact;
     }
-
-    /*    $username = $text->username;*/
     $password = $text->password;
     $vendor_name = $text->vendor_name;
     $email = $text->email;
@@ -281,9 +279,9 @@ if ($this->session->userdata('contact')) {
     $statename = $text->state;
     $cityname = $text->city;
     $pincode = $text->pincode;
+    $bio = $text->bio;
 } else {
     $contact = "";
-    /*$username = "";*/
     $password = "";
     $vendor_name = "";
     $email = "";
@@ -292,12 +290,13 @@ if ($this->session->userdata('contact')) {
     $statename = "";
     $cityname = "";
     $pincode = "";
+    $bio = "";
 }
 ?>
 
                         <div class="tab-content no-bd pd-25">
                         <div class="tab-pane" id="tab21">
-                          <form name="form" id="otp-form" method="post" action="<?php echo base_url('index.php/Vendor/registration'); ?>" autocomplete="off">
+                          <form name="form" id="otp-form" method="post" action="<?php echo base_url('index.php/Vendor/registration/'.$referred_by); ?>" autocomplete="off">
                             <div class="form-group">
                               <label class="col-md-2 col-sm-3 control-label">Mobile Number</label>
                               <div class="col-sm-3 controls">
@@ -321,6 +320,7 @@ if ($this->session->userdata('contact')) {
                                 <i class="fa fa-exclamation-circle vd_green"></i></span>
                                <?php echo $this->session->flashdata('message'); ?>
                               </div>
+                              <?php unset($_SESSION['message']); ?>
                             <?php }?>
                           </div>
                           <div class="tab-pane" id="tab22">
@@ -342,43 +342,43 @@ if ($this->session->userdata('contact')) {
                           </div>
                             <?php echo form_close(); ?>
                           </div>
+                          <style>
+                            .px-2 {
+                              padding-left: 1rem;
+                              padding-right: 1rem;
+                            }
+                          </style>
                           <div class="tab-pane" id="tab23">
                             <?php echo form_open_multipart("", array("class" => "form-horizontal", "id" => "chk_pdetail", "autocomplete" => "off")); ?>
-                            <!--div class="form-group">
-                              <label class="col-sm-2 control-label">User Name</label>
-                              <!--div class="col-sm-10 controls">
-                                <input type="text" class="width-30  input-border-btm" name="username" id="username" value="<?php echo $username; ?>" required>
-                              </div-->
-                            </div-->
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Password</label>
+                              <label class="col-sm-4 control-label">Password</label>
                               <div class="col-sm-5 controls">
                                 <input type="password" class="width-67  input-border-btm" name="password" autocomplete="new-password" id="password" value="<?php echo $password; ?>">
                               </div>
                             </div>
 
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Vendor Name</label>
+                              <label class="col-sm-4 control-label">Vendor Name</label>
                               <div class="col-sm-5 controls">
                                 <input type="text" class="width-67  input-border-btm" name="vendor_name" id="vendor_name" autocomplete="firstname" value="<?php echo $vendor_name; ?>" required>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Email</label>
+                              <label class="col-sm-4 control-label">Email</label>
                               <div class="col-sm-5 controls">
                                 <input type="text" class="width-67  input-border-btm" name="email" id="email" autocomplete="email" value="<?php echo $email; ?>">
                               </div>
 							  <div id="status" style="color:#669900;"></div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Address</label>
+                              <label class="col-sm-4 control-label">Address</label>
                               <div class="col-sm-5 controls">
                                 <input type="text" class="width-67  input-border-btm" name="address" id="address" autocomplete="address" value="<?php echo $address ?>">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Country</label><div class="col-sm-5">
-                              <div class="width-67  input-border-btm">
+                              <label class="col-sm-4 control-label">Country</label><div class="col-sm-5">
+                              <div class="width-67">
                                 <select id="country" name="country" class="form-control">
                                   <option value="">Select Country</option>
                                   <?php
@@ -393,8 +393,8 @@ foreach ($country as $country) {
                             </div>
 
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">State</label> <div class="col-sm-5">
-                              <div class="width-67  input-border-btm" id="states">
+                              <label class="col-sm-4 control-label">State</label> <div class="col-sm-5">
+                              <div class="width-67" id="states">
                                 <select id="state" name="state" class="form-control">
                                   <option value="">Select State</option>
                                  </select>
@@ -402,9 +402,9 @@ foreach ($country as $country) {
                             </div>
                           </div>
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">City</label>
+                              <label class="col-sm-4 control-label">City</label>
 							  <div class="col-sm-5">
-                              <div class="width-67  input-border-btm" id="cities">
+                              <div class="width-67" id="cities">
                               <select id="city" name="city" class="form-control">
 							  	 <option value="">Select City</option>
                                  </select>
@@ -413,28 +413,27 @@ foreach ($country as $country) {
 
 
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Postal code</label>
-                              <div class="col-sm-10 controls">
+                              <label class="col-sm-4 control-label">Postal code (Optional)</label>
+                              <div class="col-sm-8 controls">
                                 <input type="text" class="width-30  input-border-btm" maxlength="6" name="pincode" id="pincode" value="<?php echo $pincode; ?>" onKeyPress="return isNumberKey(event)">
-                                <span style="color: grey;">Not compulsory</span>
                               </div>
                             </div>
                           <div class="form-group">
-                            <label class="col-sm-2 control-label">Category</label>
-                            <div class="col-sm-10 controls">
+                            <label class="col-sm-4 control-label">Category</label>
+                            <div class="col-sm-8 controls">
                               <label class="control control--radio">Vendor
                                 <input type="radio" class="width-5 input-border-btm type-vendor" name="category" value="Vendor"/>
                                 <div class="control__indicator"></div>
                               </label>
-                              <label class="control control--radio">Service provider
+                              <label class="control control--radio">Service provider (Agent)
                                 <input type="radio" class="width-5 input-border-btm type-service-provider" name="category" value="Service provider"/>
                                 <div class="control__indicator"></div>
                               </label>
                             </div>
                           </div>
 							<div class="form-group vendor-type-options">
-                              <label class="col-sm-2 control-label">Vendor Type</label>
-                              <div class="col-sm-10 controls">
+                              <label class="col-sm-4 control-label">Vendor Type</label>
+                              <div class="col-sm-8 controls">
                               <label class="control control--checkbox">Fabric
 							  <input type="checkbox" class="width-5 input-border-btm vtype" name="option[]" value="Fabric"/>
 							  <div class="control__indicator"></div>
@@ -448,21 +447,23 @@ foreach ($country as $country) {
 							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Accessories"/>
 							  <div class="control__indicator"></div>
 							</label>
-
+              <label class="control control--checkbox">Online Boutique
+							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Online Boutique"/>
+							  <div class="control__indicator"></div>
+							</label>
+              <label class="control control--checkbox">Fashion designers (Tailor)
+							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Fashion designers"/>
+							  <div class="control__indicator"></div>
+							</label>
 							 <label class="control control--checkbox">More Services
 							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="More Services"/>
 							  <div class="control__indicator"></div>
 							</label>
-										<label class="control control--checkbox">Online Boutique
-							  <input type="checkbox" class="width-5  input-border-btm vtype" name="option[]" value="Online Boutique"/>
-							  <div class="control__indicator"></div>
-							</label>
-                              </div>
+            </div>
 							  <br>
-
                             </div>
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">Select ID Type</label>
+                              <label class="col-sm-4 control-label">Select ID Type</label>
                               <div class="col-sm-5 controls">
 								<select id="id_type" name="id_type" class="form-control">
                                   <option value="">Select Type</option>
@@ -473,15 +474,32 @@ foreach ($country as $country) {
                                  </select>
                               </div>
                             </div>
-
                             <div class="form-group">
-                              <label class="col-sm-2 control-label">ID Proof</label>
+                              <label class="col-sm-4 control-label">ID Proof</label>
                               <div class="col-sm-5 controls">
                                 <input type="file" name="id_proof" id="id_proof" >
                               </div>
                             </div>
-
-
+                            <div class="form-group">
+                              <label class="col-sm-4 control-label">Profile picture (Optional)</label>
+                              <div class="col-sm-5 controls">
+                                <input type="file" name="profile" id="profile">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="col-sm-4 control-label">Banner image (Optional)</label>
+                              <div class="col-sm-5 controls">
+                                <input type="file" name="banner" id="banner">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="bio" id="bio-label" class="col-form-label col-sm-4 px-2 control-label">Bio
+                                <span style="font-size: 80%">Kindly provide company profile. (Optional).</span></label>
+                              <div class="col-sm-7 controls">
+                                <textarea class="width-67 input-border-btm" id="bio" name="bio" maxlength="6144"
+                                  aria-describedby="bio-label" rows="3"><?php echo $bio;?></textarea>
+                              </div>
+                            </div>
 							<div class="form-actions-condensed wizard">
                             <div class="row mgbt-xs-0">
                               <div class="col-sm-9 col-sm-offset-2">

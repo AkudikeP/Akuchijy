@@ -782,8 +782,8 @@ if(jq('.noUi-handle.noUi-handle-upper .tooltip.top .tooltip-inner span').html()=
 												if($access['offer_type']=='Percentage' OR $access['offer_type']=='Amount')
 										              {
 										            ?>
-										            <span class="price-box__new"><i class="fa fa-inr"></i> <b id="price<?php echo $access['uniform_id'];?>"><?php echo $x;?></b></span>
-										              <span class="price-box__old"><i class="fa fa-inr"></i> <b id="price<?php echo $access['uniform_id'];?>"><?php echo $access['price'];?></b></span>
+										            <span class="price-box__new">&#8358; <b id="price<?php echo $access['uniform_id'];?>"><?php echo $x;?></b></span>
+										              <span class="price-box__old">&#8358; <b id="price<?php echo $access['uniform_id'];?>"><?php echo $access['price'];?></b></span>
 										            <?php
 										              }
 										             }
@@ -791,7 +791,7 @@ if(jq('.noUi-handle.noUi-handle-upper .tooltip.top .tooltip-inner span').html()=
 
 										              {
 										            ?>
-										            <span class="price-box__new"><i class="fa fa-inr"></i><b id="price<?php echo $access['uniform_id'];?>"><?php echo $x;?></b></span>
+										            <span class="price-box__new">&#8358;<b id="price<?php echo $access['uniform_id'];?>"><?php echo $x;?></b></span>
 
 										            <?php
 										              }

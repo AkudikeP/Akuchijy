@@ -247,8 +247,8 @@ $this->db->update('online_boutique', $data);
             if($pro->offer_type=='Percentage' OR $pro->offer_type=='Amount')
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <b id="price"><?php echo $x;?></b></span>
-              <span class="price-box__old"><i class="fa fa-inr"></i> <b id="oldprice"><?php echo $pro->price;?></b></span>
+            <span class="price-box__new">&#8358; <b id="price"><?php echo $x;?></b></span>
+              <span class="price-box__old">&#8358; <b id="oldprice"><?php echo $pro->price;?></b></span>
 
             <?php
               }
@@ -257,7 +257,7 @@ $this->db->update('online_boutique', $data);
 
               {
             ?>
-            <span class="price-box__new"><i class="fa fa-inr"></i> <b id="price"><?php echo $x;?></b></span>
+            <span class="price-box__new">&#8358; <b id="price"><?php echo $x;?></b></span>
 
             <?php
               }
@@ -287,7 +287,7 @@ $this->db->update('online_boutique', $data);
                // echo $x;
             ?>
 
-             <span class="product-info__sku ">&nbsp;&nbsp;<span class="label label-success" style="font-size: 12px;"><i class="fa fa-inr"></i> <?php echo $pro->offer_price;?> OFF</span></span>
+             <span class="product-info__sku ">&nbsp;&nbsp;<span class="label label-success" style="font-size: 12px;">&#8358; <?php echo $pro->offer_price;?> OFF</span></span>
 
 
             <?php
@@ -992,7 +992,7 @@ $pname = preg_replace('/[^A-Za-z0-9 ]/u','', strip_tags($pro->brand));
 
               <h5><?php echo substr($rela->brand, 0,30);
                           if(strlen($rela->brand)>30){echo '...';}?></h5>
-                  <h5><i class="fa fa-inr"></i> <?php echo $rela->price; ?></h5>
+                  <h5>&#8358; <?php echo $rela->price; ?></h5>
 
           </div>
 

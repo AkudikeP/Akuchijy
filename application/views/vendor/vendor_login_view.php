@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Vendor Login</title>
+    <title>ANSVEL | Vendor Login</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, Vendroid" />
     <meta name="description" content="Login Pages - Responsive Admin HTML Template">
     <meta name="author" content="Venmond">
@@ -127,7 +127,7 @@
               <div class="panel widget">
 
                 <div class="panel-body">
-                 <div class="login-icon entypo-icon"> <img src="http://mobiledarzi.com/assets/images/Mobiledarzilogo.png" alt="logo" width="80%"> </div>
+                 <div class="entypo-icon text-center"> <img src="<?=base_url();?>assets/images/logo/ansvel_text2.png" alt="logo" style="margin-bottom: 3rem;"> </div>
                   <?php echo form_open("Vendor/login",array("class"=>"form-horizontal"));
 				  if($this->session->flashdata('msg')!=''){ ?>
                   <div class="alert alert-danger ">
@@ -219,7 +219,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright text-center">
-                  	Copyright &copy;2014 Venmond Inc. All Rights Reserved
+                  	Copyright &copy;2014 Ansvel ltd. All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

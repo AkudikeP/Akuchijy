@@ -73,15 +73,15 @@ h2{
 
 				<div class="career_image">
                 <img class="size_im" src="<?php echo base_url(); ?>img/Tailor.jpg"/>
-                <p class="career_text" align="center">MOBILE DARZI SIZE GUIDE </p>
+                <p class="career_text" align="center">Ansvel SIZE GUIDE </p>
                 </div>
 <section style="padding-top:20px;">
 					<div class="container">
    <div class="col-md-12 ul-rt">
 	<?php $contant = $this->db->get_where('measurementguide',array('id'=>1))->row();
 	echo $contant->contant; ?>
-<!--p> Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection.
-  Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
+<!--p> Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection.
+  Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
 
 <br>
 

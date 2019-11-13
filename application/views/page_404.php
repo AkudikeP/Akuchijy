@@ -24,7 +24,7 @@
 		//font-weight: bold;
 	}
 </style>
-	<title>MobileDarzi 404</title>
+	<title>ansvel 404</title>
 </head>
 <body>
 <div class="main">

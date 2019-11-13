@@ -260,7 +260,7 @@ background-color: rgba(0, 0, 0, 0.06);
                       <h2 class="text-uppercase" style="font-weight:600;"><?php echo $sty->add_on_name;?></h2><br />
                     </div>
                     <!--<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>-->
-                    <div class="price-box"><i class="fa fa-inr"></i> <?php echo $sty->add_on_price;?>/-</div>
+                    <div class="price-box">&#8358; <?php echo $sty->add_on_price;?>/-</div>
                   </div>
                    <?php if(isset($_SESSION["$sess2"]) && $sty->id==$_SESSION["$sess2"]){
               echo "<div class='selected2'>Selected</div>";
@@ -316,7 +316,7 @@ background-color: rgba(0, 0, 0, 0.06);
                       <h2 class="text-uppercase" style="font-weight:600;"><?php echo $sty_f->style;?></h2><br />
                     </div>
                     <!--<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>-->
-                    <div class="price-box"><i class="fa fa-inr"></i> <?php echo $sty_f->sprice;?>/-</div>
+                    <div class="price-box">&#8358; <?php echo $sty_f->sprice;?>/-</div>
                   </div>
                   <?php
            if(isset($_SESSION['m_id1']) && $sty_f->id==$_SESSION['m_id1']){
@@ -361,7 +361,7 @@ background-color: rgba(0, 0, 0, 0.06);
                       <h2 class="text-uppercase" style="font-weight:600;"><?php echo $sty_b->style;?></h2><br />
                     </div>
                     <!--<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>-->
-                    <div class="price-box"><i class="fa fa-inr"></i> <?php echo $sty_b->sprice;?>/-</div>
+                    <div class="price-box">&#8358; <?php echo $sty_b->sprice;?>/-</div>
                   </div>
                   <?php
            if(isset($_SESSION['m_id2']) && $sty_b->id==$_SESSION['m_id2']){
@@ -404,7 +404,7 @@ background-color: rgba(0, 0, 0, 0.06);
                       <h2 class="text-uppercase" style="font-weight:600;"><?php echo $sty_s->style;?></h2><br />
                     </div>
                     <!--<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>-->
-                    <div class="price-box"><i class="fa fa-inr"></i> <?php echo $sty_s->sprice;?>/-</div>
+                    <div class="price-box">&#8358; <?php echo $sty_s->sprice;?>/-</div>
                   </div>
                      <?php
            if(isset($_SESSION['m_id3']) && $sty_s->id==$_SESSION['m_id3']){
@@ -454,7 +454,7 @@ background-color: rgba(0, 0, 0, 0.06);
                       <h2 class="text-uppercase" style="font-weight:600; color:#000;"><?php echo $sty->style;?></h2><br />
                     </div>
                     <!--<div class="rating"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span></div>-->
-                    <div class="price-box"><i class="fa fa-inr"></i> <?php echo $sty->sprice;?>/-</div>
+                    <div class="price-box">&#8358; <?php echo $sty->sprice;?>/-</div>
                   </div>
                  <?php
            if(isset($_SESSION['m_id']) && $sty->id==$_SESSION['m_id']){

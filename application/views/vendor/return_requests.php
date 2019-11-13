@@ -17,7 +17,7 @@
 
             <div class="row">
 <div class="col-md-12 pull-left">
-<a href="http://mobiledarzi.com/vendor/all_return_excel"><button class="btn btn-primary">Excel</button></a>
+<a href="<?=base_url();?>vendor/all_return_excel"><button class="btn btn-primary">Excel</button></a>
       </div>
               <div class="col-md-12">
                 <div class="panel widget">
@@ -62,7 +62,7 @@
                           <!--td class="center"><?php echo "&nbsp"; ?><br><?php if(!empty($order_item->vendor_id)){echo 'VMD00'.$order_item->vendor_id; $isvendor=1;}else{echo "Admin's Product";} ?></td-->
                           <td><?php echo $this->db->get_where('return_reasons',array('id'=>$fab->reason))->row()->reason; ?></td>
                           <td><?php echo $fab->description; ?></td>
-                          <td><i class="fa fa-inr"></i><?php echo $order_item->price;?></td>
+                          <td>&#8358;<?php echo $order_item->price;?></td>
                           <td><?php if($fab->approvedornot=='disapprove'){ echo "disapproved"; }else if($fab->approvedornot=='approve'){ echo "approved"; }else{ echo "pending"; } ?></td>
                           <!--td>
                           <?php  if($fab->approvedornot=='disapprove'){ echo "disapproved"; }else if($fab->approvedornot=='approve'){ echo "approved"; }else{ ?>
@@ -119,7 +119,7 @@
               </div>
               <div class="col-xs-5 col-md-offset-1 col-md-5">
 
-                    <p><b><?php echo $order_item->pname;?></b> <i class="fa fa-inr"></i><?php echo $order_item->price; ?></p>
+                    <p><b><?php echo $order_item->pname;?></b> &#8358;<?php echo $order_item->price; ?></p>
 
 
                       <?php echo form_open('vendor/return_item_request_reject'); ?>

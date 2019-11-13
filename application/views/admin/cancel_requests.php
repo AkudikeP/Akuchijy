@@ -57,7 +57,7 @@
                           <td width="200px"><?php echo $order_item->pname;?></td>
                           <td class="center"><?php echo "&nbsp"; ?><br><?php if(!empty($fab->vendor_id)){echo 'VMD00'.$order_item->vendor_id;} ?></td>
                          
-                          <td><i class="fa fa-inr"></i><?php echo $order_item->price;?></td>
+                          <td>&#8358;<?php echo $order_item->price;?></td>
                           <td>
                           <?php if($fab->approvedornot=='disapprove'){ echo "disapproved"; }else if($fab->approvedornot=='approve'){ echo "approved"; }else{ ?>
                           <button class="btn btn-xs btn-warning" id="edit<?php echo $fab->id; ?>" data-toggle="modal" data-target="#myModal2<?php echo $fab->id; ?>" >why no?</button> 
@@ -113,7 +113,7 @@
               </div>
               <div class="col-xs-5 col-md-offset-1 col-md-5">
                 
-                    <p><b><?php echo $order_item->pname;?></b> <i class="fa fa-inr"></i><?php echo $order_item->price; ?></p>
+                    <p><b><?php echo $order_item->pname;?></b> &#8358;<?php echo $order_item->price; ?></p>
                     
                     
                       <?php echo form_open('product/cancel_item_request_reject'); ?>

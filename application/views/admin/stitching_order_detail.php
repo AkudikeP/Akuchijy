@@ -564,7 +564,7 @@ $kl=0;
                           <th colspan="7" rowspan="2" class="bdr">
                             <p class="font-normal"></p></th>
                           <th class="  pd-10" colspan="2">Total For Tailor</th>
-                          <th class="  pd-10"><i class="fa fa-inr"></i> <?php echo $price; ?></th>
+                          <th class="  pd-10">&#8358; <?php echo $price; ?></th>
                         </tr>
 
 
@@ -618,15 +618,15 @@ $kl=0;
                           <th colspan="8" rowspan="3" class="bdr">
                             <p class="font-normal"></p></th>
                           <th class="  pd-10" colspan="2"><h4><strong>Sub Total</strong></h4></th>
-                          <th class="  pd-10"><h4><i class="fa fa-inr"></i> <?php echo $total_price;?></h4></th>
+                          <th class="  pd-10"><h4>&#8358; <?php echo $total_price;?></h4></th>
                         </tr>
                         <tr>
                           <th class="   pd-10 no-bd" colspan="2">Discount</th>
-                          <th class="   pd-10 vd_red no-bd"><i class="fa fa-inr"></i> <?php echo $order->odis; ?></th>
+                          <th class="   pd-10 vd_red no-bd">&#8358; <?php echo $order->odis; ?></th>
                         </tr>
                         <!--tr>
                           <th class="   pd-10 no-bd" colspan="2">Tax <span class="gray small">(Inclusive of all taxes)</span></th>
-                          <th class="   pd-10 vd_red no-bd"><i class="fa fa-inr"></i> 0.00</th>
+                          <th class="   pd-10 vd_red no-bd">&#8358; 0.00</th>
                         </tr-->
 
                         <tr>
@@ -634,12 +634,12 @@ $kl=0;
                         <?php $ship = $this->db->get_where('shipping_methods',array('id'=>$order->shipping_method))->row();
       ?>
                           <th class=" pd-10 no-bd" colspan="2">Shiping</th>
-                          <th class=" pd-10 no-bd vd_red"><i class="fa fa-inr"></i> <?php echo $ship->price." (".$ship->reason.")";  ?></th>
+                          <th class=" pd-10 no-bd vd_red">&#8358; <?php echo $ship->price." (".$ship->reason.")";  ?></th>
                         </tr>
                         <tr>
                           <th colspan="8"></th>
                           <th class="   pd-10" colspan="2"><h4><strong>Total</strong></h4></th>
-                          <th class="   pd-10 "><span class="vd_green font-sm font-normal"><h4><i class="fa fa-inr"></i><?php echo $order->ototal;?></h4></span></th>
+                          <th class="   pd-10 "><span class="vd_green font-sm font-normal"><h4>&#8358;<?php echo $order->ototal;?></h4></span></th>
                         </tr>
                       </tfoot>
                     </table>
@@ -678,7 +678,7 @@ $kl=0;
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji Inc. All Rights Reserved
+                  	Copyright &copy;2016 Ansvel Inc. All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

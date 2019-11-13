@@ -250,7 +250,7 @@ if(isset($cancel) && $cancel=="true"){ echo "<li class='active'>Cancel Orders</l
 
                           <td><strong>Order Total</strong></td>
 
-                          <td><i class="fa fa-inr"></i> <?php echo $order['ototal'];?></td>
+                          <td>&#8358; <?php echo $order['ototal'];?></td>
 
                         </tr>
 
@@ -335,13 +335,13 @@ $stete=$this->db->get_where('states',array('id'=>$order['bcity']))->row();  ?>
 $ship = $this->db->get_where('shipping_methods',array('id'=>$order['shipping_method']))->row();
       ?>
 <table class="table t-pdd">
-      <tr><td><strong>Item(s) Subtotal:&nbsp&nbsp&nbsp<strong></td><td><i class="fa fa-inr"></i> <?php echo $total_price; ?></td></tr>
-      <tr><td><strong>Shipping:<strong></td><td><i class="fa fa-inr"></i> <?php echo $shipping_cost = $ship->price." (".$ship->reason.")";  ?></td></tr>
+      <tr><td><strong>Item(s) Subtotal:&nbsp&nbsp&nbsp<strong></td><td>&#8358; <?php echo $total_price; ?></td></tr>
+      <tr><td><strong>Shipping:<strong></td><td>&#8358; <?php echo $shipping_cost = $ship->price." (".$ship->reason.")";  ?></td></tr>
       <?php if(!empty($order['odis'])){ ?>
-       <tr><td><strong>Discount:<strong></td><td><i class="fa fa-inr"></i> <?php echo $order['odis'] ;  ?></td></tr>
+       <tr><td><strong>Discount:<strong></td><td>&#8358; <?php echo $order['odis'] ;  ?></td></tr>
        <?php } ?>
-      <tr><td><strong>Total<strong></td><td><i class="fa fa-inr"></i> <?php echo $order['ototal'] ?></td></tr>
-      <tr><td><strong>Grand Total:<strong></td><td><i class="fa fa-inr"></i> <?php echo $order['ototal'] ?></td></tr>
+      <tr><td><strong>Total<strong></td><td>&#8358; <?php echo $order['ototal'] ?></td></tr>
+      <tr><td><strong>Grand Total:<strong></td><td>&#8358; <?php echo $order['ototal'] ?></td></tr>
 </table>
 
                     </div>
@@ -392,7 +392,7 @@ $ship = $this->db->get_where('shipping_methods',array('id'=>$order['shipping_met
                         <div class="col-xs-3">
                           <div class="text-right">
                           <strong>Total Amount:</strong><br>
-                          <span class="mgtp-5 vd_green font-md"><i class="fa fa-inr"></i> <?php echo $order['ototal'];?></span>
+                          <span class="mgtp-5 vd_green font-md">&#8358; <?php echo $order['ototal'];?></span>
                           </div>
                         </div>
                       </div>
@@ -445,8 +445,8 @@ $ship = $this->db->get_where('shipping_methods',array('id'=>$order['shipping_met
                               else if($type[0]=='online_boutique'){echo "POMD-".$order_item->pid; } 
                               ?></td>
                           <td><?php echo $item->qty?></td>
-                          <td class="text-right"> <i class="fa fa-inr"></i><?php echo $item->price.' ';?></td>
-                          <td class="text-right"> <i class="fa fa-inr"></i><?php echo $ptotal += $item->subtotal;?></td>
+                          <td class="text-right"> &#8358;<?php echo $item->price.' ';?></td>
+                          <td class="text-right"> &#8358;<?php echo $ptotal += $item->subtotal;?></td>
 
 
                         </tr>
@@ -457,11 +457,11 @@ $ship = $this->db->get_where('shipping_methods',array('id'=>$order['shipping_met
                           <th colspan="3" rowspan="4" class="bdr">
                             <p class="font-normal"></p></th>
                           <th class="text-right pd-10">Sub Total</th>
-                          <th class="text-right pd-10"><i class="fa fa-inr"></i> <?php echo $ptotal;?></th>
+                          <th class="text-right pd-10">&#8358; <?php echo $ptotal;?></th>
                         </tr>
                         <tr>
                           <th class="text-right  pd-10 no-bd">Discount</th>
-                          <th class="text-right  pd-10 vd_red no-bd"><i class="fa fa-inr"></i> <?php echo $order['odis'];?></th>
+                          <th class="text-right  pd-10 vd_red no-bd">&#8358; <?php echo $order['odis'];?></th>
                         </tr>
                         <tr>
                           <th class="text-right  pd-10 no-bd">Shipping Cost</th>
@@ -476,7 +476,7 @@ $ship = $this->db->get_where('shipping_methods',array('id'=>$order['shipping_met
                         <tr>
                           <th colspan="3"></th>
                           <th class="text-right  pd-10">Order Total</th>
-                          <th class="text-right  pd-10 "><span class="vd_green font-sm font-normal"><i class="fa fa-inr"></i> <?php echo $order['ototal']+$order['odis'];?></span></th>
+                          <th class="text-right  pd-10 "><span class="vd_green font-sm font-normal">&#8358; <?php echo $order['ototal']+$order['odis'];?></span></th>
                         </tr>
                       </tfoot>
                     </table>
@@ -647,9 +647,9 @@ echo '<img src='.base_url().'adminassets/styles/'.$sty_pre['dfront'].' width="50
                            </td>
 
                            <td><?php echo $item->qty;?> </td>
-                           <td><i class="fa fa-inr"></i><?php echo round($item->subtotal/$item->qty);?></td>
+                           <td>&#8358;<?php echo round($item->subtotal/$item->qty);?></td>
 
-                           <td><h5><i class="fa fa-inr"></i><?php echo $item->subtotal;?></h5></td>
+                           <td><h5>&#8358;<?php echo $item->subtotal;?></h5></td>
                            <?php $return = $this->db->get_where('cancel_requests',array('item_id'=>$item->id))->row();
                            $return2 = $this->db->get_where('return_requests',array('item_id'=>$item->id))->row();
                            //print_r($return);

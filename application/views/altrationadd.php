@@ -56,7 +56,7 @@
 
 												<div class="price-holder" align="center" style="
     padding-top: 10px;
-"><h4><i class="fa fa-inr"></i> <?php echo $info->price; ?>/- </h4></div>
+"><h4>&#8358; <?php echo $info->price; ?>/- </h4></div>
 
 											</div>
 

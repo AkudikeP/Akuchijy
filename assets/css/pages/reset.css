@@ -1,0 +1,36 @@
+/* reset to theme color */
+.custom-control-input:checked~.custom-control-label::before, 
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before, .custom-checkbox .custom-control-input:indeterminate~.custom-control-label::before, 
+.custom-radio .custom-control-input:checked~.custom-control-label::before, .custom-range::-webkit-slider-thumb, .custom-range::-moz-range-thumb, 
+.custom-range::-ms-thumb {
+    background-color: black;
+}
+
+.dropdown-item:active, .dropdown-item.active, .nav-pills .nav-link.active,.nav-pills .show>.nav-link, .page-item.active .page-link, .progress-bar, .list-group-item.active {
+    background-color: black;
+}
+
+.page-item.active .page-link, .list-group-item.active {
+    border-color: black;
+}
+
+input.form-control:focus, .custom-select:focus {
+    border-color: black;
+    box-shadow: none;
+}
+
+.form-control-plaintext {
+    border-right-width: 1px;
+    border-left-width: 1px;
+}
+
+/* .custom-select option:focus, .custom-select option:active, .custom-select option:hover, .custom-select option::backdrop {
+    background-color: #28a728!important;
+}
+
+.custom-select:focus {
+    border-color: black;
+    outline: 0;
+    box-shadow: none;
+    /* box-shadow: 0 0 0 0.2rem rgba(143, 255, 128, 0.5);
+} */

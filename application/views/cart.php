@@ -327,7 +327,7 @@
 											$off="";
 											$ctot= $this->cart->total();}?>
 
-                <span class="shopping-cart__total"><i class="fa fa-inr"></i> <b id="ctot"><?php echo $ctot;?></b></span>
+                <span class="shopping-cart__total">&#8358; <b id="ctot"><?php echo $ctot;?></b></span>
                 <?php echo $off;?>
                 </div>
 

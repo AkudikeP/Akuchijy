@@ -17,7 +17,7 @@
 
             <div class="row">
 <div class="col-md-12 pull-left">
-<a href="http://mobiledarzi.com/vendor/all_cancel_excel"><button class="btn btn-primary">Excel</button></a>
+<a href="<?=base_url();?>vendor/all_cancel_excel"><button class="btn btn-primary">Excel</button></a>
       </div>
               <div class="col-md-12">
                 <div class="panel widget">
@@ -65,7 +65,7 @@
                           <!--td class="center"><?php echo "&nbsp"; ?><br><?php if(!empty($order_item->vendor_id)){echo 'VMD00'.$order_item->vendor_id; $isvendor=1;}else{echo "Admin's Product";} ?></td-->
 													<td><?php echo $this->db->get_where('cancel_reasons',array('id'=>$fab->reason))->row()->reason; ?></td>
                           <td><?php echo $fab->description; ?></td>
-                          <td><i class="fa fa-inr"></i><?php echo $order_item->subtotal;?></td>
+                          <td>&#8358;<?php echo $order_item->subtotal;?></td>
                           <td><?php if($fab->approvedornot==''){echo "Pending";}else{echo $fab->approvedornot;}?></td>
 
                         </tr>

@@ -692,7 +692,7 @@ foreach($access as $fab_ids){
 
 												</div>
 
-												<div class="price-box price-box__new"><i class="fa fa-inr"></i><span class="price-box__new" id="price<?php echo $access['acc_id'];?>"> <?php echo $access['price'];?></span>/- <!--<span class="price-box__old">$84.00</span>--></div>
+												<div class="price-box price-box__new">&#8358;<span class="price-box__new" id="price<?php echo $access['acc_id'];?>"> <?php echo $access['price'];?></span>/- <!--<span class="price-box__old">$84.00</span>--></div>
 
 
 											</div>

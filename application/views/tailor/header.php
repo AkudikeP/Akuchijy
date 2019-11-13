@@ -11,7 +11,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarji | Tailor</title>
+    <title>Ansvel | Tailor</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, " />
     <meta name="description" content="Responsive Admin Template for e-commerce dashboard">
     <meta name="author" content="Venmond">

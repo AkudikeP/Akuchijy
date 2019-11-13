@@ -120,7 +120,7 @@
 													<h2><a href="#"><?php echo substr($fab['title'], 0,47);
 													if(strlen($fab['title'])>47){echo '...';}?></a></h2>
 												</div>
-												<div class="price-box"><i class="fa fa-inr"></i> <?php echo $fab['price'];?></div>
+												<div class="price-box">&#8358; <?php echo $fab['price'];?></div>
 
 											</div>
 
@@ -155,7 +155,7 @@
 													<h2><a href="#"><?php echo substr($acc['brand'], 0,47);
 													if(strlen($acc['brand'])>47){echo '...';}?></a></h2>
 												</div>
-												<div class="price-box"><i class="fa fa-inr"></i> <?php echo $acc['price'];?></div>
+												<div class="price-box">&#8358; <?php echo $acc['price'];?></div>
 
 											</div>
 
@@ -190,7 +190,7 @@
 													<h2><a href="#"><?php echo substr($on['brand'], 0,47);
 													if(strlen($on['brand'])>47){echo '...';}?></a></h2>
 												</div>
-												<div class="price-box"><i class="fa fa-inr"></i> <?php echo $on['price'];?></div>
+												<div class="price-box">&#8358; <?php echo $on['price'];?></div>
 
 											</div>
 

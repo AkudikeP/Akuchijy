@@ -202,7 +202,7 @@ foreach($jobdetails as $jobinfo)
                      <!-- <button class="btn btn-red lrg wave waves-effect" id="applyjob2">Apply for this job
                      </button> -->
            
-					  <b>You can drop your resume at </b><br /><b>career@mobiledarzi.com</b>
+					  <b>You can drop your resume at </b><br /><b>career@ansvel.com</b>
                      
                      
                      

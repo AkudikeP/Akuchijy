@@ -115,7 +115,7 @@
 
 				<div class="career_image">
                 <img src="http://tailor.piresearch.in//assets/images/uniformbanner/banner.jpg"  width="100%"; height="300px;"/> 
-                <p class="career_text" align="center"> CAREERS AT MOBILE DARZI </p>
+                <p class="career_text" align="center"> CAREERS AT Ansvel </p>
                 </div>
 <section style="padding-top:20px;">
 					<div class="container">
@@ -127,7 +127,7 @@
 						
 
 						</div>
-<p> Mobile Darzi is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Mobile Darzi, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
+<p> Ansvel is a one stop solution of all your tailoring needs. We serve fashion stitched to perfection. Gone are the days when you had to continuously follow up with your tailor for your stitched cloth. At Ansvel, we take your measurement at your doorstep and the stitched cloth is delivered back to you at your doorstep only. What's more- we offer a variety of fabric as well, in case you don't have one with yourself.</p>
 
 <div class="divider"> </div>
 

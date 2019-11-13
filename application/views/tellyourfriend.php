@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8" />
 
-        <title>Mobile Darzi</title>
+        <title>Ansvel</title>
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/style-tellfriend.css" type="text/css" />
         <script src="<?php echo base_url(); ?>js/jq.js" type="text/javascript"></script>
@@ -27,7 +27,7 @@
          <img id="imgBG" width="100%" src="<?php echo base_url(); ?>assets/images/<?php echo $fcats->image; ?>" alt=""/>
         <div class="wrapper">
             <header class="mainHeader">
-               <div><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/md-logo.png" title="mobiledarzi" /></a></div>
+               <div><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/images/md-logo.png" title="ansvel" /></a></div>
                 <h1>TELL YOUR FRIEND</h1>
             </header>
             <div id="mainContent" class="mainContent">

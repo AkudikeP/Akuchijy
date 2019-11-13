@@ -228,7 +228,7 @@ $urlend = end($url);
 Visualforce.remoting.Manager.add(new $VFRM.RemotingProviderImpl({"vf":{"vid":"06690000005dON6","xhr":false,"dev":false,"tst":false,"dbg":false,"tm":1486625422729,"ovrprm":false},"actions":{"JavaScriptSObjectBaseController":{"ms":[{"name":"describe","len":1,"ns":"java://CAAAAVojfzGQAAAAAAAAAAAAAAAAAAAAAAAAzIoJbUTx6u5TEvoHDOdz48qGEkCl2GA3yXUgOU5O6J+hELT7IlItHhULZEDLxwHPmCH5Fv4GY0K+OLjnf60VyMiD/0R8nYC3DZEQA+3tDQBsMG7//VgvRNt7O7r4G2sQ62XKeQUKanq9uXCLkq7ArUU=#uPI4D5T2nP9ZE8vNNUO3+nmR3Bk=","ver":38.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxkODVPSVJJdjRha1ZVeExfRkZLZE5DLE4yRTVNV1pt"},{"name":"retrieve","len":3,"ns":"java://CAAAAVojfzGQAAAAAAAAAAAAAAAAAAAAAAAAzIoJbUTx6u5TEvoHDOdz48qGEkCl2GA3yXUgOU5O6J+hj3StdG3/6Sqj+bRjSd+2yqQxYZHoeUXTHZj9SIUMfgRP5XJSODXbOnj67BjiqMIZ0LxP47NYXGEfly1Ji/iNSjZG1wl8Z5NQxIjgCUFwNVY=#bjwiQeaDHnIlMevD9tbOFDJ4oFg=","ver":38.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxrc0Q1aTdRbVdfSllQWlVVZ0p0YTNwLE1qazJOak01"},{"name":"update","len":3,"ns":"java://CAAAAVojfzGQAAAAAAAAAAAAAAAAAAAAAAAAzIoJbUTx6u5TEvoHDOdz48qGEkCl2GA3yXUgOU5O6J+hGrnLRUY5aXnS/I2aUSwuqpG4upo8jeyfVoqosGoFJFoV9fd9rN+Gst32OKAHdzkDKg/jrXAKh72xCWKCUSc5gEC01napPFoHocXRFKIIFdc=#9nO3oEtuv9vid41KLdNvAX1ZXuE=","ver":38.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxsMVJsY0hQMUs2TWV5NkhYTmpUaHlBLFlURXpZamxt"},{"name":"delete","len":2,"ns":"java://CAAAAVojfzGQAAAAAAAAAAAAAAAAAAAAAAAAzIoJbUTx6u5TEvoHDOdz48qGEkCl2GA3yXUgOU5O6J+h6cuyPh33/5gaah6UswZ8FR6D+StoSNN21xh3P+Z9lMcuo50wfFhE9FLVuKWQJE6WRZ45eBnt7+An2nn0pSHFqJ92l9j4wwQtjy16W9LgMHM=#VINSLFJh38aKFVhPMSGftxwd6EA=","ver":38.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxvSGVkQmVzcVVEeThyRjNqMmwwaWJrLE5qaGpaVFJs"},{"name":"create","len":2,"ns":"java://CAAAAVojfzGQAAAAAAAAAAAAAAAAAAAAAAAAzIoJbUTx6u5TEvoHDOdz48qGEkCl2GA3yXUgOU5O6J+h1ycd5+PFENZNyiuJWCfp42qQwwvwM/So2c8+gL0UM015KM3OC7vEgpL79XlAnLIVlDTO5vs7N/YHWD296xLlero08drM/K52PLKKGEWlQm4=#51q2B13vLbvX2NG7uOmdZ1UOyMA=","ver":38.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxnOHNpSEVTZno5OFhqOEI3cU9SakRMLE5qVmpPVGhr"}],"prm":0},"sdNewLoginController":{"ms":[{"name":"isPanelAccessProvided","len":1,"ns":"","ver":34.0,"csrf":"VmpFPSxNakF4Tnkwd01pMHhNbFF3Tnpvek1Eb3lNaTQzTXpaYSxkU2E2RGJ3R2lqMUItWFFjV0JleFpLLE5HSTRPVFpo"}],"prm":0}},"service":"apexremote"}));
 </script>
 <meta charset="utf-8" />
-            <title>Mobile Darzi</title>
+            <title>Ansvel</title>
 
 
 
@@ -289,7 +289,7 @@ Visualforce.remoting.Manager.add(new $VFRM.RemotingProviderImpl({"vf":{"vid":"06
 <?php $fcats2=$this->db->get_where("vendorposttop",array('id'=>4))->row(); ?>
               <ul class="sf-menu" id="example">
               <li class="current"><a href="/">Home</a></li>
-              <li class=""><a href="#mobiledarziadvantages"><?php echo $fcats2->menu_heading1; ?></a></li>
+              <li class=""><a href="#ansveladvantages"><?php echo $fcats2->menu_heading1; ?></a></li>
               <li class=""><a href="#termsandcondition"><?php echo $fcats2->menu_heading2; ?></a></li>
 
               <li class=""><a href="<?php echo base_url(); ?>vendor-faq">FAQs</a></li>
@@ -301,10 +301,10 @@ Visualforce.remoting.Manager.add(new $VFRM.RemotingProviderImpl({"vf":{"vid":"06
                      <div class="col-md-6 col-sm-12 col-xs-12">
                              <div class="row">
                                 <div class="col-xs-6 col-md-6 marginBottom8">
-                                    <span class="pull-left" style="font-size:16px"><a href="http://mobiledarzi.com/vendor-registration">Start Selling</a></span>
+                                    <span class="pull-left" style="font-size:16px"><a href="<?=base_url();?>vendor-registration">Start Selling</a></span>
                                 </div>
                                  <div class="col-xs-6 col-md-6 marginBottom8">
-                                    <span class="pull-right" style="font-size:16px"><a href="http://mobiledarzi.com/vendor" > Login Now</a></span>
+                                    <span class="pull-right" style="font-size:16px"><a href="<?=base_url();?>vendor" > Login Now</a></span>
                                 </div>
                             </div>
 
@@ -872,7 +872,7 @@ $this->db->order_by('id','asc');
     
 
   </div>
-  <section id="mobiledarziadvantages">
+  <section id="ansveladvantages">
   <div class="row">
     <div class="col-md-12 text-center">
       <h1 class="sellingOnSnapdeal"> <?php echo $fcats2->heading1; ?></h1>
@@ -1046,7 +1046,7 @@ $this->db->order_by('id','asc');
                         <h5 class="title mobile-collapse__title"><?php if(isset($menu_link->link_menu_name)){echo $menu_link->link_menu_name;}?></h5>
                         <div class="v-links-list mobile-collapse__content" style="margin-top: 14px;">
                             <ul>
-                        <?php $mlink = $this->db->get_where("mobiledarzi",array("status_enable"=>'enable'))->result();
+                        <?php $mlink = $this->db->get_where("ansvel",array("status_enable"=>'enable'))->result();
                         foreach ($mlink as $mlink) {
 
 
@@ -1164,7 +1164,7 @@ $this->db->order_by('id','asc');
 
 <!--div class="container">
 <!--div class="row">
-<div class="col-md-12 col-sm-12 foot" ><h6  style="color:#000; padding-top:20px;">Most Searched on Mobile Darzi </h6> <p>
+<div class="col-md-12 col-sm-12 foot" ><h6  style="color:#000; padding-top:20px;">Most Searched on Ansvel </h6> <p>
 <?php
 $keyword = $this->session->userdata('city_session');
             $this->db->where("city LIKE '%$keyword%'");

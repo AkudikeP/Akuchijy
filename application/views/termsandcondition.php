@@ -63,7 +63,7 @@
 							<div class="description">
 								<?php $contant = $this->db->get_where('tbl_pages',array('page_title'=>'Terms and Condition'))->row();
 								echo $contant->page_desc; ?>
-								<!--ul><li>These terms of use (the &quot;Terms of Use&quot;) govern your use of our website www.mobiledarzi.com (the
+								<!--ul><li>These terms of use (the &quot;Terms of Use&quot;) govern your use of our website www.ansvel.com (the
 
 &quot;Website&quot;) . Please read these Terms of Use carefully before you use the Services. If you do not agree to
 
@@ -79,7 +79,7 @@ which are mentioned herein.</li>
 
 <li>These Services are operated and owned by Absolute Innovations Private Limited (hereinafter referred
 
-to as &quot;Mobile Darzi&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;), a company registered in Indore, Madhya Pradesh.</li>
+to as &quot;Ansvel&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot;), a company registered in Indore, Madhya Pradesh.</li>
 <li>We reserve the right to change the Terms of Use and Privacy Policy at any time without notice; even by posting changes on the Website and you shall be liable to update yourself of such changes, if any, by accessing the changes on the Website. You shall, at all times, be responsible for regularly reviewing the Terms of Use and the Privacy Policy and note the changes made on the Website. Your continued usage of the Services after any change is posted constitutes your acceptance of the amended Terms of Use and Privacy Policy.</li>
 <li>All images on the website are for representation purpose only. The design and fit will be executed based on the measurements provided by the customer.</li>
 
@@ -101,26 +101,26 @@ to as &quot;Mobile Darzi&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot
 
 <h3>Account Registration or use of the Services</h3>
 
-<ul><li>ou may access the Services either by (a) signing in as a guest; or (b) registering to create an account ("Mobile Darzi Account") and become a member ("Member"); or (c) you can also register to join by logging into your account with certain third party social networking sites ("SNS") (including, but not limited to, Facebook/Google); each such account, a "Third Party Account", via our Services, as described below. As part of the functionality of the Services, you may link your Mobile Darzi Account with Third Party Accounts, by either:</li>
+<ul><li>ou may access the Services either by (a) signing in as a guest; or (b) registering to create an account ("Ansvel Account") and become a member ("Member"); or (c) you can also register to join by logging into your account with certain third party social networking sites ("SNS") (including, but not limited to, Facebook/Google); each such account, a "Third Party Account", via our Services, as described below. As part of the functionality of the Services, you may link your Ansvel Account with Third Party Accounts, by either:</li>
 
 <li style="i">providing your Third Party Account login information to us through the Services; or</li>
 <li style="ii">allowing us to access your Third Party Account, as is permitted under the applicable terms and conditions that govern your use of each Third Party Account.</li>
 
 <li>You represent that you are entitled to disclose your Third Party Account login information to us and/or grant us access to your Third Party Account (including, but not limited to, for use for the purposes described herein), without breach by you of any of the terms and conditions that govern your use of the applicable Third Party Account and without obligating us to pay any fees or making us subject to any usage limitations imposed by such third party service providers.</li>
 
-<li>By granting us access to any Third Party Accounts, you understand that we will access, make available and store (if applicable) any content or information that you have provided to and stored in your Third Party Account ("SNS Content") so that it is available on and through the Services via your Mobile Darzi Account.</li>
+<li>By granting us access to any Third Party Accounts, you understand that we will access, make available and store (if applicable) any content or information that you have provided to and stored in your Third Party Account ("SNS Content") so that it is available on and through the Services via your Ansvel Account.</li>
 
 <li>Unless otherwise specified in these Terms of Use, all SNS Content, if any, will be considered to be your content for all purposes of these Terms.</li>
 
-<li>Depending on the Third Party Accounts you choose and subject to the privacy settings that you have set in such Third Party Accounts, personally identifiable information that you post to your Third Party Accounts will be available on and through your Mobile Darzi Account on the Services.</li>
+<li>Depending on the Third Party Accounts you choose and subject to the privacy settings that you have set in such Third Party Accounts, personally identifiable information that you post to your Third Party Accounts will be available on and through your Ansvel Account on the Services.</li>
 
 <li>Please note that if a Third Party Account or associated service becomes unavailable or our access to such Third Party Account is terminated by the third party service provider, then SNS Content will no longer be available on and through the Services.</li>
 
-<li>We will create your Mobile Darzi Account for your use of the Services based upon the personal information you provide to us or that we obtain via an SNS as described above.</li>
+<li>We will create your Ansvel Account for your use of the Services based upon the personal information you provide to us or that we obtain via an SNS as described above.</li>
 <li>You agree to provide accurate, current and complete information during the registration process and to update such information to keep it accurate, current and complete.</li>
-<li>We reserve the right to suspend or terminate your Mobile Darzi Account and your access to the Services if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete.</li>
+<li>We reserve the right to suspend or terminate your Ansvel Account and your access to the Services if any information provided during the registration process or thereafter proves to be inaccurate, not current or incomplete.</li>
 
-<li>You are responsible for safeguarding your password. You agree that you will not disclose your password to any third party and that you will take sole responsibility for any activities or actions under your Mobile Darzi Account, whether or not you have authorized such activities or actions. You will immediately notify us of any unauthorized use of your Mobile Darzi Account.</li>
+<li>You are responsible for safeguarding your password. You agree that you will not disclose your password to any third party and that you will take sole responsibility for any activities or actions under your Ansvel Account, whether or not you have authorized such activities or actions. You will immediately notify us of any unauthorized use of your Ansvel Account.</li>
 
 <li>Goods and services purchased from the Services are intended for your person use and you represent that the same are not for resale or you are not acting as an agent for other parties.</li>
 </ul>
@@ -145,7 +145,7 @@ to as &quot;Mobile Darzi&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot
 
 <li>In connection with your order, you will be asked to provide customary billing information such as name, billing address and credit card information either to us or our third party payment processor. You agree to pay us for any confirmed bookings in accordance with these Terms by one of the methods described on the Services- e.g. by a credit card. You hereby authorise the collection of such amounts by charging the credit card provided as part of requesting the booking, either directly by us or indirectly, via a third party online payment processor or by one of the payment methods described on the Services. If you are directed to our third party payment processor, you may be subject to terms and conditions governing use of that third party's service and that third party's personal information collection practices. Please review such terms and conditions and privacy policy before using the services. Once you're confirmed booking transaction is complete you will receive a confirmation email summarising your confirmed booking.</li>
 
-<li>At Mobile Darzi we understand how much you value your every order. And we are committed to making your online tailoring service experience with us as delightful as possible. Therefore in rare events, mentioned below we initiate returns : </li>
+<li>At Ansvel we understand how much you value your every order. And we are committed to making your online tailoring service experience with us as delightful as possible. Therefore in rare events, mentioned below we initiate returns : </li>
 1. In case of customer not reachable after we pick up order request from your end. 
 2. In case of not being able to execute design after we pick up order request from your end.
 
@@ -156,8 +156,8 @@ to as &quot;Mobile Darzi&quot;, &quot;we&quot;, &quot;us&quot; or &quot;our&quot
 
 <h3>Cashback</h3>
 
-<ul><li>(A) In case of Referral : After successful completion of your referral order , the cash back takes maximum 24 hour to be credited to your Mobile Darzi account wallet.  </li>
-<li>(B) In case of cashback offers : After successful completion of placed order availing offer, the cash back takes maximum 24 hour to be credited to your Mobile Darzi account wallet.</li>
+<ul><li>(A) In case of Referral : After successful completion of your referral order , the cash back takes maximum 24 hour to be credited to your Ansvel account wallet.  </li>
+<li>(B) In case of cashback offers : After successful completion of placed order availing offer, the cash back takes maximum 24 hour to be credited to your Ansvel account wallet.</li>
 </ul>
 
 <h3>Cancellations and Refunds</h3>

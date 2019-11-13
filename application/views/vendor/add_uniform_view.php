@@ -151,7 +151,7 @@
                             </div>
                           </div>
                           <div class="alert alert-danger col-md-12 pull-right" style="position: relative;">
-  <strong>Note:</strong> To make your product featured and special please contact our sales team on 9644409191
+  <strong>Note:</strong> To make your product featured and special please contact our sales team on +2347034176342
 </div>
 
 
@@ -280,7 +280,7 @@
                             <div class="col-lg-5">
                               <div class="row">
                                 <div class="col-lg-9">
-                               <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                               <span class="input-group-addon">&#8358; </span>
                                 <input type="number" min="0" value="<?php echo $edit->price_without_tax;?>" onChange="this.value = this.value.replace(/,/g, '.');" placeholder="500" id="wholesale_price" name="price" required>
                               </div>
                             </div>
@@ -486,7 +486,7 @@
                             </div>
                           </div>
                           <div class="alert alert-danger col-md-12 pull-right" style="position: relative;">
-  <strong>Note:</strong> To make your product featured and special please contact our sales team on 9644409191
+  <strong>Note:</strong> To make your product featured and special please contact our sales team on +2347034176342
 </div>
 
 
@@ -591,7 +591,7 @@
                             <div class="col-lg-9">
                               <div class="row">
                                <div class="col-lg-5">
-                              <div class="input-group"> <span class="input-group-addon"><i class="fa fa-inr"></i> </span>
+                              <div class="input-group"> <span class="input-group-addon">&#8358; </span>
                                 <input type="number" min="0" onChange="this.value = this.value.replace(/,/g, '.');" placeholder="500" id="wholesale_price" name="price" required="">
                               </div></div></div>
                             </div>
@@ -1499,7 +1499,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji. All Rights Reserved
+                  	Copyright &copy;2016 Ansvel. All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

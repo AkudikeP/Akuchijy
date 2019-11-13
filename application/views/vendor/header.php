@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8" />
-    <title>MobileDarzi | Vendor</title>
+    <title>Ansvel | Vendor</title>
     <meta name="keywords" content="HTML5 Template, CSS3, All Purpose Admin Template, " />
     <meta name="description" content="Responsive Admin Template for e-commerce dashboard">
     <meta name="author" content="Venmond">
@@ -79,7 +79,7 @@
           <div class="vd_top-nav vd_nav-width">
           <div class="vd_panel-header">
           	<div class="logo">
-            	<a href="<?php echo base_url();?>vendor/dashboard"><h2><img alt="logo" src="<?php echo base_url();?>assets/images/Mobiledarzilogo.png"></h2></a>
+            	<a href="<?php echo base_url();?>vendor/dashboard"><h2><img alt="logo" src="<?php echo base_url();?>assets/images/logo/ansvel_text2.png"></h2></a>
             </div>
             <!-- logo -->
             <div class="vd_panel-menu  hidden-sm hidden-xs" data-intro="<strong>Minimize Left Navigation</strong><br/>Toggle navigation size to medium or small size. You can set both button or one button only. See full option at documentation." data-step=1>
@@ -936,6 +936,35 @@
                 <li>
                     <a href="<?php echo base_url();?>Vendor/fabrics_approve">
                         <span class="menu-text">Product Approve By Admin</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <?php  } ?>
+    <?php if (strpos($option->option, 'Fashion designers')!==false) { ?>
+
+    <li class="active4">
+      <a href="javascript:void(0);" data-action="click-trigger">
+          <span class="menu-icon"><i class="icon-bookmark"> </i></span>
+            <span class="menu-text">Manage Fashion</span>
+            <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+        </a>
+      <div class="child-menu"  data-action="click-target">
+            <ul>
+                <li>
+                    <a href="<?php echo base_url();?>Vendor/add_designs">
+                        <span class="menu-text">Add new designs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>Vendor/designs">
+                        <span class="menu-text">View all designs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url();?>Vendor/designs_approve">
+                        <span class="menu-text">Designs approved By Admin</span>
                     </a>
                 </li>
             </ul>

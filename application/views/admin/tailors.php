@@ -634,7 +634,7 @@ $rating = $this->db->get_where('tailor_rating',array('tid'=>$user->id));
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji All Rights Reserved
+                  	Copyright &copy;2016 Ansvel All Rights Reserved
                 </div>
               </div>
             </div><!-- row -->

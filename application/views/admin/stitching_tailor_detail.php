@@ -302,7 +302,7 @@
                           <th colspan="3" rowspan="5" class="bdr">
                             <p class="font-normal"></p></th>
                           <th class="  pd-10" colspan="1">Total</th>
-                          <th class="  pd-10" colspan="2"><i class="fa fa-inr"></i>&nbsp<?php echo $datak->scost; ?></th>
+                          <th class="  pd-10" colspan="2">&#8358;&nbsp<?php echo $datak->scost; ?></th>
                         </tr>
                       </tfoot>
                     </table>
@@ -341,7 +341,7 @@
             <div class="row">
               <div class=" col-xs-12">
                 <div class="copyright">
-                  	Copyright &copy;2016 MobileDarji Inc. All Rights Reserved 
+                  	Copyright &copy;2016 Ansvel Inc. All Rights Reserved 
                 </div>
               </div>
             </div><!-- row -->

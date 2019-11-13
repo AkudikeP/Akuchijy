@@ -164,7 +164,7 @@
                            <td>
                            <?php echo $uni->vendor_name."&nbsp"; ?><br><?php if(!empty($uni->vendor_id)){echo 'VMD-'.$uni->vendor_id;}else{echo 'Admin\' product';} ?>
                            </td>
-                          <td><i class="fa fa-inr"></i><?php echo $fab->price;?></td>
+                          <td>&#8358;<?php echo $fab->price;?></td>
                       
                           <td>
                           <a data-toggle="tooltip" title="Edit" class="btn btn-xs btn-warning" href="<?php echo base_url();?>index.php/product/more_services_status_change/<?php echo $fab->id;?>"><i class="fa fa-edit"></i></a> 

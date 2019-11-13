@@ -20,7 +20,7 @@
                   <?php 
                     echo $site_address->mobile;
                    ?> </br>
-                   <span>info@mobiledarzi.com</span>                  
+                   <span>info@ansvel.com</span>                  
                     </address>
                     <hr/>
                     <br/>

@@ -535,7 +535,7 @@ if($newarr==1){ ?>
            <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"><a href="#"><?php echo substr($new['title'], 0,15);
                           if(strlen($new['title'])>15){echo '...';}?></a></h5>
 
-            <h5 class="text-uppercase" style="font-weight:500;" align="center"> <i class="fa fa-inr"></i> <?php echo $new['price'];?></h5>
+            <h5 class="text-uppercase" style="font-weight:500;" align="center"> &#8358; <?php echo $new['price'];?></h5>
 
         </div>
         <?php } ?>
@@ -562,7 +562,7 @@ if($newarr==1){ ?>
             </div>
            <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"><?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?> </h5>
-                          <h5 class="text-uppercase" style="font-weight:500;" align="center"> <i class="fa fa-inr"></i> <?php echo $new_acc['price'];?></h5>
+                          <h5 class="text-uppercase" style="font-weight:500;" align="center"> &#8358; <?php echo $new_acc['price'];?></h5>
 
         </div>
     <?php } ?>
@@ -596,7 +596,7 @@ if($newarr==1){ ?>
             </div>
            <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"><?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?> </h5>
-                          <h5 class="text-uppercase" style="font-weight:500;" align="center"> <i class="fa fa-inr"></i> <?php echo $new_acc['price'];?></h5>
+                          <h5 class="text-uppercase" style="font-weight:500;" align="center"> &#8358; <?php echo $new_acc['price'];?></h5>
 
         </div>
     <?php } ?>
@@ -639,7 +639,7 @@ if($newarr==1){ ?>
 </div>
 <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center">  <?php  echo substr($new['title'], 0,15);
                           if(strlen($new['title'])>15){echo '...';}?></a></h5>
-             <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new['price'];?></h5>
+             <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new['price'];?></h5>
 
         </div>
         <?php } ?>
@@ -661,7 +661,7 @@ if($newarr==1){ ?>
 
             <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center">  <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?></a></h5>
-             <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+             <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
 </div>
         </div>
 		<?php } ?>
@@ -685,7 +685,7 @@ if($newarr==1){ ?>
     <a href="<?php echo $url;?>"><img src="<?php echo base_url(); ?>assets/images/online_boutique/<?php echo $new_acc['thumb'];?>" alt="#"></a>
               <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center">  <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?></a></h5>
-             <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+             <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
 </div>
         </div>
     <?php } ?>
@@ -731,7 +731,7 @@ if($newarr==1){ ?>
 
               <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"><?php echo substr($new['title'], 0,15);
                           if(strlen($new['title'])>15){echo '...';}?> </h5>
-               <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new['price'];?></h5>
+               <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new['price'];?></h5>
 </div>
         <?php } ?>
         <?php
@@ -757,7 +757,7 @@ if($newarr==1){ ?>
          <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?>
                           </h5>
-                           <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+                           <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
         </div>
            </div>
     <?php } ?>
@@ -783,7 +783,7 @@ if($newarr==1){ ?>
          <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?>
                           </h5>
-                           <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+                           <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
         </div>
              </div>
     <?php } ?>
@@ -828,7 +828,7 @@ if($newarr==1){ ?>
 
                 	 <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"> <?php echo substr($new['title'], 0,15);
                           if(strlen($new['title'])>15){echo '...';}?> </h5>
-              <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new['price'];?></h5>
+              <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new['price'];?></h5>
 
 
 
@@ -859,7 +859,7 @@ if($newarr==1){ ?>
 
              <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"> <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?> </h5>
-            <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+            <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
              </div>
 
     <?php } ?>
@@ -887,7 +887,7 @@ if($newarr==1){ ?>
 
              <h5 class="text-uppercase" style="font-weight:500; margin-top:10px;" align="center"> <?php echo substr($new_acc['brand'], 0,15);
                           if(strlen($new_acc['brand'])>15){echo '...';}?> </h5>
-            <h5 class="text-uppercase" style="font-weight:500;" align="center"><i class="fa fa-inr"></i>  <?php echo $new_acc['price'];?></h5>
+            <h5 class="text-uppercase" style="font-weight:500;" align="center">&#8358;  <?php echo $new_acc['price'];?></h5>
              </div>
 
     <?php } ?>
