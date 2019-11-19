@@ -70,6 +70,7 @@ $route['how-it-works'] = 'Welcome/how_it_works';
 $route['faq'] = 'Welcome/faq';
 $route['blog'] = 'Welcome/blog';
 $route['vendor-registration/(:num)'] = 'Vendor/vendor_registration/$1';
+$route['vendor-registration'] = 'Vendor/vendor_registration';
 $route['donate'] = 'Welcome/donate';
 $route['login'] = 'Welcome/login';
 $route['cancel-return'] = 'Welcome/return_page';
