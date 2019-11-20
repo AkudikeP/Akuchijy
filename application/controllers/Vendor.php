@@ -1641,7 +1641,7 @@ echo $item->subtotal; ?>/- </td>
         $this->form_validation->set_rules('acc_class', 'Account class', 'required|in_list[Individual,Limited liability]|trim');
         $this->form_validation->set_rules('business_name', 'Business name', 'required|max_length[50]|trim');
         switch (true) {
-            case $this->form_validation->run() === false:
+            case $this->form_validation->run() === FALSE:
                 echo validation_errors();
                 break;
 
@@ -3678,19 +3678,23 @@ echo $item->subtotal; ?>/- </td>
     
     public function add_designs()
     {
-
-        if (!$this->session->userdata('vendor_loggedin')) {
+        if ( ! $this->session->userdata('vendor_loggedin'))
+        {
             redirect('Vendor');
         }
         $vendor_id = $this->session->userdata('vid');
         $this->form_validation->set_rules('name', 'Name', 'required|min_length[2]|max_length[100]|trim');
-        $this->form_validation->set_rules('category', 'Category', 'required|numeric|in_list[1,2,3]|trim');
+        $this->form_validation->set_rules('category', 'Category', 'required|numeric|in_list[1,2,3]|trim',
+            array(
+                'numeric' => '%s field is invalid.',
+            )
+        );
         $this->form_validation->set_rules('type', 'Type', 'required|in_list[Ethnic,Western,Shirts,Trouser,Blazers and Waistcoats,Shirts,Girls,Boys,Traditional]|trim');
-        $this->form_validation->set_rules('design-price', 'Design price', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
-        $this->form_validation->set_rules('material-price', 'Material price', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
+        $this->form_validation->set_rules('design-cost', 'Design cost', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
+        $this->form_validation->set_rules('material-cost', 'Material cost', 'required|is_natural_no_zero|greater_than[10]|less_than[10000000]|trim');
         $this->form_validation->set_rules('desc', 'Description', 'required|max_length[1024]|trim');
         
-        $config['upload_path']              = './assets/images/uniform/';
+        $config['upload_path']              = './assets/images/catalogue/';
         $config['allowed_types']            = 'gif|jpg|png|jpeg';
         $config['max_size']                 = '1000000';
         $config['max_filename']             = '200';
@@ -3698,63 +3702,80 @@ echo $item->subtotal; ?>/- </td>
         $config['max_filename_increment']   = '10';
         $config['encrypt_name']             = TRUE;
         $this->upload->initialize($config);
+        $data['errors'] = $cover = $right = $left = $sizing_guide = '';
+        
+        if( ! empty($_FILES['cover']['name']))
+        {
+            if($this->upload->do_upload('cover'))
+            {
+                $cover = $this->upload->data()['file_name'];
+            } else {
+                $data['errors'] = $this->upload->display_errors();
+            }
+        }
+        
+        if(empty($data['errors']) && ! empty($_FILES['right']['name']))
+        {
+            if($this->upload->do_upload('right'))
+            {
+                $right = $this->upload->data()['file_name'];
+            } else {
+                $data['errors'] = $this->upload->display_errors();
+            }
+        }
+        
+        if(empty($data['errors']) && ! empty($_FILES['left']['name']))
+        {
+            if($this->upload->do_upload('left'))
+            {
+                $left = $this->upload->data()['file_name'];
+            } else {
+                $data['errors'] = $this->upload->display_errors();
+            }
+        }
+        
+        if(empty($data['errors']) && ! empty($_FILES['design-sizing-guide']['name']))
+        {
+            if($this->upload->do_upload('design-sizing-guide'))
+            {
+                $sizing_guide = $this->upload->data()['file_name'];
+            } else {
+                $data['errors'] = $this->upload->display_errors();
+            }
+        }
 
         switch(TRUE)
         {
-            case $this->form_validation->run():
-                $this->session->set_flashdata('message', validation_errors());
-                redirect('Vendor/add_designs');
+            case ! empty($data['errors']):
+            
+            case $this->form_validation->run() === FALSE:
             break;
 
-            case ! empty($_FILES['cover']) && ! $this->upload->do_upload('cover'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
+            case empty($_FILES['front']):
+                $data['errors'] = 'No front view selected.';
+            break;
+            
+            case empty($_FILES['back']):
+                $data['errors'] = 'No back view selected.';
             break;
 
-            case empty($cover = $this->upload->data()['file_name']):
-            break;
-
-            case ! empty($_FILES['front']) && ! $this->upload->do_upload('front'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
+            case ! $this->upload->do_upload('front'):
+                $data['errors'] = $this->upload->display_errors();
             break;
 
             case empty($front = $this->upload->data()['file_name']):
+                $data['errors'] = 'An error occured while uploading front view. Please try again.';
             break;
 
-            case ! empty($_FILES['back']) && ! $this->upload->do_upload('back'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
+            case ! $this->upload->do_upload('back'):
+                $data['errors'] = $this->upload->display_errors();
             break;
 
             case empty($back = $this->upload->data()['file_name']):
+                $data['errors'] = 'An error occured while uploading back view. Please try again.';
             break;
 
-            case ! empty($_FILES['right']) && ! $this->upload->do_upload('right'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
-            break;
-
-            case empty($right = $this->upload->data()['file_name']):
-            break;
-
-            case ! empty($_FILES['left']) && ! $this->upload->do_upload('left'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
-            break;
-
-            case empty($left = $this->upload->data()['file_name']):
-            break;
-
-            case ! empty($_FILES['design-sizing-guide']) && ! $this->upload->do_upload('design-sizing-guide'):
-                $this->session->set_flashdata('message', $this->upload->display_errors());
-                redirect('Vendor/add_designs');
-            break;
-
-            case empty($sizing_guide = $this->upload->data()['file_name']):
-            break;
-
-            case empty($data = array(
+            case empty($set = array(
                 'name' => $this->input->post('name'),
                 'mid' => $this->input->post('category'),
                 'type' => $this->input->post('type'),
@@ -3772,19 +3793,42 @@ echo $item->subtotal; ?>/- </td>
                 )):
             break;
 
-            case ! $this->db->set($data)->insert('catalog_design_category'):
-                $this->session->set_flashdata('message', 'An error occured. Please try again.');
-                redirect('Vendor/add_designs');
+            case $this->db->insert('catalog_design_category', $set):
+                $data['success'] = 'Catalogue added successfully.';
             break;
 
             default:
-                $this->session->set_flashdata('message', 'Catalogue added successfully.');
+                $data['errors'] = 'An error occured. Please try again.';
         }
         $this->load->view('vendor/header');
-        $this->load->view('vendor/add_designs_view');
+        $this->load->view('vendor/add_designs_view', $data);
         $this->load->view('vendor/index');
     }
 
+    public function designs()
+    {
+        if ( ! $this->session->userdata('vendor_loggedin'))
+        {
+            redirect('Vendor');
+        }
+        $vid = $this->session->userdata('vid');
+        $data['designs'] = $this->db->get_where('catalog_design_category', array('status' => 'disapprove', 'vendor_id' => $vid))->result();
+        $this->load->view('vendor/header', $data);
+        $this->load->view('vendor/designs', $data);
+        $this->load->view('vendor/index', $data);
+    }
+
+    public function designs_approve()
+    {
+        if (!$this->session->userdata('vendor_loggedin')) {
+            redirect('Vendor');
+        }
+        $vid = $this->session->userdata('vid');
+        $data['designs'] = $this->db->get_where('catalog_design_category', array('status' => 'approve', 'vendor_id' => $vid))->result();
+        $this->load->view('vendor/header', $data);
+        $this->load->view('vendor/designs', $data);
+        $this->load->view('vendor/index', $data);
+    }
 
     public function add_uniform($edit = false)
     {
@@ -4148,6 +4192,26 @@ echo $item->subtotal; ?>/- </td>
         $this->middle = 'vendor/add_uniform_view';
         $this->vendorlayout();
 
+    }
+
+    public function del_design()
+    {
+        $this->form_validation->set_rules('design_id', 'Design ID', 'required|max_length[5]|numeric|trim');
+        switch(TRUE)
+        {
+            case ! $this->session->userdata('vendor_loggedin'):
+                echo 'Session has expired. Please login.';
+                redirect('Vendor');
+            break;
+
+            case $this->form_validation->run() === FALSE:
+                echo 'Invalid request. Please reload the page and try again';
+            break;
+
+            case $this->db->delete('catalog_design_category', array('catalog_id' => $this->input->post('design_id'))):
+                echo 'Design has been successfully deleted.';
+            break;
+        }
     }
 
     public function del_uniform()

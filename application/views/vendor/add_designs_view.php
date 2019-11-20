@@ -1,13 +1,28 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <style>
 .active7
 {
 	background-color:#1fae66 !important;
 }
-
-@media (min-width: 768px){
-.form-horizontal .control-label{
-  text-align: left !important;
+.image-holder {
+  max-height: 200px;
+  max-width: 200px;
 }
+@media (min-width: 768px)
+{
+  .form-horizontal .control-label {
+    text-align: left !important;
+  }
+}
+.form-wizard .nav > li > a{padding: 10px; margin-right:0; text-align: left; color:#888888;}
+.tab-right{margin-left:0px; margin-top:0px; }
+.tab-right .panel {margin-right:-30px;}
+.tab-right .vd_panel-menu {right: 28px; top: -15px;}
+.tab-right h3{border-bottom:1px solid #EEEEEE;}
+table .vd_radio label:after{top:0;}
+@media (max-width: 767px) {
+  .tab-right{margin-left:0; margin-top:0;}
+  .tab-right .panel{margin-right: 0;}
 }
 </style>
 <script type="text/javascript" src="<?=base_url();?>adminassets/js/jquery.js"></script>
@@ -16,33 +31,9 @@
 
 <link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet" type="text/css">
 <link href="<?php echo base_url();?>adminassets/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet" type="text/css">
-<style>
-
-						.form-wizard .nav > li > a{padding: 10px; margin-right:0; text-align: left; color:#888888;}
-                        .tab-right{margin-left:0px; margin-top:0px; }
-						.tab-right .panel {margin-right:-30px;}
-						.tab-right .vd_panel-menu {right: 28px; top: -15px;}
-						.tab-right h3{border-bottom:1px solid #EEEEEE;}
-						table .vd_radio label:after{top:0;}
-
-
-		</style>
-
-    <!-- for specific page responsive in style css -->
-    		<style>
-
-						@media (max-width: 767px) {
-							.tab-right{margin-left:0; margin-top:0;}
-							.tab-right .panel{margin-right: 0;}
-
-						}
-
-		</style>
           <div class="vd_title-section clearfix">
             <div class="vd_panel-header">
               <h1>Add Catalogue</h1>
-             <!-- <small class="subtitle">Ecommerce Pages: Add Product</small>-->
-
               <div class="vd_panel-menu visible-xs">
                 <div class="menu">
                   <div data-action="click-trigger"> <span class="menu-icon mgr-10"><i class="fa fa-bars"></i></span>Menu <i class="fa fa-angle-down"></i> </div>
@@ -74,11 +65,21 @@
                   <div class="panel-heading no-title"> </div>
                   <div  class="panel-body">
                     <div class="tab-content no-bd mgbt-xs-20">
-                    <?php if($this->session->flashdata('message')){?>
-                      <div class="alert alert-success">
-                        <?php echo $this->session->flashdata('message')?>
-                      </div>
-                  <?php } ?>
+                      <?php if( ! empty($success)): ?>
+                          <div class="alert alert-success" style="display: inline-block;padding-right: 3rem;">
+                              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                              <strong>Success!</strong><hr style="margin-top: 0;">
+                              <?=$success;?>
+                          </div>
+                      <?php endif; ?>
+                      <?php if( ! empty(validation_errors()) || ! empty($errors)): ?>
+                          <div class="alert alert-danger" style="display: inline-block;padding-right: 3rem;">
+                              <button type="button" class="close" data-dismiss="alert">&times;</button>
+                              <strong>Error!</strong><hr style="margin-top: 0;">
+                              <?=validation_errors();?>
+                              <?=$errors;?>
+                          </div>
+                      <?php endif; ?>
                       <div id="tabinfo" class="tab-pane active">
                        <?php
 					                echo form_open_multipart("Vendor/add_designs",array("class"=>"form-horizontal"));?>
@@ -148,12 +149,6 @@
                               <textarea name="desc" id="desc" data-rel="ckeditor" rows="3"></textarea>
                             </div>
                           </div>
-                          <style>
-                          .image-holder {
-                            max-height: 200px;
-                            max-width: 200px;
-                          }
-                          </style>
                           <div class="form-group">
                             <label class="control-label col-lg-2 file_upload_label">
                             <span> Add Images </span> </label>
@@ -169,14 +164,14 @@
                               <div class="col-lg-3 row col-sm-4 col-md-4"> 
                               <span class="btn vd_btn vd_bg-green fileinput-button">
                               <span>Front Side</span><div class="image-holder"></div>
-                                <input type="file" name="front" class="fileupload">
+                                <input type="file" name="front" class="fileupload" required>
                                 </span>
                                 <div id="remo2" class="btn remove-btn">Remove</div>
                                 </div>
                               <div class="col-lg-3 row col-sm-4 col-md-4">
                                 <span class="btn vd_btn vd_bg-green fileinput-button">
                                 <span>Back Side</span><div class="image-holder"></div>
-                                  <input type="file" name="back" class="fileupload">
+                                  <input type="file" name="back" class="fileupload" required>
                                   </span>
                                   <div id="remo3" class="btn remove-btn">Remove</div>
                               </div>
