@@ -49,18 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['designer'] = 'designer';
+$route['designers/(:any)/(:num)'] = 'welcome/view_designers/$1/$2';
+$route['designers'] = 'welcome/designers';
 $route['test'] = 'Welcome/test';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = 'welcome/page_404';
 $route['translate_uri_dashes'] = FALSE;
-///fabric
 $route['fabric/(:any)/(:num)'] = 'Welcome/shop/$2';
 $route['careerdetails/(:num)'] = 'Welcome/careerdetails/$1';
-
-/*$route['fabric/Women'] = 'Welcome/shop/2';
-$route['fabric/Kids'] = 'Welcome/shop/3';*/
-///uniform
 $route['uniform/(:any)'] = 'Welcome/uniform_shop/$1';
 $route['accessories/(:any)/(:any)'] = 'Welcome/accessories_shop/$1';
 $route['altration/(:any)/(:any)'] = 'Welcome/altration/$1';

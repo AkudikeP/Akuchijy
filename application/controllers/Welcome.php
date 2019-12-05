@@ -489,14 +489,66 @@ class Welcome extends MY_Controller
 
     public function donate()
     {
-
         $this->middle = 'donate'; // passing middle to function. change this for different views.
         $this->layout();
     }
 
+    public function designers()
+    {
+        $data['title'] = 'Ansvel - Meet our Designers';
+        $data['page'] = 'designer';
+
+        $vendors = $this->db->where(array('approve_status' => 'yes'))->get('vendor')->result();
+        
+        $i = 0;
+        foreach($vendors as $vendor)
+        {
+            if (strpos($vendor->option, 'Fashion designers') !== false)
+            {
+                $vid = $vendor->vid;
+                $data['designers'][$i] = $vendor;
+                $data['designers'][$i]->url = url_title($vendor->vendor_name).'/'. $vid;
+                $i++;
+            }
+        };
+        
+        $this->load->view('layout/headernew', $data);
+        $this->load->view('designers', $data);
+        $this->load->view('layout/footernew');
+    }
+
+    public function view_designers($url = '', $vid = '')
+    {
+        switch(TRUE)
+        {
+            case empty($url):
+
+            case empty($vid):
+
+            case empty($vendor = $this->db->where(array('vid' => $vid, 'approve_status' => 'yes'))->get('vendor')->row_array()):
+                $this->load->view('page_404');
+            break;
+
+            default:
+                $city = $this->db->where(array('id' => $vendor['city']))->get('cities')->row_array();
+                $state = $this->db->where(array('id' => $city['state_id']))->get('states')->row_array();
+                $country = $this->db->where(array('id' => $state['country_id']))->get('countries')->row_array();
+                $vendor['location'] = $city['name'] . ' ' . $state['name'] . ', ' . $country['name']. '.';
+
+                $data['designs'] = $this->db->where(array('vendor_id' => $vid))->get('catalog_design_category')->result_array();
+
+                $data['designer'] = $vendor;
+
+                $data['title'] = 'Ansvel - Meet '.$vendor['vendor_name'];
+                
+                $this->load->view('layout/headernew', $data);
+                $this->load->view('view_designer', $data);
+                $this->load->view('layout/footernew');
+        }
+    }
+
     public function how_it_works()
     {
-
         $this->middle = 'how_it_works'; // passing middle to function. change this for different views.
         $this->layout();
     }

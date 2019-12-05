@@ -1456,7 +1456,7 @@ echo $item->subtotal; ?>/- </td>
     public function registration_insert()
     {
         $this->load->library('upload');
-        $config['upload_path'] = './assets/images/';
+        $config['upload_path'] = './assets/images/profile_images/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg|GIF|JPG|PNG|JPEG';
         $config['max_size'] = '20480';
         $config['max_filename'] = '200';
@@ -1478,11 +1478,11 @@ echo $item->subtotal; ?>/- </td>
         $this->form_validation->set_rules('pincode', 'Pincode', 'min_length[1]|max_length[20]|numeric|trim');
         $this->form_validation->set_rules('category', 'Category', 'required|in_list[Vendor,Service provider]|trim');
         $this->form_validation->set_rules('id_type', 'ID type', 'required|in_list[Passport,Voters Card,Drivers License,NIN Card]|trim');
-        $this->form_validation->set_rules('bio', 'Bio', 'max_length[6143]|trim');
+        $this->form_validation->set_rules('bio', 'Bio', 'required|max_length[6143]|trim');
 
         $contact = $this->session->userdata('contact');
         switch (TRUE) {
-            case empty($_FILES["id_proof"]["name"]):
+            case empty($_FILES['id_proof']['name']):
                 echo 'id proof file not selected';
                 break;
 
@@ -1501,12 +1501,12 @@ echo $item->subtotal; ?>/- </td>
             default:
                 $file = $this->upload->data()['file_name'];
                 $image = $banner = $referral_link = '';
-                if( ! empty($_FILES["image"]["name"]))
+                if( ! empty($_FILES['image']['name']))
                 {
                     $this->upload->do_upload('image');
                     $image = $this->upload->data()['file_name'];
                 }
-                if( ! empty($_FILES["banner"]["name"]))
+                if( ! empty($_FILES['banner']['name']))
                 {
                     $this->upload->do_upload('banner');
                     $banner = $this->upload->data()['file_name'];
@@ -1516,18 +1516,18 @@ echo $item->subtotal; ?>/- </td>
                     'password' => md5($this->input->post('password')),
                     'email' => $this->input->post('email'),
                     'address' => $this->input->post('address'),
-                    'city' => $this->input->post("city"),
+                    'city' => $this->input->post('city'),
                     'state' => $this->input->post('state'),
                     'country' => $this->input->post('country'),
                     'pincode' => $this->input->post('pincode'),
                     'category' => $this->input->post('category'),
-                    "id_type" => $this->input->post("id_type"),
-                    "id_proof" => $file,
-                    "bio" => $this->input->post("bio"),
-                    "image" => $image,
-                    "banner" => $banner
+                    'id_type' => $this->input->post('id_type'),
+                    'id_proof' => $file,
+                    'bio' => $this->input->post('bio'),
+                    'image' => $image,
+                    'banner' => $banner
                 );
-                $data['option'] = $data['category'] == 'Service provider' ? '' : implode(",", $this->input->post("option"));
+                $data['option'] = $data['category'] == 'Service provider' ? '' : implode(',', $this->input->post('option'));
                 $where = array('contact' => $contact);
                 if ($this->db->set($data)->where($where)->update('vendor')) {
                     if($this->input->post('category') == 'Service provider')
